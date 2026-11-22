@@ -1,0 +1,38 @@
+# SHA256SUMS.txt — Token Launch Radar (token-radar-01), model radar-3.1
+# SHA-256 and MD5 for every file in the submission bundle, except this file itself.
+# (This file cannot list its own hash, and the .zip/.tar.gz archive hashes are
+#  recorded in the delivery summary — the archives contain this file.)
+# Generated 2026-11-22 after the Top-10 upgrade; board.json must match:
+#   SHA-256 95ec533f47abd52e2024cffefdcf5d4fe5671acef92eb51dd0d9703b7f4981e4
+#   MD5     27b93a69624a1244e3f9abf582917d0b
+
+SHA-256 82675d75f88fdda6cc9bcad4b44f8896d57f0c24ff0f2c99271131995ee72e7a  LICENSE
+MD5     606169e1b32be7ff6955dd53696c9b75  LICENSE
+SHA-256 534f8233583d2b87ce1deb6948e2730b9e9a856fafa7fe067e9203d3a71766eb  README.md
+MD5     570816bcad847bccf78192222e2f7cb6  README.md
+SHA-256 fedbb1d2fbc8d79195b0eef585f16f8f034010f07822d299c4463e44b35e6d0b  TRANSCRIPT.md
+MD5     cdaa0a9522d45822dd57092ec1608393  TRANSCRIPT.md
+SHA-256 544eb0f0ea62e18bf8424824758bd32c24a0f31656daf649037071bcb860aab8  main.ts
+MD5     4b69f2fd7c6ae1fbda717c748ccdbc48  main.ts
+SHA-256 95ec533f47abd52e2024cffefdcf5d4fe5671acef92eb51dd0d9703b7f4981e4  board.json
+MD5     27b93a69624a1244e3f9abf582917d0b  board.json
+SHA-256 c5e2a978badb7b7112ffa4efd20c45f9f7ca6c7e3484f84b82b8090138dcd3a7  excluded.json
+MD5     e568cb54cca11533f53d341fb2ea4f9c  excluded.json
+SHA-256 504b5a28dd71d98536bf6f3a7a5389e573923870e1340b31f0e6bd71f512aefa  dossier.json
+MD5     35f87a45ee6d4457294e5ffb8db1c1fc  dossier.json
+SHA-256 9ca51b6e5cd84fe46cb0efa61e2ea99365a1fb0e21f2b75e6007f977f0dc326e  vendor/makefun-board.ts
+MD5     5ba220c2671b81b1c453350f3235adf4  vendor/makefun-board.ts
+SHA-256 3f9675f24dc8629826f70ef45e4caab0b1c2b3859f1947fc897e3bb442a5b4b1  dashboard/index.html
+MD5     2cc2d8d56e9ee212810e8945d2d83875  dashboard/index.html
+SHA-256 f50a9d1564b539224eb054b782abdf48f8146fdd1433178a2ba31c448b9e515e  screenshots/01-desktop-overview.png
+MD5     ccc082b0e34ba0a10715205ae91b6130  screenshots/01-desktop-overview.png
+SHA-256 67c4e35a93584ae3191805c35b76cb6d78365e785e16ccdf388dcb37583e050d  screenshots/02-watchlist-detail.png
+MD5     9a7059924628d81b24a84e33ad72dca8  screenshots/02-watchlist-detail.png
+SHA-256 c7a8d8e902355a1d912729c13b51332e055963a557e4d75d22deb0c76f314081  screenshots/03-methodology-filters.png
+MD5     1ae9d4ba09c2200b12217712fbdb20b8  screenshots/03-methodology-filters.png
+SHA-256 cd37ca42168426786a478af5a03ea2af7569d9239f83939b4776bde3442fe682  screenshots/04-mobile-390px.png
+MD5     01412ffb2fe9ca69e6a68fda654a542e  screenshots/04-mobile-390px.png
+SHA-256 a6d8368e90074b1fe85b6ff7fea815097fd1af8fd017bab9f867daea0104fa87  screenshots/05-validation-audit.png
+MD5     5db6349e79195b5167f476d05c61af88  screenshots/05-validation-audit.png
+SHA-256 05070eaa1b02ff75b3e02600d1562167a6bc65c7200a76de4e19461ee25afc3d  screenshots/06-audit-551.png
+MD5     89f307dc241f58e6e21bb19966133047  screenshots/06-audit-551.png

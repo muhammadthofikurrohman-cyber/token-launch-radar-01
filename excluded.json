@@ -1,0 +1,3870 @@
+{
+  "meta": {
+    "count": 551,
+    "codes": {
+      "LIVE_TOKEN": 416,
+      "BRIDGE": 44,
+      "CEX": 42,
+      "WRAPPED_STAKED": 49
+    }
+  },
+  "excluded": [
+    {
+      "name": "Aave Horizon RWA",
+      "slug": "aave-horizon-rwa",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Aave V1",
+      "slug": "aave-v1",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Aave V2",
+      "slug": "aave-v2",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Aave V3",
+      "slug": "aave-v3",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Aave V4",
+      "slug": "aave-v4",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Across",
+      "slug": "across",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "ACryptoS",
+      "slug": "acryptos",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "ADI Bridge",
+      "slug": "adi-bridge",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Aero Basic",
+      "slug": "aero-basic",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Aero Slipstream",
+      "slug": "aero-slipstream",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Aerodrome Ignition",
+      "slug": "aerodrome-ignition",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Aerodrome Slipstream",
+      "slug": "aerodrome-slipstream",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Aerodrome V1",
+      "slug": "aerodrome-v1",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Aevo Perps",
+      "slug": "aevo-perps",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "AILayer farm",
+      "slug": "ailayer-farm",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Alchemix V3",
+      "slug": "alchemix-v3",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Alpaca Finance 2.0",
+      "slug": "alpaca-finance-2.0",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Alpaca Leveraged Yield Farming",
+      "slug": "alpaca-leveraged-yield-farming",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Ankr",
+      "slug": "ankr",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Anvil",
+      "slug": "anvil",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "AO Bridge",
+      "slug": "ao-bridge",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "ApeSwap AMM",
+      "slug": "apeswap-amm",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Api3",
+      "slug": "api3",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Aquarius Stellar",
+      "slug": "aquarius-stellar",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Arbitrum Bridge",
+      "slug": "arbitrum-bridge",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Arbitrum Nova Bridge",
+      "slug": "arbitrum-nova-bridge",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Arcadia V2",
+      "slug": "arcadia-v2",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Astar dApps Staking",
+      "slug": "astar-dapps-staking",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Aster asBNB",
+      "slug": "aster-asbnb",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Aster Bridge",
+      "slug": "aster-bridge",
+      "code": "BRIDGE",
+      "detail": "Bridge product — value moves across chains, no token of its own to farm; category or name/slug carries 'bridge'.",
+      "parent": ""
+    },
+    {
+      "name": "Aster USDF",
+      "slug": "aster-usdf",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Aura",
+      "slug": "aura",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Autofarm",
+      "slug": "autofarm",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "AUTOfinance",
+      "slug": "autofinance",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Avalanche Core Bridge",
+      "slug": "avalanche-core-bridge",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Avalon CeDeFi",
+      "slug": "avalon-cedefi",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Avalon Superearn",
+      "slug": "avalon-superearn",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Axelar",
+      "slug": "axelar",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "B2 Buzz",
+      "slug": "b2-buzz",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Babylon Protocol",
+      "slug": "babylon-protocol",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Backpack",
+      "slug": "backpack",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Badger DAO",
+      "slug": "badger-dao",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Balancer V2",
+      "slug": "balancer-v2",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Balancer V3",
+      "slug": "balancer-v3",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Bancor V2.1",
+      "slug": "bancor-v2.1",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Bancor V3",
+      "slug": "bancor-v3",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Base Bridge",
+      "slug": "base-bridge",
+      "code": "BRIDGE",
+      "detail": "Bridge product — value moves across chains, no token of its own to farm; category or name/slug carries 'bridge'.",
+      "parent": ""
+    },
+    {
+      "name": "Bedrock uniBTC",
+      "slug": "bedrock-unibtc",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Bedrock uniETH",
+      "slug": "bedrock-unieth",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Beefy",
+      "slug": "beefy",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Belt Finance",
+      "slug": "belt-finance",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Benqi Lending",
+      "slug": "benqi-lending",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Benqi Staked Avax",
+      "slug": "benqi-staked-avax",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Biconomy.com",
+      "slug": "biconomy.com",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "BiFi",
+      "slug": "bifi",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Bifrost Liquid Staking",
+      "slug": "bifrost-liquid-staking",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "BigONE",
+      "slug": "bigone",
+      "code": "CEX",
+      "detail": "Centralised exchange / custody — a token launch would be an equity event, not a farmable protocol launch.",
+      "parent": ""
+    },
+    {
+      "name": "Binance Bitcoin",
+      "slug": "binance-bitcoin",
+      "code": "BRIDGE",
+      "detail": "Bridge product — value moves across chains, no token of its own to farm; category or name/slug carries 'bridge'.",
+      "parent": ""
+    },
+    {
+      "name": "Binance CEX",
+      "slug": "binance-cex",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Binance staked ETH",
+      "slug": "binance-staked-eth",
+      "code": "WRAPPED_STAKED",
+      "detail": "Wrapped or staked product of a traded token — value accrues to the parent, no separate launch.",
+      "parent": ""
+    },
+    {
+      "name": "Binance Staked SOL",
+      "slug": "binance-staked-sol",
+      "code": "WRAPPED_STAKED",
+      "detail": "Wrapped or staked product of a traded token — value accrues to the parent, no separate launch.",
+      "parent": ""
+    },
+    {
+      "name": "BingX",
+      "slug": "bingx",
+      "code": "CEX",
+      "detail": "Centralised exchange / custody — a token launch would be an equity event, not a farmable protocol launch.",
+      "parent": ""
+    },
+    {
+      "name": "Biquid",
+      "slug": "biquid",
+      "code": "WRAPPED_STAKED",
+      "detail": "Wrapped or staked product of a traded token — value accrues to the parent, no separate launch.",
+      "parent": ""
+    },
+    {
+      "name": "Bitfinex",
+      "slug": "bitfinex",
+      "code": "CEX",
+      "detail": "Centralised exchange / custody — a token launch would be an equity event, not a farmable protocol launch.",
+      "parent": ""
+    },
+    {
+      "name": "Bitget",
+      "slug": "bitget",
+      "code": "CEX",
+      "detail": "Centralised exchange / custody — a token launch would be an equity event, not a farmable protocol launch.",
+      "parent": ""
+    },
+    {
+      "name": "Bitget bgBTC",
+      "slug": "bitget-bgbtc",
+      "code": "BRIDGE",
+      "detail": "Bridge product — value moves across chains, no token of its own to farm; category or name/slug carries 'bridge'.",
+      "parent": ""
+    },
+    {
+      "name": "Bitget SOL",
+      "slug": "bitget-sol",
+      "code": "WRAPPED_STAKED",
+      "detail": "Wrapped or staked product of a traded token — value accrues to the parent, no separate launch.",
+      "parent": ""
+    },
+    {
+      "name": "BitKan",
+      "slug": "bitkan",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Bitkub",
+      "slug": "bitkub",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Bitlo",
+      "slug": "bitlo",
+      "code": "CEX",
+      "detail": "Centralised exchange / custody — a token launch would be an equity event, not a farmable protocol launch.",
+      "parent": ""
+    },
+    {
+      "name": "Bitrue",
+      "slug": "bitrue",
+      "code": "CEX",
+      "detail": "Centralised exchange / custody — a token launch would be an equity event, not a farmable protocol launch.",
+      "parent": ""
+    },
+    {
+      "name": "Bitstamp",
+      "slug": "bitstamp",
+      "code": "CEX",
+      "detail": "Centralised exchange / custody — a token launch would be an equity event, not a farmable protocol launch.",
+      "parent": ""
+    },
+    {
+      "name": "Bitunix",
+      "slug": "bitunix",
+      "code": "CEX",
+      "detail": "Centralised exchange / custody — a token launch would be an equity event, not a farmable protocol launch.",
+      "parent": ""
+    },
+    {
+      "name": "Bitvavo",
+      "slug": "bitvavo",
+      "code": "CEX",
+      "detail": "Centralised exchange / custody — a token launch would be an equity event, not a farmable protocol launch.",
+      "parent": ""
+    },
+    {
+      "name": "BitVenus",
+      "slug": "bitvenus",
+      "code": "CEX",
+      "detail": "Centralised exchange / custody — a token launch would be an equity event, not a farmable protocol launch.",
+      "parent": ""
+    },
+    {
+      "name": "Bitway Earn",
+      "slug": "bitway-earn",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "BlazeStake",
+      "slug": "blazestake",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Blend Pools V2",
+      "slug": "blend-pools-v2",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "BloFin",
+      "slug": "blofin",
+      "code": "CEX",
+      "detail": "Centralised exchange / custody — a token launch would be an equity event, not a farmable protocol launch.",
+      "parent": ""
+    },
+    {
+      "name": "Bluefin Spot",
+      "slug": "bluefin-spot",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Blur Bids",
+      "slug": "blur-bids",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Bonk Staked SOL",
+      "slug": "bonk-staked-sol",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Brickken",
+      "slug": "brickken",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Buzz Farming",
+      "slug": "buzz-farming",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Bybit",
+      "slug": "bybit",
+      "code": "CEX",
+      "detail": "Centralised exchange / custody — a token launch would be an equity event, not a farmable protocol launch.",
+      "parent": ""
+    },
+    {
+      "name": "Bybit Staked SOL",
+      "slug": "bybit-staked-sol",
+      "code": "WRAPPED_STAKED",
+      "detail": "Wrapped or staked product of a traded token — value accrues to the parent, no separate launch.",
+      "parent": ""
+    },
+    {
+      "name": "BYDFi",
+      "slug": "bydfi",
+      "code": "CEX",
+      "detail": "Centralised exchange / custody — a token launch would be an equity event, not a farmable protocol launch.",
+      "parent": ""
+    },
+    {
+      "name": "Byte Exchange",
+      "slug": "byte-exchange",
+      "code": "CEX",
+      "detail": "Centralised exchange / custody — a token launch would be an equity event, not a farmable protocol launch.",
+      "parent": ""
+    },
+    {
+      "name": "cap",
+      "slug": "cap",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "CatFee Staking Vault",
+      "slug": "catfee-staking-vault",
+      "code": "WRAPPED_STAKED",
+      "detail": "Wrapped or staked product of a traded token — value accrues to the parent, no separate launch.",
+      "parent": ""
+    },
+    {
+      "name": "cBridge",
+      "slug": "cbridge",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "CCIP",
+      "slug": "ccip",
+      "code": "BRIDGE",
+      "detail": "Bridge product — value moves across chains, no token of its own to farm; category or name/slug carries 'bridge'.",
+      "parent": ""
+    },
+    {
+      "name": "Cetus CLMM",
+      "slug": "cetus-clmm",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Chainflip AMM",
+      "slug": "chainflip-amm",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Chamber Vaults",
+      "slug": "chamber-vaults",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Chiliz Governance Staking",
+      "slug": "chiliz-governance-staking",
+      "code": "WRAPPED_STAKED",
+      "detail": "Wrapped or staked product of a traded token — value accrues to the parent, no separate launch.",
+      "parent": ""
+    },
+    {
+      "name": "Chutes",
+      "slug": "chutes",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Circle Bitcoin",
+      "slug": "circle-bitcoin",
+      "code": "BRIDGE",
+      "detail": "Bridge product — value moves across chains, no token of its own to farm; category or name/slug carries 'bridge'.",
+      "parent": ""
+    },
+    {
+      "name": "Circle Gateway",
+      "slug": "circle-gateway",
+      "code": "BRIDGE",
+      "detail": "Bridge product — value moves across chains, no token of its own to farm; category or name/slug carries 'bridge'.",
+      "parent": ""
+    },
+    {
+      "name": "Citrea Bridge",
+      "slug": "citrea-bridge",
+      "code": "BRIDGE",
+      "detail": "Bridge product — value moves across chains, no token of its own to farm; category or name/slug carries 'bridge'.",
+      "parent": ""
+    },
+    {
+      "name": "Clearpool TPOOL",
+      "slug": "clearpool-tpool",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Coin8",
+      "slug": "coin8",
+      "code": "CEX",
+      "detail": "Centralised exchange / custody — a token launch would be an equity event, not a farmable protocol launch.",
+      "parent": ""
+    },
+    {
+      "name": "Coinbase Bridge",
+      "slug": "coinbase-bridge",
+      "code": "BRIDGE",
+      "detail": "Bridge product — value moves across chains, no token of its own to farm; category or name/slug carries 'bridge'.",
+      "parent": ""
+    },
+    {
+      "name": "Coinbase Wrapped Staked ETH",
+      "slug": "coinbase-wrapped-staked-eth",
+      "code": "WRAPPED_STAKED",
+      "detail": "Wrapped or staked product of a traded token — value accrues to the parent, no separate launch.",
+      "parent": ""
+    },
+    {
+      "name": "CoinDCX",
+      "slug": "coindcx",
+      "code": "CEX",
+      "detail": "Centralised exchange / custody — a token launch would be an equity event, not a farmable protocol launch.",
+      "parent": ""
+    },
+    {
+      "name": "Coinstore",
+      "slug": "coinstore",
+      "code": "CEX",
+      "detail": "Centralised exchange / custody — a token launch would be an equity event, not a farmable protocol launch.",
+      "parent": ""
+    },
+    {
+      "name": "Compound V2",
+      "slug": "compound-v2",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Compound V3",
+      "slug": "compound-v3",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Concentrator",
+      "slug": "concentrator",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Concrete",
+      "slug": "concrete",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Connext",
+      "slug": "connext",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Contango V2",
+      "slug": "contango-v2",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Convex Finance",
+      "slug": "convex-finance",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Cooler Loans",
+      "slug": "cooler-loans",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Cronos zkEVM Bridge",
+      "slug": "cronos-zkevm-bridge",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "crvUSD",
+      "slug": "crvusd",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Crypto-com",
+      "slug": "crypto-com",
+      "code": "CEX",
+      "detail": "Centralised exchange / custody — a token launch would be an equity event, not a farmable protocol launch.",
+      "parent": ""
+    },
+    {
+      "name": "Crypto.com Liquid Staking",
+      "slug": "crypto.com-liquid-staking",
+      "code": "WRAPPED_STAKED",
+      "detail": "Wrapped or staked product of a traded token — value accrues to the parent, no separate launch.",
+      "parent": ""
+    },
+    {
+      "name": "Curve DEX",
+      "slug": "curve-dex",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Curve LlamaLend",
+      "slug": "curve-llamalend",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Curve LlamaLend V2",
+      "slug": "curve-llamalend-v2",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "cVault Finance",
+      "slug": "cvault-finance",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "DeepBook V3",
+      "slug": "deepbook-v3",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Definity Staked SOL",
+      "slug": "definity-staked-sol",
+      "code": "WRAPPED_STAKED",
+      "detail": "Wrapped or staked product of a traded token — value accrues to the parent, no separate launch.",
+      "parent": ""
+    },
+    {
+      "name": "Deri V4",
+      "slug": "deri-v4",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Deribit",
+      "slug": "deribit",
+      "code": "CEX",
+      "detail": "Centralised exchange / custody — a token launch would be an equity event, not a farmable protocol launch.",
+      "parent": ""
+    },
+    {
+      "name": "Derive V3 Options",
+      "slug": "derive-v3-options",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Dexalot Portfolio",
+      "slug": "dexalot-portfolio",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "DFDV Staked SOL",
+      "slug": "dfdv-staked-sol",
+      "code": "WRAPPED_STAKED",
+      "detail": "Wrapped or staked product of a traded token — value accrues to the parent, no separate launch.",
+      "parent": ""
+    },
+    {
+      "name": "DODO AMM",
+      "slug": "dodo-amm",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Dolomite",
+      "slug": "dolomite",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Drift Staked SOL",
+      "slug": "drift-staked-sol",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "DxSale",
+      "slug": "dxsale",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "dYdX V3",
+      "slug": "dydx-v3",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "dYdX V4",
+      "slug": "dydx-v4",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Echo Bridge",
+      "slug": "echo-bridge",
+      "code": "BRIDGE",
+      "detail": "Bridge product — value moves across chains, no token of its own to farm; category or name/slug carries 'bridge'.",
+      "parent": ""
+    },
+    {
+      "name": "edgeX Bridge",
+      "slug": "edgex-bridge",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "EigenCloud",
+      "slug": "eigencloud",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Ekubo",
+      "slug": "ekubo",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Endur",
+      "slug": "endur",
+      "code": "WRAPPED_STAKED",
+      "detail": "Wrapped or staked product of a traded token — value accrues to the parent, no separate launch.",
+      "parent": ""
+    },
+    {
+      "name": "Endurance Bridge",
+      "slug": "endurance-bridge",
+      "code": "BRIDGE",
+      "detail": "Bridge product — value moves across chains, no token of its own to farm; category or name/slug carries 'bridge'.",
+      "parent": ""
+    },
+    {
+      "name": "Enzyme Finance",
+      "slug": "enzyme-finance",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Equilibria",
+      "slug": "equilibria",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Ethena USDe",
+      "slug": "ethena-usde",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Ethena USDtb",
+      "slug": "ethena-usdtb",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "ether.fi Liquid",
+      "slug": "ether.fi-liquid",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "ether.fi Stake",
+      "slug": "ether.fi-stake",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "EtherFi Borrowing Market",
+      "slug": "etherfi-borrowing-market",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "EtherFi Cash Liquid",
+      "slug": "etherfi-cash-liquid",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Euler V2",
+      "slug": "euler-v2",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "EVAA Protocol",
+      "slug": "evaa-protocol",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Exactly",
+      "slug": "exactly",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "ExinPool",
+      "slug": "exinpool",
+      "code": "WRAPPED_STAKED",
+      "detail": "Wrapped or staked product of a traded token — value accrues to the parent, no separate launch.",
+      "parent": ""
+    },
+    {
+      "name": "exSat Staking BTC",
+      "slug": "exsat-staking-btc",
+      "code": "BRIDGE",
+      "detail": "Bridge product — value moves across chains, no token of its own to farm; category or name/slug carries 'bridge'.",
+      "parent": ""
+    },
+    {
+      "name": "Extra Finance Leverage Farming",
+      "slug": "extra-finance-leverage-farming",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Fables",
+      "slug": "fables",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Falcon Finance",
+      "slug": "falcon-finance",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "FAssets",
+      "slug": "fassets",
+      "code": "BRIDGE",
+      "detail": "Bridge product — value moves across chains, no token of its own to farm; category or name/slug carries 'bridge'.",
+      "parent": ""
+    },
+    {
+      "name": "FlokiFi Locker",
+      "slug": "flokifi-locker",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Fluid DEX",
+      "slug": "fluid-dex",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Fluid Lending",
+      "slug": "fluid-lending",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Fluid Lite",
+      "slug": "fluid-lite",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Flying Tulip Lend",
+      "slug": "flying-tulip-lend",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Folks Finance Lending",
+      "slug": "folks-finance-lending",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Forward Industries SOL",
+      "slug": "forward-industries-sol",
+      "code": "WRAPPED_STAKED",
+      "detail": "Wrapped or staked product of a traded token — value accrues to the parent, no separate launch.",
+      "parent": ""
+    },
+    {
+      "name": "Frankencoin",
+      "slug": "frankencoin",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Frax",
+      "slug": "frax",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Frax Ether",
+      "slug": "frax-ether",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Frax Swap",
+      "slug": "frax-swap",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Frax USD",
+      "slug": "frax-usd",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Fraxlend",
+      "slug": "fraxlend",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Fraxtal",
+      "slug": "fraxtal",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Fuel Bridge",
+      "slug": "fuel-bridge",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Function FBTC",
+      "slug": "function-fbtc",
+      "code": "BRIDGE",
+      "detail": "Bridge product — value moves across chains, no token of its own to farm; category or name/slug carries 'bridge'.",
+      "parent": ""
+    },
+    {
+      "name": "Futarchy AMM",
+      "slug": "futarchy-amm",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "fx Protocol",
+      "slug": "fx-protocol",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Gain",
+      "slug": "gain",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Gains Network",
+      "slug": "gains-network",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Gate",
+      "slug": "gate",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Gate SOL",
+      "slug": "gate-sol",
+      "code": "WRAPPED_STAKED",
+      "detail": "Wrapped or staked product of a traded token — value accrues to the parent, no separate launch.",
+      "parent": ""
+    },
+    {
+      "name": "Gate US",
+      "slug": "gate-us",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Gearbox",
+      "slug": "gearbox",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Gemini",
+      "slug": "gemini",
+      "code": "CEX",
+      "detail": "Centralised exchange / custody — a token launch would be an equity event, not a farmable protocol launch.",
+      "parent": ""
+    },
+    {
+      "name": "GETH",
+      "slug": "geth",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "GLIF",
+      "slug": "glif",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "GMX EVM",
+      "slug": "gmx-evm",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "GoldFinger",
+      "slug": "goldfinger",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "GoPlus Locker V3",
+      "slug": "goplus-locker-v3",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Gravity Bridge",
+      "slug": "gravity-bridge",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Grove Finance",
+      "slug": "grove-finance",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Grvt Bridge",
+      "slug": "grvt-bridge",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "GTBTC",
+      "slug": "gtbtc",
+      "code": "WRAPPED_STAKED",
+      "detail": "Wrapped or staked product of a traded token — value accrues to the parent, no separate launch.",
+      "parent": ""
+    },
+    {
+      "name": "Haedal Lending Vault",
+      "slug": "haedal-lending-vault",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Haedal Protocol",
+      "slug": "haedal-protocol",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Harmonix Finance",
+      "slug": "harmonix-finance",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Harvest Finance",
+      "slug": "harvest-finance",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "HashKey Exchange",
+      "slug": "hashkey-exchange",
+      "code": "CEX",
+      "detail": "Centralised exchange / custody — a token launch would be an equity event, not a farmable protocol launch.",
+      "parent": ""
+    },
+    {
+      "name": "HashKey Global",
+      "slug": "hashkey-global",
+      "code": "CEX",
+      "detail": "Centralised exchange / custody — a token launch would be an equity event, not a farmable protocol launch.",
+      "parent": ""
+    },
+    {
+      "name": "Hatom Lending",
+      "slug": "hatom-lending",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Hegic",
+      "slug": "hegic",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Helius Staked SOL",
+      "slug": "helius-staked-sol",
+      "code": "WRAPPED_STAKED",
+      "detail": "Wrapped or staked product of a traded token — value accrues to the parent, no separate launch.",
+      "parent": ""
+    },
+    {
+      "name": "Hibt",
+      "slug": "hibt",
+      "code": "CEX",
+      "detail": "Centralised exchange / custody — a token launch would be an equity event, not a farmable protocol launch.",
+      "parent": ""
+    },
+    {
+      "name": "Hipo",
+      "slug": "hipo",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Hotcoin",
+      "slug": "hotcoin",
+      "code": "CEX",
+      "detail": "Centralised exchange / custody — a token launch would be an equity event, not a farmable protocol launch.",
+      "parent": ""
+    },
+    {
+      "name": "HTX",
+      "slug": "htx",
+      "code": "CEX",
+      "detail": "Centralised exchange / custody — a token launch would be an equity event, not a farmable protocol launch.",
+      "parent": ""
+    },
+    {
+      "name": "Hubra Staked SOL",
+      "slug": "hubra-staked-sol",
+      "code": "WRAPPED_STAKED",
+      "detail": "Wrapped or staked product of a traded token — value accrues to the parent, no separate launch.",
+      "parent": ""
+    },
+    {
+      "name": "Huma",
+      "slug": "huma",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Hydration DEX",
+      "slug": "hydration-dex",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Hydration Lending",
+      "slug": "hydration-lending",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Hydro Lending",
+      "slug": "hydro-lending",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Hydro LST",
+      "slug": "hydro-lst",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Hylo LSTs",
+      "slug": "hylo-lsts",
+      "code": "WRAPPED_STAKED",
+      "detail": "Wrapped or staked product of a traded token — value accrues to the parent, no separate launch.",
+      "parent": ""
+    },
+    {
+      "name": "Hyperbeat LST",
+      "slug": "hyperbeat-lst",
+      "code": "WRAPPED_STAKED",
+      "detail": "Wrapped or staked product of a traded token — value accrues to the parent, no separate launch.",
+      "parent": ""
+    },
+    {
+      "name": "Hyperlane",
+      "slug": "hyperlane",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "HyperLend Pooled",
+      "slug": "hyperlend-pooled",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Hyperliquid Bridge",
+      "slug": "hyperliquid-bridge",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Hyperliquid Earn",
+      "slug": "hyperliquid-earn",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Hyperliquid HLP",
+      "slug": "hyperliquid-hlp",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Hyperliquid Spot Orderbook",
+      "slug": "hyperliquid-spot-orderbook",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "HyperSwap V2",
+      "slug": "hyperswap-v2",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "HyperSwap V3",
+      "slug": "hyperswap-v3",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "ICHI",
+      "slug": "ichi",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "IDEX V1",
+      "slug": "idex-v1",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Immutable zkEVM",
+      "slug": "immutable-zkevm",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "InceptionLRT (Isolated Restaking)",
+      "slug": "inceptionlrt-(isolated-restaking)",
+      "code": "WRAPPED_STAKED",
+      "detail": "Wrapped or staked product of a traded token — value accrues to the parent, no separate launch.",
+      "parent": ""
+    },
+    {
+      "name": "Index Coop",
+      "slug": "index-coop",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Indodax",
+      "slug": "indodax",
+      "code": "CEX",
+      "detail": "Centralised exchange / custody — a token launch would be an equity event, not a farmable protocol launch.",
+      "parent": ""
+    },
+    {
+      "name": "Infrared Finance",
+      "slug": "infrared-finance",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Ink Bridge",
+      "slug": "ink-bridge",
+      "code": "BRIDGE",
+      "detail": "Bridge product — value moves across chains, no token of its own to farm; category or name/slug carries 'bridge'.",
+      "parent": ""
+    },
+    {
+      "name": "Inverse Finance FiRM",
+      "slug": "inverse-finance-firm",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "JagPool Staked SOL",
+      "slug": "jagpool-staked-sol",
+      "code": "WRAPPED_STAKED",
+      "detail": "Wrapped or staked product of a traded token — value accrues to the parent, no separate launch.",
+      "parent": ""
+    },
+    {
+      "name": "Japan Staked SOL",
+      "slug": "japan-staked-sol",
+      "code": "WRAPPED_STAKED",
+      "detail": "Wrapped or staked product of a traded token — value accrues to the parent, no separate launch.",
+      "parent": ""
+    },
+    {
+      "name": "Jito Liquid Staking",
+      "slug": "jito-liquid-staking",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Jito Restaking",
+      "slug": "jito-restaking",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Joe DEX",
+      "slug": "joe-dex",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "JPool",
+      "slug": "jpool",
+      "code": "WRAPPED_STAKED",
+      "detail": "Wrapped or staked product of a traded token — value accrues to the parent, no separate launch.",
+      "parent": ""
+    },
+    {
+      "name": "Juicebox V1",
+      "slug": "juicebox-v1",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Jupiter Lend",
+      "slug": "jupiter-lend",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Jupiter Lend DEX",
+      "slug": "jupiter-lend-dex",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Jupiter Perpetual Exchange",
+      "slug": "jupiter-perpetual-exchange",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Jupiter Staked SOL",
+      "slug": "jupiter-staked-sol",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "JupUSD",
+      "slug": "jupusd",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "JustCryptos",
+      "slug": "justcryptos",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "JustLend sTRX",
+      "slug": "justlend-strx",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "JustLend V1",
+      "slug": "justlend-v1",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "KAIO",
+      "slug": "kaio",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Kamino Lend",
+      "slug": "kamino-lend",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Kamino Liquidity",
+      "slug": "kamino-liquidity",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Kava Lend",
+      "slug": "kava-lend",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Kelp",
+      "slug": "kelp",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Kinetic",
+      "slug": "kinetic",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Kinetiq Earn",
+      "slug": "kinetiq-earn",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Kinetiq Elysium Bridge",
+      "slug": "kinetiq-elysium-bridge",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Kinetiq kHYPE",
+      "slug": "kinetiq-khype",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Kinetiq kmHYPE",
+      "slug": "kinetiq-kmhype",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Kodiak Islands",
+      "slug": "kodiak-islands",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Kodiak V3",
+      "slug": "kodiak-v3",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Korbit",
+      "slug": "korbit",
+      "code": "CEX",
+      "detail": "Centralised exchange / custody — a token launch would be an equity event, not a farmable protocol launch.",
+      "parent": ""
+    },
+    {
+      "name": "KPK",
+      "slug": "kpk",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Kraken Bitcoin",
+      "slug": "kraken-bitcoin",
+      "code": "BRIDGE",
+      "detail": "Bridge product — value moves across chains, no token of its own to farm; category or name/slug carries 'bridge'.",
+      "parent": ""
+    },
+    {
+      "name": "KTON",
+      "slug": "kton",
+      "code": "WRAPPED_STAKED",
+      "detail": "Wrapped or staked product of a traded token — value accrues to the parent, no separate launch.",
+      "parent": ""
+    },
+    {
+      "name": "KuCoin",
+      "slug": "kucoin",
+      "code": "CEX",
+      "detail": "Centralised exchange / custody — a token launch would be an equity event, not a farmable protocol launch.",
+      "parent": ""
+    },
+    {
+      "name": "Kyros",
+      "slug": "kyros",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "LayerBank",
+      "slug": "layerbank",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "LayerZero V2",
+      "slug": "layerzero-v2",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "LBank",
+      "slug": "lbank",
+      "code": "CEX",
+      "detail": "Centralised exchange / custody — a token launch would be an equity event, not a farmable protocol launch.",
+      "parent": ""
+    },
+    {
+      "name": "LeveX",
+      "slug": "levex",
+      "code": "CEX",
+      "detail": "Centralised exchange / custody — a token launch would be an equity event, not a farmable protocol launch.",
+      "parent": ""
+    },
+    {
+      "name": "Lido",
+      "slug": "lido",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Lighter Bridge",
+      "slug": "lighter-bridge",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Lighter LLP",
+      "slug": "lighter-llp",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Lighter Robinhood Perps",
+      "slug": "lighter-robinhood-perps",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Linea Bridge",
+      "slug": "linea-bridge",
+      "code": "BRIDGE",
+      "detail": "Bridge product — value moves across chains, no token of its own to farm; category or name/slug carries 'bridge'.",
+      "parent": ""
+    },
+    {
+      "name": "LiNEAR Protocol",
+      "slug": "linear-protocol",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Liquid Collective",
+      "slug": "liquid-collective",
+      "code": "WRAPPED_STAKED",
+      "detail": "Wrapped or staked product of a traded token — value accrues to the parent, no separate launch.",
+      "parent": ""
+    },
+    {
+      "name": "Liquity V1",
+      "slug": "liquity-v1",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Liquity V2",
+      "slug": "liquity-v2",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Liqwid",
+      "slug": "liqwid",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Lista CDP",
+      "slug": "lista-cdp",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Lista DEX",
+      "slug": "lista-dex",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Lista Lending",
+      "slug": "lista-lending",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Lista Liquid Staking",
+      "slug": "lista-liquid-staking",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Lombard BTC.b",
+      "slug": "lombard-btc.b",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Lombard LBTC",
+      "slug": "lombard-lbtc",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Lombard Vaults",
+      "slug": "lombard-vaults",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Looped Hype",
+      "slug": "looped-hype",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Lorenzo enzoBTC",
+      "slug": "lorenzo-enzobtc",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Lorenzo sUSD1+",
+      "slug": "lorenzo-susd1+",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "M0",
+      "slug": "m0",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Mansory",
+      "slug": "mansory",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Manta Pacific",
+      "slug": "manta-pacific",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Mantle Bridge",
+      "slug": "mantle-bridge",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Mantle Restaking",
+      "slug": "mantle-restaking",
+      "code": "WRAPPED_STAKED",
+      "detail": "Wrapped or staked product of a traded token — value accrues to the parent, no separate launch.",
+      "parent": ""
+    },
+    {
+      "name": "Maple",
+      "slug": "maple",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "marginfi LST",
+      "slug": "marginfi-lst",
+      "code": "WRAPPED_STAKED",
+      "detail": "Wrapped or staked product of a traded token — value accrues to the parent, no separate launch.",
+      "parent": ""
+    },
+    {
+      "name": "Marinade Liquid Staking",
+      "slug": "marinade-liquid-staking",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Marinade Native",
+      "slug": "marinade-native",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Marinade Select",
+      "slug": "marinade-select",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Mellow Restaking",
+      "slug": "mellow-restaking",
+      "code": "WRAPPED_STAKED",
+      "detail": "Wrapped or staked product of a traded token — value accrues to the parent, no separate launch.",
+      "parent": ""
+    },
+    {
+      "name": "Mento V2",
+      "slug": "mento-v2",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Merchant Moe Liquidity Book",
+      "slug": "merchant-moe-liquidity-book",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Merlins Seal",
+      "slug": "merlins-seal",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "MerlinSwap",
+      "slug": "merlinswap",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Meta Pool ETH",
+      "slug": "meta-pool-eth",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Meta Pool Near",
+      "slug": "meta-pool-near",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "MetalX Lending",
+      "slug": "metalx-lending",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Meteora DAMM V1",
+      "slug": "meteora-damm-v1",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Meteora DAMM V2",
+      "slug": "meteora-damm-v2",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Meteora DLMM",
+      "slug": "meteora-dlmm",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Meteora vaults",
+      "slug": "meteora-vaults",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "mETH Protocol",
+      "slug": "meth-protocol",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Metis Bridge",
+      "slug": "metis-bridge",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Metronome Synth",
+      "slug": "metronome-synth",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "MEXC",
+      "slug": "mexc",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Mezo Bridge",
+      "slug": "mezo-bridge",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Minswap DEX",
+      "slug": "minswap-dex",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "MoneyOnChain",
+      "slug": "moneyonchain",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Moonwell Lending",
+      "slug": "moonwell-lending",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Moonwell Vaults",
+      "slug": "moonwell-vaults",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Morph Bridge",
+      "slug": "morph-bridge",
+      "code": "BRIDGE",
+      "detail": "Bridge product — value moves across chains, no token of its own to farm; category or name/slug carries 'bridge'.",
+      "parent": ""
+    },
+    {
+      "name": "MorpheusAI",
+      "slug": "morpheusai",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Morpho Blue",
+      "slug": "morpho-blue",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Morpho Midnight",
+      "slug": "morpho-midnight",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "mStable V2",
+      "slug": "mstable-v2",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Multichain",
+      "slug": "multichain",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "MUX Perps",
+      "slug": "mux-perps",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "NAVI Curator",
+      "slug": "navi-curator",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "NAVI Lending",
+      "slug": "navi-lending",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "NBX",
+      "slug": "nbx",
+      "code": "CEX",
+      "detail": "Centralised exchange / custody — a token launch would be an equity event, not a farmable protocol launch.",
+      "parent": ""
+    },
+    {
+      "name": "NEAR Bridge",
+      "slug": "near-bridge",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "NEAR Intents",
+      "slug": "near-intents",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "NEOPIN Staking",
+      "slug": "neopin-staking",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "nest CL",
+      "slug": "nest-cl",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Nexo",
+      "slug": "nexo",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Nexus BTC",
+      "slug": "nexus-btc",
+      "code": "BRIDGE",
+      "detail": "Bridge product — value moves across chains, no token of its own to farm; category or name/slug carries 'bridge'.",
+      "parent": ""
+    },
+    {
+      "name": "Nexus Mutual Insurance",
+      "slug": "nexus-mutual-insurance",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Niza",
+      "slug": "niza",
+      "code": "CEX",
+      "detail": "Centralised exchange / custody — a token launch would be an equity event, not a farmable protocol launch.",
+      "parent": ""
+    },
+    {
+      "name": "NodeDAO",
+      "slug": "nodedao",
+      "code": "WRAPPED_STAKED",
+      "detail": "Wrapped or staked product of a traded token — value accrues to the parent, no separate launch.",
+      "parent": ""
+    },
+    {
+      "name": "ObeliskBTC",
+      "slug": "obeliskbtc",
+      "code": "BRIDGE",
+      "detail": "Bridge product — value moves across chains, no token of its own to farm; category or name/slug carries 'bridge'.",
+      "parent": ""
+    },
+    {
+      "name": "Obol",
+      "slug": "obol",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Okcoin",
+      "slug": "okcoin",
+      "code": "CEX",
+      "detail": "Centralised exchange / custody — a token launch would be an equity event, not a farmable protocol launch.",
+      "parent": ""
+    },
+    {
+      "name": "OKX",
+      "slug": "okx",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "OKX xBTC",
+      "slug": "okx-xbtc",
+      "code": "BRIDGE",
+      "detail": "Bridge product — value moves across chains, no token of its own to farm; category or name/slug carries 'bridge'.",
+      "parent": ""
+    },
+    {
+      "name": "Optimism Bridge",
+      "slug": "optimism-bridge",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "OrangeX",
+      "slug": "orangex",
+      "code": "CEX",
+      "detail": "Centralised exchange / custody — a token launch would be an equity event, not a farmable protocol launch.",
+      "parent": ""
+    },
+    {
+      "name": "Orbit Bridge",
+      "slug": "orbit-bridge",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Orca DEX",
+      "slug": "orca-dex",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Orderly Bridge",
+      "slug": "orderly-bridge",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Origin ARM",
+      "slug": "origin-arm",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Origin Dollar",
+      "slug": "origin-dollar",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Origin Ether",
+      "slug": "origin-ether",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "OSL Exchange",
+      "slug": "osl-exchange",
+      "code": "CEX",
+      "detail": "Centralised exchange / custody — a token launch would be an equity event, not a farmable protocol launch.",
+      "parent": ""
+    },
+    {
+      "name": "Osmosis DEX",
+      "slug": "osmosis-dex",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Ourbit",
+      "slug": "ourbit",
+      "code": "CEX",
+      "detail": "Centralised exchange / custody — a token launch would be an equity event, not a farmable protocol launch.",
+      "parent": ""
+    },
+    {
+      "name": "Pacifica Bridge",
+      "slug": "pacifica-bridge",
+      "code": "BRIDGE",
+      "detail": "Bridge product — value moves across chains, no token of its own to farm; category or name/slug carries 'bridge'.",
+      "parent": ""
+    },
+    {
+      "name": "PancakeSwap AMM",
+      "slug": "pancakeswap-amm",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "PancakeSwap AMM V3",
+      "slug": "pancakeswap-amm-v3",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "PancakeSwap Infinity",
+      "slug": "pancakeswap-infinity",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Papertrade",
+      "slug": "papertrade",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Paradex Bridge",
+      "slug": "paradex-bridge",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Pendle Loop",
+      "slug": "pendle-loop",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Pendle V2",
+      "slug": "pendle-v2",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Phantom SOL",
+      "slug": "phantom-sol",
+      "code": "WRAPPED_STAKED",
+      "detail": "Wrapped or staked product of a traded token — value accrues to the parent, no separate launch.",
+      "parent": ""
+    },
+    {
+      "name": "Pharaoh DLMM",
+      "slug": "pharaoh-dlmm",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Pharaoh V3",
+      "slug": "pharaoh-v3",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Phase Delegation",
+      "slug": "phase-delegation",
+      "code": "WRAPPED_STAKED",
+      "detail": "Wrapped or staked product of a traded token — value accrues to the parent, no separate launch.",
+      "parent": ""
+    },
+    {
+      "name": "Phemex",
+      "slug": "phemex",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Piku Finance",
+      "slug": "piku-finance",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "PinkSale",
+      "slug": "pinksale",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Pionex",
+      "slug": "pionex",
+      "code": "CEX",
+      "detail": "Centralised exchange / custody — a token launch would be an equity event, not a farmable protocol launch.",
+      "parent": ""
+    },
+    {
+      "name": "Poloniex",
+      "slug": "poloniex",
+      "code": "CEX",
+      "detail": "Centralised exchange / custody — a token launch would be an equity event, not a farmable protocol launch.",
+      "parent": ""
+    },
+    {
+      "name": "Polygon Bridge",
+      "slug": "polygon-bridge",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Polygon zkEVM Bridge",
+      "slug": "polygon-zkevm-bridge",
+      "code": "BRIDGE",
+      "detail": "Bridge product — value moves across chains, no token of its own to farm; category or name/slug carries 'bridge'.",
+      "parent": ""
+    },
+    {
+      "name": "Popdex Bridge",
+      "slug": "popdex-bridge",
+      "code": "BRIDGE",
+      "detail": "Bridge product — value moves across chains, no token of its own to farm; category or name/slug carries 'bridge'.",
+      "parent": ""
+    },
+    {
+      "name": "Portal",
+      "slug": "portal",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Prime Staking",
+      "slug": "prime-staking",
+      "code": "WRAPPED_STAKED",
+      "detail": "Wrapped or staked product of a traded token — value accrues to the parent, no separate launch.",
+      "parent": ""
+    },
+    {
+      "name": "ProBit Global",
+      "slug": "probit-global",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Proxy",
+      "slug": "proxy",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Puffer Stake",
+      "slug": "puffer-stake",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "PulseChain Bridge",
+      "slug": "pulsechain-bridge",
+      "code": "BRIDGE",
+      "detail": "Bridge product — value moves across chains, no token of its own to farm; category or name/slug carries 'bridge'.",
+      "parent": ""
+    },
+    {
+      "name": "PulseX V1",
+      "slug": "pulsex-v1",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "PulseX V2",
+      "slug": "pulsex-v2",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "PumpBTC",
+      "slug": "pumpbtc",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "PumpSwap",
+      "slug": "pumpswap",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Quickswap Dex",
+      "slug": "quickswap-dex",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Quickswap V3",
+      "slug": "quickswap-v3",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Radpie",
+      "slug": "radpie",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Raiku Staked SOL",
+      "slug": "raiku-staked-sol",
+      "code": "WRAPPED_STAKED",
+      "detail": "Wrapped or staked product of a traded token — value accrues to the parent, no separate launch.",
+      "parent": ""
+    },
+    {
+      "name": "Railgun",
+      "slug": "railgun",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Rain",
+      "slug": "rain",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Ramses CL V2",
+      "slug": "ramses-cl-v2",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Raydium AMM",
+      "slug": "raydium-amm",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Re",
+      "slug": "re",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Realms",
+      "slug": "realms",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "RealT RMM Marketplace V2",
+      "slug": "realt-rmm-marketplace-v2",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "RealT Tokens",
+      "slug": "realt-tokens",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Renzo",
+      "slug": "renzo",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Reserve Protocol",
+      "slug": "reserve-protocol",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Reservoir Protocol",
+      "slug": "reservoir-protocol",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Resolv USR",
+      "slug": "resolv-usr",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Resupply",
+      "slug": "resupply",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Rhea Dex",
+      "slug": "rhea-dex",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Rhea Lend",
+      "slug": "rhea-lend",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "RHEA LST",
+      "slug": "rhea-lst",
+      "code": "WRAPPED_STAKED",
+      "detail": "Wrapped or staked product of a traded token — value accrues to the parent, no separate launch.",
+      "parent": ""
+    },
+    {
+      "name": "Ring Few",
+      "slug": "ring-few",
+      "code": "BRIDGE",
+      "detail": "Bridge product — value moves across chains, no token of its own to farm; category or name/slug carries 'bridge'.",
+      "parent": ""
+    },
+    {
+      "name": "River Omni-CDP",
+      "slug": "river-omni-cdp",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "RNT Lend",
+      "slug": "rnt-lend",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Robinhood",
+      "slug": "robinhood",
+      "code": "CEX",
+      "detail": "Centralised exchange / custody — a token launch would be an equity event, not a farmable protocol launch.",
+      "parent": ""
+    },
+    {
+      "name": "Robinhood Chain Bridge",
+      "slug": "robinhood-chain-bridge",
+      "code": "BRIDGE",
+      "detail": "Bridge product — value moves across chains, no token of its own to farm; category or name/slug carries 'bridge'.",
+      "parent": ""
+    },
+    {
+      "name": "Rocket Pool",
+      "slug": "rocket-pool",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "RSK Bridge",
+      "slug": "rsk-bridge",
+      "code": "BRIDGE",
+      "detail": "Bridge product — value moves across chains, no token of its own to farm; category or name/slug carries 'bridge'.",
+      "parent": ""
+    },
+    {
+      "name": "Sanctum Infinity",
+      "slug": "sanctum-infinity",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Sanctum Reserve",
+      "slug": "sanctum-reserve",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Sanctum Validator LSTs",
+      "slug": "sanctum-validator-lsts",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Saphyre V3",
+      "slug": "saphyre-v3",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "SaucerSwap V1",
+      "slug": "saucerswap-v1",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "SaucerSwap V2",
+      "slug": "saucerswap-v2",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Save",
+      "slug": "save",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Save SOL",
+      "slug": "save-sol",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Scallop Lend",
+      "slug": "scallop-lend",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Sceptre Liquid",
+      "slug": "sceptre-liquid",
+      "code": "WRAPPED_STAKED",
+      "detail": "Wrapped or staked product of a traded token — value accrues to the parent, no separate launch.",
+      "parent": ""
+    },
+    {
+      "name": "Scroll Bridge",
+      "slug": "scroll-bridge",
+      "code": "BRIDGE",
+      "detail": "Bridge product — value moves across chains, no token of its own to farm; category or name/slug carries 'bridge'.",
+      "parent": ""
+    },
+    {
+      "name": "sDAI",
+      "slug": "sdai",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Seamless V2",
+      "slug": "seamless-v2",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Serum",
+      "slug": "serum",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "ShMonad",
+      "slug": "shmonad",
+      "code": "WRAPPED_STAKED",
+      "detail": "Wrapped or staked product of a traded token — value accrues to the parent, no separate launch.",
+      "parent": ""
+    },
+    {
+      "name": "Sierra Protocol",
+      "slug": "sierra-protocol",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Sky Lending",
+      "slug": "sky-lending",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Sky Money",
+      "slug": "sky-money",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Sky RWA",
+      "slug": "sky-rwa",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "SoDEX Bridge",
+      "slug": "sodex-bridge",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Solayer Restaking",
+      "slug": "solayer-restaking",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Solomon USDv",
+      "slug": "solomon-usdv",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Solstice",
+      "slug": "solstice",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Solv Basis Trading",
+      "slug": "solv-basis-trading",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Solv RWA",
+      "slug": "solv-rwa",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "SolvBTC",
+      "slug": "solvbtc",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "SolvBTC LSTs",
+      "slug": "solvbtc-lsts",
+      "code": "WRAPPED_STAKED",
+      "detail": "Wrapped or staked product of a traded token — value accrues to the parent, no separate launch.",
+      "parent": ""
+    },
+    {
+      "name": "Sonic Gateway",
+      "slug": "sonic-gateway",
+      "code": "BRIDGE",
+      "detail": "Bridge product — value moves across chains, no token of its own to farm; category or name/slug carries 'bridge'.",
+      "parent": ""
+    },
+    {
+      "name": "Sophon Bridge",
+      "slug": "sophon-bridge",
+      "code": "BRIDGE",
+      "detail": "Bridge product — value moves across chains, no token of its own to farm; category or name/slug carries 'bridge'.",
+      "parent": ""
+    },
+    {
+      "name": "SoSoValue Indexes",
+      "slug": "sosovalue-indexes",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Sovryn Dex",
+      "slug": "sovryn-dex",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Sovryn Zero",
+      "slug": "sovryn-zero",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Spark Liquidity Layer",
+      "slug": "spark-liquidity-layer",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Spark Savings",
+      "slug": "spark-savings",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "SparkDEX V3.1",
+      "slug": "sparkdex-v3.1",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "SparkDEX V4",
+      "slug": "sparkdex-v4",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "SparkLend",
+      "slug": "sparklend",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Spectra MetaVaults",
+      "slug": "spectra-metavaults",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Spectra V2",
+      "slug": "spectra-v2",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "SpringSui",
+      "slug": "springsui",
+      "code": "WRAPPED_STAKED",
+      "detail": "Wrapped or staked product of a traded token — value accrues to the parent, no separate launch.",
+      "parent": ""
+    },
+    {
+      "name": "SSV Network",
+      "slug": "ssv-network",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "StackingDAO",
+      "slug": "stackingdao",
+      "code": "WRAPPED_STAKED",
+      "detail": "Wrapped or staked product of a traded token — value accrues to the parent, no separate launch.",
+      "parent": ""
+    },
+    {
+      "name": "Stacks sBTC",
+      "slug": "stacks-sbtc",
+      "code": "BRIDGE",
+      "detail": "Bridge product — value moves across chains, no token of its own to farm; category or name/slug carries 'bridge'.",
+      "parent": ""
+    },
+    {
+      "name": "Stader",
+      "slug": "stader",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Stake DAO Yield",
+      "slug": "stake-dao-yield",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "stake.link liquid",
+      "slug": "stake.link-liquid",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Stakee",
+      "slug": "stakee",
+      "code": "WRAPPED_STAKED",
+      "detail": "Wrapped or staked product of a traded token — value accrues to the parent, no separate launch.",
+      "parent": ""
+    },
+    {
+      "name": "StakeStone STONE",
+      "slug": "stakestone-stone",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "StakeWise V3",
+      "slug": "stakewise-v3",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Stargate V1",
+      "slug": "stargate-v1",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Stargate V2",
+      "slug": "stargate-v2",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Starknet Bridge",
+      "slug": "starknet-bridge",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Starknet BTC Staking",
+      "slug": "starknet-btc-staking",
+      "code": "WRAPPED_STAKED",
+      "detail": "Wrapped or staked product of a traded token — value accrues to the parent, no separate launch.",
+      "parent": ""
+    },
+    {
+      "name": "stHYPE",
+      "slug": "sthype",
+      "code": "WRAPPED_STAKED",
+      "detail": "Wrapped or staked product of a traded token — value accrues to the parent, no separate launch.",
+      "parent": ""
+    },
+    {
+      "name": "STKESOL by SOL Strategies",
+      "slug": "stkesol-by-sol-strategies",
+      "code": "WRAPPED_STAKED",
+      "detail": "Wrapped or staked product of a traded token — value accrues to the parent, no separate launch.",
+      "parent": ""
+    },
+    {
+      "name": "STON.fi",
+      "slug": "ston.fi",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Streamflow",
+      "slug": "streamflow",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "stUSDT",
+      "slug": "stusdt",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "SuiBridge",
+      "slug": "suibridge",
+      "code": "BRIDGE",
+      "detail": "Bridge product — value moves across chains, no token of its own to farm; category or name/slug carries 'bridge'.",
+      "parent": ""
+    },
+    {
+      "name": "Suilend",
+      "slug": "suilend",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Summer.fi Pro",
+      "slug": "summer.fi-pro",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "SUNSwap V1",
+      "slug": "sunswap-v1",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "SUNSwap V2",
+      "slug": "sunswap-v2",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "SUNSwap V3",
+      "slug": "sunswap-v3",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "SunSwap V4",
+      "slug": "sunswap-v4",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "SunX Bridge",
+      "slug": "sunx-bridge",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Superfluid",
+      "slug": "superfluid",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Superform",
+      "slug": "superform",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Sushi Stellar",
+      "slug": "sushi-stellar",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "SushiSwap",
+      "slug": "sushiswap",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "SushiSwap V3",
+      "slug": "sushiswap-v3",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Swell Liquid Restaking",
+      "slug": "swell-liquid-restaking",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Swell Liquid Staking",
+      "slug": "swell-liquid-staking",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "SwissBorg",
+      "slug": "swissborg",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "SX Rollup Bridge",
+      "slug": "sx-rollup-bridge",
+      "code": "BRIDGE",
+      "detail": "Bridge product — value moves across chains, no token of its own to farm; category or name/slug carries 'bridge'.",
+      "parent": ""
+    },
+    {
+      "name": "Symbiosis",
+      "slug": "symbiosis",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Synapse Cross Chain Bridge",
+      "slug": "synapse-cross-chain-bridge",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Taiko Bridge",
+      "slug": "taiko-bridge",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Tangible RWA",
+      "slug": "tangible-rwa",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "tBTC",
+      "slug": "tbtc",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Team Finance",
+      "slug": "team-finance",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Tectonic",
+      "slug": "tectonic",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "The Idols",
+      "slug": "the-idols",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "The Vault Liquid Staking",
+      "slug": "the-vault-liquid-staking",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "THORChain DEX",
+      "slug": "thorchain-dex",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Tonstakers LSD",
+      "slug": "tonstakers-lsd",
+      "code": "WRAPPED_STAKED",
+      "detail": "Wrapped or staked product of a traded token — value accrues to the parent, no separate launch.",
+      "parent": ""
+    },
+    {
+      "name": "Toobit",
+      "slug": "toobit",
+      "code": "CEX",
+      "detail": "Centralised exchange / custody — a token launch would be an equity event, not a farmable protocol launch.",
+      "parent": ""
+    },
+    {
+      "name": "Tornado Cash",
+      "slug": "tornado-cash",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Treehouse Protocol",
+      "slug": "treehouse-protocol",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "TxFlow Bridge",
+      "slug": "txflow-bridge",
+      "code": "BRIDGE",
+      "detail": "Bridge product — value moves across chains, no token of its own to farm; category or name/slug carries 'bridge'.",
+      "parent": ""
+    },
+    {
+      "name": "tzBTC",
+      "slug": "tzbtc",
+      "code": "BRIDGE",
+      "detail": "Bridge product — value moves across chains, no token of its own to farm; category or name/slug carries 'bridge'.",
+      "parent": ""
+    },
+    {
+      "name": "UNCX Network V2",
+      "slug": "uncx-network-v2",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "UNCX Network V3",
+      "slug": "uncx-network-v3",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Uniswap V2",
+      "slug": "uniswap-v2",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Uniswap V3",
+      "slug": "uniswap-v3",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Uniswap V4",
+      "slug": "uniswap-v4",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Unit",
+      "slug": "unit",
+      "code": "BRIDGE",
+      "detail": "Bridge product — value moves across chains, no token of its own to farm; category or name/slug carries 'bridge'.",
+      "parent": ""
+    },
+    {
+      "name": "Unitas USDu",
+      "slug": "unitas-usdu",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Unitus",
+      "slug": "unitus",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Uranium.io",
+      "slug": "uranium.io",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "USD AI",
+      "slug": "usd-ai",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "USDT0",
+      "slug": "usdt0",
+      "code": "BRIDGE",
+      "detail": "Bridge product — value moves across chains, no token of its own to farm; category or name/slug carries 'bridge'.",
+      "parent": ""
+    },
+    {
+      "name": "Usual USD0",
+      "slug": "usual-usd0",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Valantis stHYPE Restaking",
+      "slug": "valantis-sthype-restaking",
+      "code": "WRAPPED_STAKED",
+      "detail": "Wrapped or staked product of a traded token — value accrues to the parent, no separate launch.",
+      "parent": ""
+    },
+    {
+      "name": "Valdora Finance",
+      "slug": "valdora-finance",
+      "code": "WRAPPED_STAKED",
+      "detail": "Wrapped or staked product of a traded token — value accrues to the parent, no separate launch.",
+      "parent": ""
+    },
+    {
+      "name": "VALR",
+      "slug": "valr",
+      "code": "CEX",
+      "detail": "Centralised exchange / custody — a token launch would be an equity event, not a farmable protocol launch.",
+      "parent": ""
+    },
+    {
+      "name": "Vaulta REX",
+      "slug": "vaulta-rex",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Veno Finance",
+      "slug": "veno-finance",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Venus Core Pool",
+      "slug": "venus-core-pool",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Veranta",
+      "slug": "veranta",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Vesper V1",
+      "slug": "vesper-v1",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Vesper V2",
+      "slug": "vesper-v2",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Vires Finance",
+      "slug": "vires-finance",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Volo LST",
+      "slug": "volo-lst",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "VVS Standard",
+      "slug": "vvs-standard",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Wan Bridge",
+      "slug": "wan-bridge",
+      "code": "BRIDGE",
+      "detail": "Bridge product — value moves across chains, no token of its own to farm; category or name/slug carries 'bridge'.",
+      "parent": ""
+    },
+    {
+      "name": "WaterNeuron",
+      "slug": "waterneuron",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "WBTC",
+      "slug": "wbtc",
+      "code": "BRIDGE",
+      "detail": "Bridge product — value moves across chains, no token of its own to farm; category or name/slug carries 'bridge'.",
+      "parent": ""
+    },
+    {
+      "name": "WEEX",
+      "slug": "weex",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "WEMIX.FI Staking",
+      "slug": "wemix.fi-staking",
+      "code": "WRAPPED_STAKED",
+      "detail": "Wrapped or staked product of a traded token — value accrues to the parent, no separate launch.",
+      "parent": ""
+    },
+    {
+      "name": "Wise Token",
+      "slug": "wise-token",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "World Chain Bridge",
+      "slug": "world-chain-bridge",
+      "code": "BRIDGE",
+      "detail": "Bridge product — value moves across chains, no token of its own to farm; category or name/slug carries 'bridge'.",
+      "parent": ""
+    },
+    {
+      "name": "Wrapped",
+      "slug": "wrapped",
+      "code": "BRIDGE",
+      "detail": "Bridge product — value moves across chains, no token of its own to farm; category or name/slug carries 'bridge'.",
+      "parent": ""
+    },
+    {
+      "name": "wTAO",
+      "slug": "wtao",
+      "code": "BRIDGE",
+      "detail": "Bridge product — value moves across chains, no token of its own to farm; category or name/slug carries 'bridge'.",
+      "parent": ""
+    },
+    {
+      "name": "xALGO Liquid Staking",
+      "slug": "xalgo-liquid-staking",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "xDAI Stake Bridge",
+      "slug": "xdai-stake-bridge",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "XSY",
+      "slug": "xsy",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Yearn Curating",
+      "slug": "yearn-curating",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Yearn Finance",
+      "slug": "yearn-finance",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Yield Basis",
+      "slug": "yield-basis",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Yield Yak Aggregator",
+      "slug": "yield-yak-aggregator",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "YieldNest",
+      "slug": "yieldnest",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "YO Protocol",
+      "slug": "yo-protocol",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Youves",
+      "slug": "youves",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Zama",
+      "slug": "zama",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "ZEROBASE CeDeFi",
+      "slug": "zerobase-cedefi",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Zest V2",
+      "slug": "zest-v2",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    },
+    {
+      "name": "Zircuit Staking",
+      "slug": "zircuit-staking",
+      "code": "WRAPPED_STAKED",
+      "detail": "Wrapped or staked product of a traded token — value accrues to the parent, no separate launch.",
+      "parent": ""
+    },
+    {
+      "name": "zkSync Era txBridge",
+      "slug": "zksync-era-txbridge",
+      "code": "BRIDGE",
+      "detail": "Bridge product — value moves across chains, no token of its own to farm; category or name/slug carries 'bridge'.",
+      "parent": ""
+    },
+    {
+      "name": "Zoomex",
+      "slug": "zoomex",
+      "code": "CEX",
+      "detail": "Centralised exchange / custody — a token launch would be an equity event, not a farmable protocol launch.",
+      "parent": ""
+    },
+    {
+      "name": "ZyFAI",
+      "slug": "zyfai",
+      "code": "LIVE_TOKEN",
+      "detail": "Live token in snapshot — market cap, CoinGecko id and symbol all present.",
+      "parent": ""
+    }
+  ]
+}
