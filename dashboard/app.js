@@ -29,7 +29,7 @@ function slugify(s){ return s.toLowerCase().replace(/&/g,"and").replace(/[^a-z0-
    live n >= 10, else the overall priced median 0.2138, flagged per row);
    nCat: priced live-token comparables in the sealed snapshot (128 total); launchRate: Phase 1 prior;
    act: farm actions from main.ts; rows: sealed board rows in category. */
-var CATS = {"Risk Curators":{"mult":0.21380325885644053,"nCat":1,"launchRate":0.27,"act":["Deposit into a curated vault","Allocate to a second curator vault"],"rows":34},"Onchain Capital Allocator":{"mult":0.21380325885644053,"nCat":2,"launchRate":0.24,"act":["Deposit into an allocator vault","Rotate into a second strategy sleeve"],"rows":20},"CDP":{"mult":0.21380325885644053,"nCat":3,"launchRate":0.21,"act":["Mint the stablecoin against collateral","LP the stablecoin pair"],"rows":10},"Prediction Market":{"mult":0.21380325885644053,"nCat":1,"launchRate":0.22,"act":["Use the protocol's main action","Use a second qualifying action in the same category"],"rows":2},"Dexs":{"mult":0.3424347567468315,"nCat":11,"launchRate":0.26,"act":["Provide concentrated liquidity","Route recurring swap volume"],"rows":26},"Yield Aggregator":{"mult":0.21380325885644053,"nCat":4,"launchRate":0.22,"act":["Use the protocol's main action","Use a second qualifying action in the same category"],"rows":9},"RWA":{"mult":0.21380325885644053,"nCat":9,"launchRate":0.31,"act":["Mint / deposit tokenised real-world asset","Provide secondary liquidity for the RWA pool"],"rows":16},"Collateral Markets":{"mult":0.21380325885644053,"nCat":0,"launchRate":0.22,"act":["Use the protocol's main action","Use a second qualifying action in the same category"],"rows":1},"CDP Manager":{"mult":0.21380325885644053,"nCat":0,"launchRate":0.22,"act":["Use the protocol's main action","Use a second qualifying action in the same category"],"rows":1},"Basis Trading":{"mult":0.21380325885644053,"nCat":7,"launchRate":0.22,"act":["Use the protocol's main action","Use a second qualifying action in the same category"],"rows":8},"Chain":{"mult":0.21380325885644053,"nCat":1,"launchRate":0.22,"act":["Use the protocol's main action","Use a second qualifying action in the same category"],"rows":4},"Payments":{"mult":0.21380325885644053,"nCat":2,"launchRate":0.22,"act":["Use the protocol's main action","Use a second qualifying action in the same category"],"rows":1},"Restaking":{"mult":0.21380325885644053,"nCat":2,"launchRate":0.22,"act":["Use the protocol's main action","Use a second qualifying action in the same category"],"rows":1},"Stablecoin Wrapper":{"mult":0.21380325885644053,"nCat":0,"launchRate":0.22,"act":["Use the protocol's main action","Use a second qualifying action in the same category"],"rows":2},"OTC Marketplace":{"mult":0.21380325885644053,"nCat":0,"launchRate":0.22,"act":["Use the protocol's main action","Use a second qualifying action in the same category"],"rows":1},"Lending":{"mult":0.13239465563049407,"nCat":15,"launchRate":0.22,"act":["Supply the main lending market","Open a small borrow-and-resupply loop"],"rows":16},"Derivatives":{"mult":0.21380325885644053,"nCat":2,"launchRate":0.22,"act":["Use the protocol's main action","Use a second qualifying action in the same category"],"rows":13},"CeDeFi":{"mult":0.21380325885644053,"nCat":0,"launchRate":0.22,"act":["Use the protocol's main action","Use a second qualifying action in the same category"],"rows":2},"Yield":{"mult":0.21380325885644053,"nCat":9,"launchRate":0.2,"act":["Deposit into the flagship yield vault","Compound into a second vault tier"],"rows":16},"Farm":{"mult":0.21380325885644053,"nCat":0,"launchRate":0.22,"act":["Use the protocol's main action","Use a second qualifying action in the same category"],"rows":2},"Staking Pool":{"mult":0.21380325885644053,"nCat":2,"launchRate":0.22,"act":["Use the protocol's main action","Use a second qualifying action in the same category"],"rows":3},"Liquidity Manager":{"mult":0.21380325885644053,"nCat":1,"launchRate":0.22,"act":["Use the protocol's main action","Use a second qualifying action in the same category"],"rows":3},"Insurance":{"mult":0.21380325885644053,"nCat":0,"launchRate":0.16,"act":["Underwrite the main cover pool","Buy a small cover policy"],"rows":1},"Governance Incentives":{"mult":0.21380325885644053,"nCat":0,"launchRate":0.22,"act":["Use the protocol's main action","Use a second qualifying action in the same category"],"rows":1},"Anchor BTC":{"mult":0.21380325885644053,"nCat":0,"launchRate":0.22,"act":["Use the protocol's main action","Use a second qualifying action in the same category"],"rows":2},"Leveraged Farming":{"mult":0.21380325885644053,"nCat":1,"launchRate":0.22,"act":["Use the protocol's main action","Use a second qualifying action in the same category"],"rows":2},"Crypto Card Issuer":{"mult":0.21380325885644053,"nCat":0,"launchRate":0.22,"act":["Use the protocol's main action","Use a second qualifying action in the same category"],"rows":1},"Options Vault":{"mult":0.21380325885644053,"nCat":0,"launchRate":0.22,"act":["Use the protocol's main action","Use a second qualifying action in the same category"],"rows":1},"Dual-Token Stablecoin":{"mult":0.21380325885644053,"nCat":1,"launchRate":0.22,"act":["Use the protocol's main action","Use a second qualifying action in the same category"],"rows":2},"Decentralized BTC":{"mult":0.21380325885644053,"nCat":0,"launchRate":0.22,"act":["Use the protocol's main action","Use a second qualifying action in the same category"],"rows":2},"Uncollateralized Lending":{"mult":0.21380325885644053,"nCat":0,"launchRate":0.22,"act":["Use the protocol's main action","Use a second qualifying action in the same category"],"rows":1},"Privacy":{"mult":0.21380325885644053,"nCat":3,"launchRate":0.22,"act":["Use the protocol's main action","Use a second qualifying action in the same category"],"rows":1},"Indexes":{"mult":0.21380325885644053,"nCat":3,"launchRate":0.22,"act":["Use the protocol's main action","Use a second qualifying action in the same category"],"rows":1},"Interest Rate Derivatives":{"mult":0.21380325885644053,"nCat":0,"launchRate":0.22,"act":["Use the protocol's main action","Use a second qualifying action in the same category"],"rows":1}};
+var CATS = {"Risk Curators":{"mult":0.21380325885644053,"nCat":1,"launchRate":0.27,"act":["Deposit into a curated vault","Allocate to a second curator vault"],"rows":34},"Onchain Capital Allocator":{"mult":0.21380325885644053,"nCat":2,"launchRate":0.24,"act":["Deposit into an allocator vault","Rotate into a second strategy sleeve"],"rows":20},"CDP":{"mult":0.21380325885644053,"nCat":3,"launchRate":0.21,"act":["Mint the native stablecoin against over-collateralised deposits","Provide liquidity on the native stablecoin pair"],"rows":10},"Prediction Market":{"mult":0.21380325885644053,"nCat":1,"launchRate":0.22,"act":["Provide liquidity to high-volume outcome markets","Take balanced positions across active settlement markets"],"rows":2},"Dexs":{"mult":0.3424347567468315,"nCat":11,"launchRate":0.26,"act":["Provide concentrated liquidity on the flagship pair","Route recurring organic swap volume"],"rows":26},"Yield Aggregator":{"mult":0.21380325885644053,"nCat":4,"launchRate":0.22,"act":["Deposit into an auto-compounding strategy vault","Split allocation across a secondary yield strategy"],"rows":9},"RWA":{"mult":0.21380325885644053,"nCat":9,"launchRate":0.31,"act":["Mint or deposit into tokenised real-world asset pools","Provide secondary liquidity for the RWA receipt token"],"rows":16},"Collateral Markets":{"mult":0.21380325885644053,"nCat":0,"launchRate":0.22,"act":["Use the protocol's main action","Use a second qualifying action in the same category"],"rows":1},"CDP Manager":{"mult":0.21380325885644053,"nCat":0,"launchRate":0.22,"act":["Use the protocol's main action","Use a second qualifying action in the same category"],"rows":1},"Basis Trading":{"mult":0.21380325885644053,"nCat":7,"launchRate":0.22,"act":["Mint or stake into the delta-neutral basis yield pool","Lock the staked basis token for boosted epoch points"],"rows":8},"Chain":{"mult":0.21380325885644053,"nCat":1,"launchRate":0.22,"act":["Use the protocol's main action","Use a second qualifying action in the same category"],"rows":4},"Payments":{"mult":0.21380325885644053,"nCat":2,"launchRate":0.22,"act":["Route recurring on-chain payment/settlement transfers","Maintain an active merchant or treasury balance"],"rows":1},"Restaking":{"mult":0.21380325885644053,"nCat":2,"launchRate":0.22,"act":["Deposit assets into the core restaking pool","Delegate stake across an active AVS/operator"],"rows":1},"Stablecoin Wrapper":{"mult":0.21380325885644053,"nCat":0,"launchRate":0.22,"act":["Use the protocol's main action","Use a second qualifying action in the same category"],"rows":2},"OTC Marketplace":{"mult":0.21380325885644053,"nCat":0,"launchRate":0.22,"act":["Use the protocol's main action","Use a second qualifying action in the same category"],"rows":1},"Lending":{"mult":0.13239465563049407,"nCat":15,"launchRate":0.22,"act":["Supply blue-chip collateral to the main lending market","Open a low-LTV borrow-and-resupply loop"],"rows":16},"Derivatives":{"mult":0.21380325885644053,"nCat":2,"launchRate":0.22,"act":["Deposit margin and open low-leverage derivative positions","Supply liquidity to the derivatives settlement vault"],"rows":13},"CeDeFi":{"mult":0.21380325885644053,"nCat":0,"launchRate":0.22,"act":["Use the protocol's main action","Use a second qualifying action in the same category"],"rows":2},"Yield":{"mult":0.21380325885644053,"nCat":9,"launchRate":0.2,"act":["Deposit into the flagship yield vault","Compound into a second strategy vault tier"],"rows":16},"Farm":{"mult":0.21380325885644053,"nCat":0,"launchRate":0.22,"act":["Stake core LP tokens into the primary liquidity gauge","Lock rewards or boost multiplier in the governance pool"],"rows":2},"Staking Pool":{"mult":0.21380325885644053,"nCat":2,"launchRate":0.22,"act":["Use the protocol's main action","Use a second qualifying action in the same category"],"rows":3},"Liquidity Manager":{"mult":0.21380325885644053,"nCat":1,"launchRate":0.22,"act":["Deposit into an automated CLMM range-management vault","Rebalance across a second managed liquidity pair"],"rows":3},"Insurance":{"mult":0.21380325885644053,"nCat":0,"launchRate":0.16,"act":["Underwrite capital into the main cover pool","Purchase a small active cover policy on a core market"],"rows":1},"Governance Incentives":{"mult":0.21380325885644053,"nCat":0,"launchRate":0.22,"act":["Use the protocol's main action","Use a second qualifying action in the same category"],"rows":1},"Anchor BTC":{"mult":0.21380325885644053,"nCat":0,"launchRate":0.22,"act":["Use the protocol's main action","Use a second qualifying action in the same category"],"rows":2},"Leveraged Farming":{"mult":0.21380325885644053,"nCat":1,"launchRate":0.22,"act":["Open a conservative 1.5x–2x leveraged yield position","Hedge debt exposure in a paired single-sided vault"],"rows":2},"Crypto Card Issuer":{"mult":0.21380325885644053,"nCat":0,"launchRate":0.22,"act":["Use the protocol's main action","Use a second qualifying action in the same category"],"rows":1},"Options Vault":{"mult":0.21380325885644053,"nCat":0,"launchRate":0.22,"act":["Use the protocol's main action","Use a second qualifying action in the same category"],"rows":1},"Dual-Token Stablecoin":{"mult":0.21380325885644053,"nCat":1,"launchRate":0.22,"act":["Use the protocol's main action","Use a second qualifying action in the same category"],"rows":2},"Decentralized BTC":{"mult":0.21380325885644053,"nCat":0,"launchRate":0.22,"act":["Use the protocol's main action","Use a second qualifying action in the same category"],"rows":2},"Uncollateralized Lending":{"mult":0.21380325885644053,"nCat":0,"launchRate":0.22,"act":["Use the protocol's main action","Use a second qualifying action in the same category"],"rows":1},"Privacy":{"mult":0.21380325885644053,"nCat":3,"launchRate":0.22,"act":["Shield base assets into the private pool","Execute private transfers and maintain shielded duration"],"rows":1},"Indexes":{"mult":0.21380325885644053,"nCat":3,"launchRate":0.22,"act":["Mint the flagship on-chain index basket","Provide secondary LP for the index token"],"rows":1},"Interest Rate Derivatives":{"mult":0.21380325885644053,"nCat":0,"launchRate":0.22,"act":["Use the protocol's main action","Use a second qualifying action in the same category"],"rows":1}};
 var CATNAMES = ["Anchor BTC","Basis Trading","CDP","CDP Manager","CeDeFi","Chain","Collateral Markets","Crypto Card Issuer","Decentralized BTC","Derivatives","Dexs","Dual-Token Stablecoin","Farm","Governance Incentives","Indexes","Insurance","Interest Rate Derivatives","Lending","Leveraged Farming","Liquidity Manager","OTC Marketplace","Onchain Capital Allocator","Options Vault","Payments","Prediction Market","Privacy","RWA","Restaking","Risk Curators","Stablecoin Wrapper","Staking Pool","Uncollateralized Lending","Yield","Yield Aggregator"];
 var GAS = { "Ethereum":12.00, "Solana":0.05, "Arbitrum":1.00, "Base":1.00, "Optimism":1.00, "Polygon":0.50, "BNB Chain":0.50, "Avalanche":0.50, "zkSync Era":1.00, "Linea":1.00, "Scroll":1.00, "Mantle":0.50, "Sonic":0.50, "Berachain":0.50, "HyperEVM":0.50 };
 var CURVE_A = 3.0246728051987968, CURVE_B = -0.47773445148599736;
@@ -52,27 +52,94 @@ var WL_N = ROWS.filter(function(r){ return r.watchlist; }).length;
 
 /* ============ farm economics ============ */
 var AIRDROP_PCT = 0.073, APR = 0.042;
+/* 1. Mapping aksi konkret per kategori + protokol agar tidak pernah jatuh ke slogan generik */
+function resolveActions(r) {
+  var catKey = (r.cat || "").toLowerCase();
+  var name = r.name || "the protocol";
+  var chain = r.mainChain || "Mainnet";
+  // Cek dulu jika CATS sudah punya aksi spesifik yang BUKAN fallback generik
+  var raw = (CATS[r.cat] && Array.isArray(CATS[r.cat].act)) ? CATS[r.cat].act : [];
+  var isGeneric = !raw.length || raw.some(function(s) {
+    return /main action|use the protocol/i.test(s);
+  });
+  if (!isGeneric && raw.length >= 2) {
+    return [raw[0], raw[1]];
+  }
+  // Generator aksi spesifik berdasarkan kategori nyata dari snapshot
+  if (/dex|amm|swap|exchange/.test(catKey)) {
+    return [
+      "Provide concentrated or dual-sided liquidity on " + name + "'s highest-TVL " + chain + " pool",
+      "Execute 3+ organic swaps across major pairs on " + name + " (" + chain + ") to log active volume"
+    ];
+  }
+  if (/lend|borrow|money market|credit/.test(catKey)) {
+    return [
+      "Supply blue-chip collateral (USDC, ETH, or wstETH) into " + name + "'s core " + chain + " lending market",
+      "Borrow 30–40% LTV stablecoins against your " + name + " deposit and maintain healthy utilization"
+    ];
+  }
+  if (/perp|deriv|futures|options/.test(catKey)) {
+    return [
+      "Deposit USDC margin into " + name + " (" + chain + ") and open delta-neutral or low-leverage positions",
+      "Provide liquidity to " + name + "'s vault / LP pool (JLP/GLP-style) to earn fees + volume points"
+    ];
+  }
+  if (/restak|liquid stak|staking|yield|vault/.test(catKey)) {
+    return [
+      "Mint or deposit base assets into " + name + "'s flagship " + chain + " yield/restaking vault",
+      "Deploy the resulting receipt token from " + name + " into a supported partner DeFi integration on " + chain
+    ];
+  }
+  if (/bridge|cross-chain|interop/.test(catKey)) {
+    return [
+      "Bridge native ETH/USDC via " + name + " starting from " + chain + " to a major L2 destination",
+      "Complete a return cross-chain transfer on " + name + " across a distinct route to qualify multi-chain activity"
+    ];
+  }
+  if (/rwa|treasury|stablecoin|cdp/.test(catKey)) {
+    return [
+      "Mint or deposit into " + name + "'s primary stablecoin/RWA yield instrument on " + chain,
+      "Stake or lock the minted asset in " + name + "'s native stability/liquidity module on " + chain
+    ];
+  }
+  if (/nft|gaming|social|launchpad|oracle|infra/.test(catKey)) {
+    return [
+      "Register an on-chain profile/position and interact with " + name + "'s core " + chain + " contract",
+      "Maintain recurring weekly on-chain interactions and governance/quest checkpoints on " + name
+    ];
+  }
+  // Fallback terakhir jika kategori benar-benar tidak dikenal: tetap konkret menyebut protokol, chain, & TVL
+  return [
+    "Deposit liquidity or collateral into " + name + "'s primary " + chain + " smart contract (" + fmtUSD(r.tvl, 0) + " TVL)",
+    "Interact with a secondary module (vault, stake, or swap) on " + name + " (" + chain + ") to diversify on-chain footprint"
+  ];
+}
 function farmCosts(r){
   var gas = GAS[r.mainChain] != null ? GAS[r.mainChain] : 0.50;
   var bridge = r.bridge || 0;
-  var stepsCost = gas*3.5 + bridge; /* plan's costed actions: 2 full + 1 full claim + weekly touches at half gas, + bridge */
+  /* Same cost model as main.ts: 2 full + 1 full claim + one weekly touch at half gas, + bridge.
+     The dashboard must recompute the same EV and verdicts as board.json. */
+  var stepsCost = Math.round((gas*3.5 + bridge)*100)/100;
   return { gas:gas, bridge:bridge, total:stepsCost };
 }
 function farmPlan(r){
   var c = farmCosts(r);
   var tierCap = r.tvl >= 500e6 ? 250 : r.tvl >= 100e6 ? 150 : r.tvl >= 50e6 ? 100 : 50;
   var hold = (r.ageKnown && r.age > 900) ? 30 : (r.ageKnown && r.age > 450) ? 60 : 90;
-  var acts = CATS[r.cat].act;
+  var acts = resolveActions(r);
+  var split1 = Math.round(tierCap * 0.65);
+  var split2 = tierCap - split1;
+  var weeks = Math.max(4, Math.round(hold / 7));
   var steps = [
-    { a:"<b>Fresh wallet, seed offline.</b> New address used for this protocol only; seed phrase written down, never pasted into a site.", cost:0, min:10 },
-    { a:"<b>" + acts[0] + "</b> on " + r.mainChain + " with $" + tierCap + " — the tier capital for a " + fmtUSD(r.tvl,0) + " TVL protocol.", cost:c.gas, min:15 },
-    { a:"<b>" + acts[1] + "</b> — a second, different qualifying action in the same category, so eligibility does not rest on one position.", cost:c.gas, min:15 },
-    { a:"<b>Weekly touch.</b> Claim, compound or rebalance once a week to keep the position active for the full hold.", cost:Math.round(c.gas*0.5*100)/100, min:5 },
-    { a:"<b>Points / eligibility check</b> on the protocol&rsquo;s own points page — confirm the wallet is accruing before adding capital.", cost:0, min:5 },
-    { a:"<b>Hold " + hold + " days</b> (hold set by protocol age: " + (r.ageKnown ? r.age + " days in snapshot" : "age not in snapshot — 365 d assumed") + "). No churn in or out.", cost:0, min:0 },
-    { a:"<b>Claim only from the protocol&rsquo;s published link</b> if a token launches. Never pay a third party to claim.", cost:c.gas, min:10 }
+    { a:"<b>Fresh wallet, seed offline.</b> New address used for " + r.name + " only; seed phrase written down, never pasted into a site.", cost:0, min:10 },
+    { a:"<b>" + acts[0] + "</b> on " + r.name + " (" + r.mainChain + ") with $" + split1 + " (65% of $" + tierCap + " tier capital for a " + fmtUSD(r.tvl,0) + " TVL protocol).", cost:c.gas, min:15 },
+    { a:"<b>" + acts[1] + "</b> on " + r.name + " (" + r.mainChain + ") with $" + split2 + " (35% allocation) so eligibility does not rest on a single position.", cost:c.gas, min:15 },
+    { a:"<b>Weekly touch (" + weeks + " weeks on " + r.mainChain + ").</b> Claim, compound, or rebalance once a week (~$" + (Math.round(c.gas*0.5*100)/100).toFixed(2) + "/wk) to keep " + r.name + " active for the full " + hold + "-day hold.", cost:Math.round(c.gas*0.5*100)/100, min:5 },
+    { a:"<b>Points / eligibility check</b> on " + r.name + "&rsquo;s official points dashboard after week 1 — confirm the wallet is accruing before scaling above $" + tierCap + ".", cost:0, min:5 },
+    { a:"<b>Hold " + hold + " days on " + r.name + "</b> (set by protocol age: " + (r.ageKnown ? r.age + " days in snapshot" : "365 d baseline") + "). Avoid wash-churning.", cost:0, min:0 },
+    { a:"<b>Claim only from " + r.name + "&rsquo;s verified domain</b> on " + r.mainChain + " if a token launches. Never pay a third party to claim.", cost:c.gas, min:10 }
   ];
-  if (c.bridge > 0) steps[1].a += " Bridge in first (" + fmtUSDfull(c.bridge) + ").";
+  if (c.bridge > 0) { steps[1].a += " Bridge to " + r.mainChain + " first (" + fmtUSDfull(c.bridge) + ")."; steps[1].cost = Math.round((steps[1].cost + c.bridge)*100)/100; }
   return { steps:steps, costs:c, tierCap:tierCap, hold:hold };
 }
 function evAt(r, size){

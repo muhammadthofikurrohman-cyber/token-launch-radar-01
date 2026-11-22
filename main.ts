@@ -108,16 +108,41 @@ const CATEGORY_ACTIONS = {
   "Risk Curators": ["Deposit into a curated vault", "Allocate to a second curator vault"],
   "Onchain Capital Allocators": ["Deposit into an allocator vault", "Rotate into a second strategy sleeve"],
   "Onchain Capital Allocator": ["Deposit into an allocator vault", "Rotate into a second strategy sleeve"],
-  "RWA": ["Mint / deposit tokenised real-world asset", "Provide secondary liquidity for the RWA pool"],
-  "Lending": ["Supply the main lending market", "Open a small borrow-and-resupply loop"],
-  "Liquid Staking": ["Stake the base asset", "LP the liquid staking token"],
-  "Yield": ["Deposit into the flagship yield vault", "Compound into a second vault tier"],
-  "DEX": ["Provide concentrated liquidity", "Route recurring swap volume"],
-  "Dexs": ["Provide concentrated liquidity", "Route recurring swap volume"],
-  "Bridge": ["Bridge capital across the main route", "LP the bridge liquidity pool"],
-  "Perps": ["Deposit margin and trade the main market", "Provide vault liquidity to the perp book"],
-  "CDP": ["Mint the stablecoin against collateral", "LP the stablecoin pair"],
-  "Insurance": ["Underwrite the main cover pool", "Buy a small cover policy"],
+  "RWA": ["Mint or deposit into tokenised real-world asset pools", "Provide secondary liquidity for the RWA receipt token"],
+  "Lending": ["Supply blue-chip collateral to the main lending market", "Open a low-LTV borrow-and-resupply loop"],
+  "Liquid Staking": ["Stake the base asset to mint the LST", "Provide liquidity with the liquid staking token"],
+  "Liquid Restaking": ["Restake ETH/LST to mint the LRT", "Deploy the LRT into a supported DeFi vault"],
+  "Restaking": ["Deposit assets into the core restaking pool", "Delegate stake across an active AVS/operator"],
+  "Yield": ["Deposit into the flagship yield vault", "Compound into a second strategy vault tier"],
+  "Yield Aggregator": ["Deposit into an auto-compounding strategy vault", "Split allocation across a secondary yield strategy"],
+  "DEX": ["Provide concentrated liquidity on the flagship pair", "Route recurring organic swap volume"],
+  "Dexs": ["Provide concentrated liquidity on the flagship pair", "Route recurring organic swap volume"],
+  "Bridge": ["Bridge capital across the primary cross-chain route", "Provide liquidity to the bridge canonical pool"],
+  "Cross Chain": ["Execute cross-chain transfers across top routes", "Provide liquidity to the cross-chain router pool"],
+  "Perps": ["Deposit USDC margin and trade the main perp market", "Provide vault liquidity to the perp LP book"],
+  "Derivatives": ["Deposit margin and open low-leverage derivative positions", "Supply liquidity to the derivatives settlement vault"],
+  "Basis Trading": ["Mint or stake into the delta-neutral basis yield pool", "Lock the staked basis token for boosted epoch points"],
+  "CDP": ["Mint the native stablecoin against over-collateralised deposits", "Provide liquidity on the native stablecoin pair"],
+  "Algo-Stables": ["Mint or deposit into the primary stablecoin module", "Stake stablecoin LP tokens in the stability pool"],
+  "Insurance": ["Underwrite capital into the main cover pool", "Purchase a small active cover policy on a core market"],
+  "Options": ["Deposit collateral into an options vault (DOV)", "Write or buy covered positions across weekly expiries"],
+  "Launchpad": ["Commit capital to an active token/pool launch tier", "Stake launchpad access tokens for recurring allocation"],
+  "Prediction Market": ["Provide liquidity to high-volume outcome markets", "Take balanced positions across active settlement markets"],
+  "Payments": ["Route recurring on-chain payment/settlement transfers", "Maintain an active merchant or treasury balance"],
+  "Oracle": ["Stake or delegate into active data-feed security pools", "Interact with oracle-powered consumer vaults"],
+  "Indexes": ["Mint the flagship on-chain index basket", "Provide secondary LP for the index token"],
+  "Synthetics": ["Deposit collateral to mint synthetic spot/perp assets", "Provide liquidity to the synthetic asset pool"],
+  "Liquidity Manager": ["Deposit into an automated CLMM range-management vault", "Rebalance across a second managed liquidity pair"],
+  "Farm": ["Stake core LP tokens into the primary liquidity gauge", "Lock rewards or boost multiplier in the governance pool"],
+  "Leveraged Farming": ["Open a conservative 1.5x–2x leveraged yield position", "Hedge debt exposure in a paired single-sided vault"],
+  "DePIN": ["Register an active node/device credential on-chain", "Stake network tokens into the DePIN service pool"],
+  "AI": ["Deposit compute/agent credits into the core protocol pool", "Interact with on-chain agent execution tasks"],
+  "NFT Marketplace": ["Place collection bids and execute verified trades", "List or stake eligible NFTs in protocol incentive pools"],
+  "NFT Lending": ["Supply ETH/USDC liquidity to top collection lending pools", "Originate or refinance a short-duration NFT loan"],
+  "Gaming": ["Mint an on-chain player pass and complete daily check-ins", "Stake or trade in-game assets on the native marketplace"],
+  "Social": ["Mint an on-chain profile handle and publish recurring posts", "Collect or trade creator keys/passes on-chain"],
+  "Privacy": ["Shield base assets into the private pool", "Execute private transfers and maintain shielded duration"],
+  "Wallets": ["Execute native in-wallet swaps across supported pairs", "Bridge or stake directly through the wallet's smart account"],
 };
 const GAS = {
   "Ethereum": 12.0, "Solana": 0.05, "Arbitrum": 1.0, "Base": 1.0, "Optimism": 1.0,
@@ -300,23 +325,96 @@ if (watchlistCaught.length > 0) {
 }
 
 // ---------- radar-3 scoring ----------
+// Concrete per-category actions, so a farm step never falls back to a slogan.
+// Exact category match first; then a keyword fallback on the category name;
+// finally a fallback that still names the protocol, its category and its chain.
+function resolveProtocolActions(r) {
+  const exact = CATEGORY_ACTIONS[r.category];
+  if (exact) return exact;
+  const cat = String(r.category || "").toLowerCase();
+  if (/deriv|perp|futures|margin/.test(cat)) {
+    return ["Deposit margin and trade the primary perp/derivatives market", "Provide liquidity to the protocol's counterparty vault"];
+  }
+  if (/yield|aggregat|vault|earn/.test(cat)) {
+    return ["Deposit into the highest-TVL yield strategy vault", "Allocate a secondary slice into an alternate yield pool"];
+  }
+  if (/basis|delta|hedge|neutral/.test(cat)) {
+    return ["Deposit stable collateral into the delta-neutral basis vault", "Stake the yield-bearing receipt token for epoch multipliers"];
+  }
+  if (/restak|stak/.test(cat)) {
+    return ["Stake base assets into the primary validator/restaking pool", "Deploy the liquid receipt token into a partner DeFi pool"];
+  }
+  if (/lend|borrow|credit|money/.test(cat)) {
+    return ["Supply core collateral to the primary lending pool", "Maintain a low-LTV borrow position to accrue two-sided points"];
+  }
+  if (/dex|swap|amm|liquid/.test(cat)) {
+    return ["Provide concentrated liquidity on the top volume pair", "Execute recurring organic swaps across major pairs"];
+  }
+  if (/bridge|cross|interop/.test(cat)) {
+    return ["Bridge assets across the primary cross-chain corridor", "Supply liquidity to the canonical bridge pool"];
+  }
+  if (/rwa|treasury|bond|real/.test(cat)) {
+    return ["Mint or deposit into the primary RWA yield instrument", "Provide liquidity in the secondary RWA trading pool"];
+  }
+  const cleanCat = r.category || "DeFi";
+  return [
+    `Deposit capital into ${r.name}'s flagship ${cleanCat} pool on ${r.main_chain}`,
+    `Interact with a secondary ${cleanCat} module on ${r.name} to diversify on-chain activity`,
+  ];
+}
 function farmPlan(r) {
   const gas = GAS[r.main_chain] ?? 0.5;
-  const bridge = r.chains.length > 1 ? 4 + Math.min(14, r.chains.length * 2) : 0; // $4–$18, by chain count
-  const total = gas * 3.5 + bridge;
+  const bridge = r.chains.length > 1 ? 4 + Math.min(14, r.chains.length * 2) : 0;
+  const total = Math.round((gas * 3.5 + bridge) * 100) / 100;
   const tierCap = r.tvl_usd >= 500e6 ? 250 : r.tvl_usd >= 100e6 ? 150 : r.tvl_usd >= 50e6 ? 100 : 50;
+  const split1 = Math.round(tierCap * 0.65);
+  const split2 = tierCap - split1;
   const hold = r.age_known && r.age_days > 900 ? 30 : r.age_known && r.age_days > 450 ? 60 : 90;
-  const acts = CATEGORY_ACTIONS[r.category] ?? ["Use the protocol's main action", "Use a second qualifying action in the same category"];
+  const weeks = Math.max(4, Math.round(hold / 7));
+  const [act1, act2] = resolveProtocolActions(r);
   const steps = [
-    { action: "Fresh wallet, seed offline. New address used for this protocol only; seed phrase written down, never pasted into a site.", cost_usd: 0, time_min: 10 },
-    { action: `${acts[0]} on ${r.main_chain} with $${tierCap} — the tier capital for a $${Math.round(r.tvl_usd / 1e6)}M TVL protocol.${bridge > 0 ? ` Bridge in first ($${bridge.toFixed(2)}).` : ""}`, cost_usd: gas, time_min: 15 },
-    { action: `${acts[1]} — a second, different qualifying action in the same category, so eligibility does not rest on one position.`, cost_usd: gas, time_min: 15 },
-    { action: "Weekly touch. Claim, compound or rebalance once a week to keep the position active for the full hold.", cost_usd: Math.round(gas * 0.5 * 100) / 100, time_min: 5 },
-    { action: "Points / eligibility check on the protocol's own points page — confirm the wallet is accruing before adding capital.", cost_usd: 0, time_min: 5 },
-    { action: `Hold ${hold} days (hold set by protocol age: ${r.age_known ? `${r.age_days} days in snapshot` : "age not in snapshot — 365 d assumed"}). No churn in or out.`, cost_usd: 0, time_min: 0 },
-    { action: "Claim only from the protocol's published link if a token launches. Never pay a third party to claim.", cost_usd: gas, time_min: 10 },
+    {
+      action: `Fresh wallet, seed offline. Create an isolated address dedicated solely to ${r.name}; write the seed phrase offline and never paste it into a site.`,
+      cost_usd: 0,
+      time_min: 10,
+    },
+    {
+      action: `${act1} on ${r.name} (${r.main_chain}) with $${split1} (65% of $${tierCap} tier capital for a $${Math.round(r.tvl_usd / 1e6)}M TVL protocol).${bridge > 0 ? ` Bridge to ${r.main_chain} first ($${bridge.toFixed(2)}).` : ""}`,
+      cost_usd: gas,
+      time_min: 15,
+    },
+    {
+      action: `${act2} on ${r.name} (${r.main_chain}) with $${split2} (35% allocation) so eligibility does not rest on a single position.`,
+      cost_usd: gas,
+      time_min: 15,
+    },
+    {
+      action: `Weekly touch (${weeks} weeks on ${r.main_chain}). Claim, compound, or rebalance once a week (~$${(Math.round(gas * 0.5 * 100) / 100).toFixed(2)}/wk) to keep ${r.name} active for the full ${hold}-day hold.`,
+      cost_usd: Math.round(gas * 0.5 * 100) / 100,
+      time_min: 5,
+    },
+    {
+      action: `Points / eligibility check on ${r.name}'s official points dashboard after week 1 — confirm the wallet is accruing before scaling above $${tierCap}.`,
+      cost_usd: 0,
+      time_min: 5,
+    },
+    {
+      action: `Hold ${hold} days on ${r.name} (set by protocol age: ${r.age_known ? `${r.age_days} days in snapshot` : "age not in snapshot — 365 d assumed"}). Avoid wash-churning.`,
+      cost_usd: 0,
+      time_min: 0,
+    },
+    {
+      action: `Claim only from ${r.name}'s verified domain on ${r.main_chain} if a token launches. Never pay or sign approvals on a third-party claimer.`,
+      cost_usd: gas,
+      time_min: 10,
+    },
   ];
-  return { steps, costs: { gas_usd_per_action: gas, bridge_usd: bridge, total_usd: total }, tierCap, hold };
+  return {
+    steps,
+    costs: { gas_usd_per_action: gas, bridge_usd: bridge, total_usd: total },
+    tierCap,
+    hold,
+  };
 }
 function evAt(r, size, fp) {
   const Nf = clamp(Math.round(r.tvl_usd / 4500), 400, 60000);

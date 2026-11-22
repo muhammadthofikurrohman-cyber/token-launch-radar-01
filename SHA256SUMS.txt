@@ -1,35 +1,35 @@
 # SHA256SUMS.txt — Token Launch Radar (token-radar-01), model radar-3.1
 # SHA-256 and MD5 for every file in the submission bundle, except this file itself.
 # (This file cannot list its own hash.)
-# Generated 2026-11-23 after the round-5 run-output fix; board.json must match:
-#   SHA-256 ef0a756989e6fdde093a545bda8d23f39bb14e1036aecd6cb8ce89514488e87d
-#   MD5     c1b755dfa953ec48311af1d536a981ce  (cross-check — this is the MD5, not a SHA-256)
+# Generated 2026-11-23 after the round-6 concrete farm steps; board.json must match:
+#   SHA-256 8fbba6feee7b4829e148f351c8d2f89b172f8eb3fb9533061023431b95399629
+#   MD5     5e0171139d1fb75644f29909ac6d4172  (cross-check — this is the MD5, not a SHA-256)
 3628130266d88123bb3153a0c0c5b7ac17d3fda3669d3eddbcaa7939ae921770  LICENSE
 f51756ce5de4c4bc322a900e1758fff8  LICENSE (MD5)
-d0320e12481fe45584de4dc94d45877c6f4ea7b95cca7db33857cc0b563be261  README.md
-4221fa660982af30c7dd25694395f5eb  README.md (MD5)
-7c7bf56670f183b18151135bcd6b1cb72ee203dd07b8c4447ee3c5dbbf3ebef8  TRANSCRIPT.md
-752030dad84edac243687be51269654f  TRANSCRIPT.md (MD5)
-bef49f953c290323032f2aefb59d385dd7515340d217847a17ffa5133e0636f9  main.ts
-ec0bd1b34ee5335d5ca59f0450bfc444  main.ts (MD5)
-ef0a756989e6fdde093a545bda8d23f39bb14e1036aecd6cb8ce89514488e87d  board.json
-c1b755dfa953ec48311af1d536a981ce  board.json (MD5)
+7f53f28900e454f110dcfc4525a3a4464831871eb88546627de0a8dd18f60539  README.md
+7b481c52c8a23f35b62f17745d38307b  README.md (MD5)
+6e7b089bf854bac4ead1d6243f2d45686bb491e3bb9aa4ca9caec071115f64ae  TRANSCRIPT.md
+7fd30c9bfb5aa9f9506665cb0932f017  TRANSCRIPT.md (MD5)
+74165bab41f54ce48f7390f1a8d1691c96e5f966a8a150d98abdb3c61f44bd2b  main.ts
+62cd6b477a58bf74a1b2807f1b341039  main.ts (MD5)
+8fbba6feee7b4829e148f351c8d2f89b172f8eb3fb9533061023431b95399629  board.json
+5e0171139d1fb75644f29909ac6d4172  board.json (MD5)
 efb7aa4f775c5e2f55c8b879e31fb0c0fa4e143934ba675c556ba3e93f7b1f7c  excluded.json
 98b7fe7aa4ffc4d7256516b0ed0886ed  excluded.json (MD5)
-040c3cd0af7d57e766fab44b6981c332c6ad0f2b9c7ec5c3a08107003c8504b4  dossier.json
-deac15fa6c81a4033e508c7bf9538189  dossier.json (MD5)
+1ab38d8260e5ca67e71c0300a9c313837a739241e4bba5618dd9b62744fed236  dossier.json
+772d12301fed572bb8d8c4056fb251ce  dossier.json (MD5)
 9ca51b6e5cd84fe46cb0efa61e2ea99365a1fb0e21f2b75e6007f977f0dc326e  vendor/makefun-board.ts
 5ba220c2671b81b1c453350f3235adf4  vendor/makefun-board.ts (MD5)
 8bf2729913ac040429ae3b10634bd0260530c03ad5906f4b3a05a4d8bd7e73a1  dashboard/index.html
 a4ee513ef1333e338c9a57d711e8aeeb  dashboard/index.html (MD5)
 8ede8b3fd230fad8103bae1de7df8fc4a1ef2fbaf2dd2c51e22eaba9ab167943  dashboard/style.css
 be4a0f48c7df14cfd0ef7f408fa27dc6  dashboard/style.css (MD5)
-4139c6e46dadd6793e47f8cab332f13ed8ed33beab34b321e34581f675bf9f4d  dashboard/app.js
-594e44f13ef9b29b90f0534a3eeeade0  dashboard/app.js (MD5)
+1717fef5d6fc59c42b4db4460b43fe5e12efabc567a0d3ca4b38084918a74c7e  dashboard/app.js
+a02f229813e4929d55c55712f9be40d8  dashboard/app.js (MD5)
 035dda8999cf5559877da1da69eccac2005a4a30a189097da7bc4286a3ec51cf  screenshots/01-desktop-overview.png
 a40d08059e97868b470287d3cd3e3c5e  screenshots/01-desktop-overview.png (MD5)
-b0db92cd8eb772e4ac740cf1a3d22edbdc100661311dca03b8d9e217aabe9169  screenshots/02-watchlist-detail.png
-a570dec7a6908b78f8d4286841ca546e  screenshots/02-watchlist-detail.png (MD5)
+5d610f230a5cc2a1083116c87dd36e0c13d091352463315053410ee093a2103a  screenshots/02-watchlist-detail.png
+92890dbfec5023138de32a7c56aac480  screenshots/02-watchlist-detail.png (MD5)
 f941da81c3eb5ed4cc31ade47cfaa9068180b208eb0c38aeec43856ddd8dfd31  screenshots/03-methodology-filters.png
 0dbcb9a266b5c407bf314dafb2e804d5  screenshots/03-methodology-filters.png (MD5)
 50534285cf987520c1ef23460af6b74e87f4b5b3a7c34415b4b37a67bfd12636  screenshots/05-validation-audit.png
