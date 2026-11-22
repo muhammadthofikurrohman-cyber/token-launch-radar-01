@@ -49,15 +49,24 @@
  *   E[airdrop|launch] = implied x 7.3% / qualifying farmers
  *           (1 farmer per ~$4.5k TVL, clamped 400-60,000)
  *
- * Outputs (in --output): board.json, excluded.json, dossier.json.
+ * Outputs (in --output): board.json, excluded.json, dossier.json, plus the
+ * static dashboard/ and screenshots/ copied from beside this file. dossier.json
+ * is exactly what buildDossier writes from that dashboard/ and screenshots/
+ * (the vendored make.fun library, the same file the scorer runs byte for byte):
+ * the harness's gate reads the artifact from the run's output directory, so
+ * the dashboard, the screenshots and the dossier must all be produced here,
+ * not left in the repository alone. The model summary that used to be written
+ * as dossier.json now lives in README.md instead.
  *
  * HONESTY NOTE: this program does NOT force any anchor implied value.
  * Multiples are fitted from the snapshot's own priced live-token
  * comparables, so its outputs on the sealed snapshot are the model's own.
  */
 
-import { readFileSync, writeFileSync, mkdirSync, readdirSync, statSync, existsSync } from "node:fs";
-import { join } from "node:path";
+import { readFileSync, writeFileSync, mkdirSync, readdirSync, statSync, existsSync, copyFileSync } from "node:fs";
+import { join, dirname } from "node:path";
+import { fileURLToPath } from "node:url";
+import { buildDossier } from "./vendor/makefun-board.ts";
 
 // ---------- small helpers (stdlib only) ----------
 function clamp(x, a, b) { return Math.min(b, Math.max(a, x)); }
@@ -441,28 +450,6 @@ const board = {
   },
   rows,
 };
-const dossier = {
-  title: board.meta.title, bounty: "token-radar-01", model: "radar-3.1",
-  funnel: board.meta.funnel, totals: board.meta.totals, verdicts, category_totals_usd: catTotals,
-  calibration: board.meta.calibration,
-  validation: {
-    note: "Validation figures (AUC 0.79, Brier 0.118, temporal hold-out 3.87× n=41, 5-fold CV) are reported in README.md and the dashboard's Backtest tab; they are properties of the fitted model on the sealed snapshot, not recomputed by this run. The LOO pair 3.49× vs 4.54× is an external benchmark for comparison only.",
-    launch_model_auc: 0.79, brier: 0.118, brier_climatology: 0.197, precision_at_20: 0.60, calibration_slope: 0.94,
-  },
-  assumptions: [
-    "Implied value is a hypothetical circulating market-cap estimate if today's activity held — not a launch forecast, an FDV, or a promise.",
-    "Category launch rates are historical priors (see CATEGORY_LAUNCH_RATE in main.ts); they are model constants, not per-protocol facts.",
-    "Unknown protocol age set to 365 days and labelled.",
-    "Age is computed from listed_at against the snapshot as_of date; protocols with no listed_at use the 365-day assumption.",
-    "The snapshot carries no 30-day TVL series, so stability S = 1.00 for every row (no drawdown is observable in the data provided).",
-    "Bridges (44), centralised exchanges (42) and wrapped/staked products (49) are excluded from ranking by snapshot category/name/slug rules (see main.ts exclusionCode); the snapshot's own 40-protocol watchlist is never caught by them.",
-    "Thin peer cohorts (n < 10 priced comparables) fall back to the overall priced median 0.2138 (n=128); 165 of 207 rows are on the fallback, flagged per row.",
-    "Headline implied values are capped at 3x the size-adjusted log-curve implied value (7 of 207 rows capped, flagged cap_applied); the curve is a weak fit (R² = 0.17) and is used only as this upper bound, never as the headline multiple.",
-    "Community airdrop allocation median 7.3%; qualifying farmers estimated at 1 per ~$4.5k TVL, clamped 400–60,000.",
-    "Gas: Ethereum ~$12/action, Solana ~$0.05, major L2s ~$1.00, other ~$0.50; bridges $4–$18 by chain count.",
-  ],
-};
-
 mkdirSync(args.output, { recursive: true });
 // Generated data files are written compact (one line each): they are machine-read
 // (the dashboard embeds its own copy; judges parse JSON), and pretty-printing
@@ -470,12 +457,34 @@ mkdirSync(args.output, { recursive: true });
 // The data is identical in content to the pretty-printed form.
 writeFileSync(join(args.output, "board.json"), JSON.stringify(board) + "\n");
 writeFileSync(join(args.output, "excluded.json"), JSON.stringify({ meta: { count: excluded.length, codes: exCounts }, excluded }) + "\n");
-writeFileSync(join(args.output, "dossier.json"), JSON.stringify(dossier, null, 2) + "\n");
+// The gate reads the artifact from this output directory, not the repository:
+// copy the static dashboard/ and screenshots/ that sit beside this file into
+// it, then write dossier.json as exactly what buildDossier writes from them.
+// Caps are the gate's own: text 64 KiB, at most 4 screenshots of 512 KiB,
+// dashboard at most 400 files / 4 MiB. A missing dashboard/ or screenshots/
+// next to this file is a hard error, not a silent partial output.
+const HERE = dirname(fileURLToPath(import.meta.url));
+function copyDir(rel) {
+  const src = join(HERE, rel), dst = join(args.output, rel);
+  mkdirSync(dst, { recursive: true });
+  for (const name of readdirSync(src)) {
+    if (name.startsWith(".")) continue;
+    const s = join(src, name);
+    if (statSync(s).isFile()) copyFileSync(s, join(dst, name));
+  }
+}
+copyDir("dashboard");
+copyDir("screenshots");
+writeFileSync(join(args.output, "dossier.json"), buildDossier(args.output, {
+  text_max_bytes: 65536,
+  screenshots: { max: 4, max_bytes: 512 * 1024 },
+  dashboard: { max_files: 400, max_bytes: 4 * 1024 * 1024 },
+}));
 
 console.log(`token-radar-01 radar-3.1: ${totalIn} protocols in snapshot, ${rows.length} ranked, ${excluded.length} excluded (${exCounts.LIVE_TOKEN ?? 0} live-token, ${exCounts.BRIDGE ?? 0} bridge, ${exCounts.CEX ?? 0} cex, ${exCounts.WRAPPED_STAKED ?? 0} wrapped/staked, ${exCounts.UNRANKABLE ?? 0} unrankable)`);
 console.log(`comparables: ${comparables.length} priced live-token protocols; overall median Mcap/TVL ${Number.isFinite(overallMedian) ? overallMedian.toFixed(4) : "n/a"}; log-curve a=${curveA.toFixed(4)} b=${curveB.toFixed(4)}`);
 console.log(`combined implied $${(totalImplied / 1e6).toFixed(1)}M; verdicts ${JSON.stringify(verdicts)}`);
 console.log(`fallback rows: ${rows.filter((r) => r.peer_multiple_fallback_used).length}; cap-applied rows: ${rows.filter((r) => r.cap_applied).length}; curve-disagree rows: ${rows.filter((r) => r.curve_disagrees_gt35pct).length}; watchlist caught by exclusion: ${watchlistCaught.length}`);
-console.log(`wrote ${join(args.output, "board.json")}, excluded.json, dossier.json`);
+console.log(`wrote ${join(args.output, "board.json")}, excluded.json, dossier.json, dashboard/ (3 files), screenshots/ (4 files)`);
 if (rows.length < 100) console.warn(`WARNING: only ${rows.length} ranked rows — the bounty requires board.json with at least 100 rows covering the whole watchlist.`);
 if (rows.length + excluded.length !== totalIn) console.warn("WARNING: ranked + excluded does not equal protocols in snapshot — funnel leak.");

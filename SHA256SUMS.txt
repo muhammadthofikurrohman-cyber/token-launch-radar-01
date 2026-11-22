@@ -1,17 +1,17 @@
 # SHA256SUMS.txt — Token Launch Radar (token-radar-01), model radar-3.1
 # SHA-256 and MD5 for every file in the submission bundle, except this file itself.
 # (This file cannot list its own hash.)
-# Generated 2026-11-23 after the round-4 judge-gate fix; board.json must match:
+# Generated 2026-11-23 after the round-5 run-output fix; board.json must match:
 #   SHA-256 ef0a756989e6fdde093a545bda8d23f39bb14e1036aecd6cb8ce89514488e87d
 #   MD5     c1b755dfa953ec48311af1d536a981ce  (cross-check — this is the MD5, not a SHA-256)
 3628130266d88123bb3153a0c0c5b7ac17d3fda3669d3eddbcaa7939ae921770  LICENSE
 f51756ce5de4c4bc322a900e1758fff8  LICENSE (MD5)
-486cdd9136a8b67dc6318b652c0405316bb7f23b5cc3210827893b0e8a5bddcd  README.md
-c7fadaf28eebf6d1ef970d2e812932cd  README.md (MD5)
-e3181cf1a93e80264710e7e976eb853990b5ceb92b57fa9098c9cdfaad2e2ec9  TRANSCRIPT.md
-5f176353d1d4d7ac17ea4ae38f5c035f  TRANSCRIPT.md (MD5)
-ce9176da36dcbd87e18e5aff7543f319631e27ce580ccdac382645747450d815  main.ts
-2d091edf2b718886b17001d741dec445  main.ts (MD5)
+d0320e12481fe45584de4dc94d45877c6f4ea7b95cca7db33857cc0b563be261  README.md
+4221fa660982af30c7dd25694395f5eb  README.md (MD5)
+7c7bf56670f183b18151135bcd6b1cb72ee203dd07b8c4447ee3c5dbbf3ebef8  TRANSCRIPT.md
+752030dad84edac243687be51269654f  TRANSCRIPT.md (MD5)
+bef49f953c290323032f2aefb59d385dd7515340d217847a17ffa5133e0636f9  main.ts
+ec0bd1b34ee5335d5ca59f0450bfc444  main.ts (MD5)
 ef0a756989e6fdde093a545bda8d23f39bb14e1036aecd6cb8ce89514488e87d  board.json
 c1b755dfa953ec48311af1d536a981ce  board.json (MD5)
 efb7aa4f775c5e2f55c8b879e31fb0c0fa4e143934ba675c556ba3e93f7b1f7c  excluded.json
