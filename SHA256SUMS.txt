@@ -2,22 +2,23 @@
 # SHA-256 and MD5 for every file in the submission bundle, except this file itself.
 # (This file cannot list its own hash, and the .zip/.tar.gz archive hashes are
 #  recorded in the delivery summary — the archives contain this file.)
-# Generated 2026-11-22 after the Top-10 upgrade; board.json must match:
-#   SHA-256 95ec533f47abd52e2024cffefdcf5d4fe5671acef92eb51dd0d9703b7f4981e4
-#   MD5     27b93a69624a1244e3f9abf582917d0b
+# Generated 2026-11-22 after the round-2 compact-JSON fix; board.json must match:
+#   SHA-256 b2a0fbf6544fff94c5ecc5017dd2e09a17f47375ecf67936a474f14a3511f45d
+#   MD5     ba4b471c952a89187f6b937115c8dcc3
 
-SHA-256 82675d75f88fdda6cc9bcad4b44f8896d57f0c24ff0f2c99271131995ee72e7a  LICENSE
-MD5     606169e1b32be7ff6955dd53696c9b75  LICENSE
-SHA-256 534f8233583d2b87ce1deb6948e2730b9e9a856fafa7fe067e9203d3a71766eb  README.md
-MD5     570816bcad847bccf78192222e2f7cb6  README.md
-SHA-256 fedbb1d2fbc8d79195b0eef585f16f8f034010f07822d299c4463e44b35e6d0b  TRANSCRIPT.md
-MD5     cdaa0a9522d45822dd57092ec1608393  TRANSCRIPT.md
-SHA-256 544eb0f0ea62e18bf8424824758bd32c24a0f31656daf649037071bcb860aab8  main.ts
-MD5     4b69f2fd7c6ae1fbda717c748ccdbc48  main.ts
-SHA-256 95ec533f47abd52e2024cffefdcf5d4fe5671acef92eb51dd0d9703b7f4981e4  board.json
-MD5     27b93a69624a1244e3f9abf582917d0b  board.json
-SHA-256 c5e2a978badb7b7112ffa4efd20c45f9f7ca6c7e3484f84b82b8090138dcd3a7  excluded.json
-MD5     e568cb54cca11533f53d341fb2ea4f9c  excluded.json
+
+SHA-256 3628130266d88123bb3153a0c0c5b7ac17d3fda3669d3eddbcaa7939ae921770  LICENSE
+MD5     f51756ce5de4c4bc322a900e1758fff8  LICENSE
+SHA-256 ad2e0926dae9ebfef2899653e0831c48dfb6cfa8b798fdf17441f74c1cc6c359  README.md
+MD5     7486e9126643ce1113e340fd2f82afe4  README.md
+SHA-256 a12963d3d627a578edd917672ee661e59191b28fbc1470cb282bdec4079b9b12  TRANSCRIPT.md
+MD5     ad20b7fba8126074b27df2f7959c6142  TRANSCRIPT.md
+SHA-256 282cbbb0d39e17a0e1264a2954647a28939f1f7ac8c7cc7f4f6729b11273e0fd  main.ts
+MD5     1921331b208a77398d420ff2905a76ee  main.ts
+SHA-256 b2a0fbf6544fff94c5ecc5017dd2e09a17f47375ecf67936a474f14a3511f45d  board.json
+MD5     ba4b471c952a89187f6b937115c8dcc3  board.json
+SHA-256 efb7aa4f775c5e2f55c8b879e31fb0c0fa4e143934ba675c556ba3e93f7b1f7c  excluded.json
+MD5     98b7fe7aa4ffc4d7256516b0ed0886ed  excluded.json
 SHA-256 504b5a28dd71d98536bf6f3a7a5389e573923870e1340b31f0e6bd71f512aefa  dossier.json
 MD5     35f87a45ee6d4457294e5ffb8db1c1fc  dossier.json
 SHA-256 9ca51b6e5cd84fe46cb0efa61e2ea99365a1fb0e21f2b75e6007f977f0dc326e  vendor/makefun-board.ts

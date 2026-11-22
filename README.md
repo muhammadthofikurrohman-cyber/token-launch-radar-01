@@ -1,6 +1,6 @@
 [![make.fun · token-radar-01](https://make.fun/badge/token-radar-01.svg)](https://make.fun/bounty/token-radar-01?utm_source=github&utm_medium=readme&utm_campaign=token-radar-01)
 [![rank](https://make.fun/badge/token-radar-01/muhammadthofikurrohman-cyber/token-launch-radar-01/rank.svg)](https://make.fun/bounty/token-radar-01/leaderboard?utm_source=github&utm_medium=readme&utm_campaign=token-radar-01)
-[![reward](https://make.fun/badge/token-radar-01/muhammadthofikurrohman-cyber/token-launch-radar-01/reward.svg)](https://make.fun/bounty/token-radar-01?utm_source=github&utm_medium=readme&utmcampaign=token-radar-01)
+[![reward](https://make.fun/badge/token-radar-01/muhammadthofikurrohman-cyber/token-launch-radar-01/reward.svg)](https://make.fun/bounty/token-radar-01?utm_source=github&utm_medium=readme&utm_campaign=token-radar-01)
 
 # Token Launch Radar — radar-3.1
 
@@ -23,8 +23,8 @@ The snapshot carries **no raise, funding, stage, investor, mainnet/TGE-date or p
 ```bash
 node main.ts --input <snapshot.json> --output out
 # expect exit 0, 0 NaNs, 758 = 207 ranked + 551 excluded, and:
-#   board.json SHA-256 95ec533f47abd52e2024cffefdcf5d4fe5671acef92eb51dd0d9703b7f4981e4
-#   board.json MD5     27b93a69624a1244e3f9abf582917d0b  (cross-check — this is the MD5, not a SHA-256)
+#   board.json SHA-256 b2a0fbf6544fff94c5ecc5017dd2e09a17f47375ecf67936a474f14a3511f45d
+#   board.json MD5     ba4b471c952a89187f6b937115c8dcc3  (cross-check — this is the MD5, not a SHA-256)
 ```
 
 ## Top-5 High-Conviction TGE Watchlist
@@ -100,12 +100,12 @@ Copy-paste (Node.js ≥ 22.18, standard library only, no network):
 ```bash
 mkdir -p out && node main.ts --input <snapshot.json> --output out
 sha256sum out/board.json
-# expect 95ec533f47abd52e2024cffefdcf5d4fe5671acef92eb51dd0d9703b7f4981e4
+# expect b2a0fbf6544fff94c5ecc5017dd2e09a17f47375ecf67936a474f14a3511f45d
 md5sum out/board.json
-# expect 27b93a69624a1244e3f9abf582917d0b
+# expect ba4b471c952a89187f6b937115c8dcc3
 ```
 
-The `board.json` in this package must match both hashes. `27b93a69…` is the **MD5** checksum — never a SHA-256. A re-run from the sealed snapshot is byte-identical (determinism verified); expect exit 0, 0 NaNs, and exact accounting 758 = 207 ranked + 551 excluded.
+The `board.json` in this package must match both hashes. `ba4b471c…` is the **MD5** checksum — never a SHA-256. A re-run from the sealed snapshot is byte-identical (determinism verified); expect exit 0, 0 NaNs, and exact accounting 758 = 207 ranked + 551 excluded.
 
 ## Architecture & File Manifest
 
@@ -113,13 +113,13 @@ The final bundle is 16 files. Sizes are measured from the files in this package 
 
 | File | Size | What it contains |
 |---|---|---|
-| `LICENSE` | 1,093 B (≈1.1 KB) | MIT License, copyright 2026 Muhammad Thofikurrohman (@thofix-05). |
-| `README.md` | ≈29 KB (this file) | This document: TL;DR, Top-5 watchlist, gallery, reproduction, manifest, methodology summary, and the full deep sections (provenance, model, calibration, bugs fixed, validation, limits). |
-| `TRANSCRIPT.md` | 17,589 B (≈17.2 KB) | Chronological build log of radar-3.1, from Phase 1 model design through the sealed v2 audit and the Top-10 upgrade; every number re-verified from the files in this package. |
-| `SHA256SUMS.txt` | 2,907 B (≈2.8 KB) | SHA-256 + MD5 for every file in the bundle except itself (it cannot list its own hash). |
-| `main.ts` | 28,135 B (≈27.5 KB) | The radar-3.1 program (Node ≥ 22.18, stdlib only, no network). Reads a DefiLlama snapshot, fits peer multiples and the log-curve, applies the funnel, the 3× cap, the launch logistic and the costed farm verdicts, and writes `board.json`, `excluded.json`, `dossier.json`. |
-| `board.json` | 698,181 B (≈682 KB) | 207 ranked rows + meta. Each row: TVL, 7d change, age, chains, peer multiple and peer_n, implied value with 80% interval, curve-implied value, P(launch), EV at $50/$250/$1,000, break-even P, farmer estimate, verdict, rank. SHA-256 `95ec533f…4981e4`, MD5 `27b93a69…17d0b`. |
-| `excluded.json` | 121,828 B (≈119 KB) | 551 excluded protocols with reason codes: 416 live-token · 44 bridge · 42 CEX · 49 wrapped/staked · 0 unrankable. |
+| `LICENSE` | 1,122 B (≈1.1 KB) | MIT License, copyright 2026 Muhammad Thofikurrohman (@thofix-05). |
+| `README.md` | ≈30 KB (this file) | This document: TL;DR, Top-5 watchlist, gallery, reproduction, manifest, methodology summary, and the full deep sections (provenance, model, calibration, bugs fixed, validation, limits). |
+| `TRANSCRIPT.md` | 19,530 B (≈19.1 KB) | Chronological build log of radar-3.1, from Phase 1 model design through the sealed v2 audit, the Top-10 upgrade and the round-2 compact-JSON fix; every number re-verified from the files in this package. |
+| `SHA256SUMS.txt` | ≈2.9 KB | SHA-256 + MD5 for every file in the bundle except itself (it cannot list its own hash). |
+| `main.ts` | 28,424 B (≈27.8 KB) | The radar-3.1 program (Node ≥ 22.18, stdlib only, no network). Reads a DefiLlama snapshot, fits peer multiples and the log-curve, applies the funnel, the 3× cap, the launch logistic and the costed farm verdicts, and writes `board.json`, `excluded.json`, `dossier.json` (the two data files compact, one line each — same data as the pretty-printed form). |
+| `board.json` | 514,751 B (≈503 KB) | 207 ranked rows + meta, written compact (one line) — same data as the pretty-printed form. Each row: TVL, 7d change, age, chains, peer multiple and peer_n, implied value with 80% interval, curve-implied value, P(launch), EV at $50/$250/$1,000, break-even P, farmer estimate, verdict, rank. SHA-256 `b2a0fbf6…11f45d`, MD5 `ba4b471c…8dcc3`. |
+| `excluded.json` | 94,214 B (≈92 KB) | 551 excluded protocols with reason codes: 416 live-token · 44 bridge · 42 CEX · 49 wrapped/staked · 0 unrankable. Written compact (one line), same data as before. |
 | `dossier.json` | 4,872 B (≈4.8 KB) | Model, validation, funnel, assumptions and limits as emitted by `main.ts` (not a kit-library dossier). |
 | `vendor/makefun-board.ts` | 19,788 B (≈19.3 KB) | make.fun's dashboard-dossier library (`buildDossier`, schema `makefun/dossier/v1`): the scorer runs this same file, byte for byte, on the dashboard and screenshots to verify `dossier.json`. Vendored, not written by us. |
 | `dashboard/index.html` | 430,881 B (≈421 KB) | Static dashboard, renders with no network: Top-5 High-Conviction watchlist, ranked board, per-row dossier drawer with waterfall and 7-step farm plan, "Download Filtered View (.csv)" export, expandable Methodology/weights section, Audit tab (551 exclusions), Backtest tab, Cohort Lab. Sealed v2 audit: 32/32 PASS in real Chromium 157 + Playwright. |

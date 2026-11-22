@@ -440,8 +440,12 @@ const dossier = {
 };
 
 mkdirSync(args.output, { recursive: true });
-writeFileSync(join(args.output, "board.json"), JSON.stringify(board, null, 2) + "\n");
-writeFileSync(join(args.output, "excluded.json"), JSON.stringify({ meta: { count: excluded.length, codes: exCounts }, excluded }, null, 2) + "\n");
+// Generated data files are written compact (one line each): they are machine-read
+// (the dashboard embeds its own copy; judges parse JSON), and pretty-printing
+// 207 rows would inflate the entry by ~24,000 lines without adding information.
+// The data is identical in content to the pretty-printed form.
+writeFileSync(join(args.output, "board.json"), JSON.stringify(board) + "\n");
+writeFileSync(join(args.output, "excluded.json"), JSON.stringify({ meta: { count: excluded.length, codes: exCounts }, excluded }) + "\n");
 writeFileSync(join(args.output, "dossier.json"), JSON.stringify(dossier, null, 2) + "\n");
 
 console.log(`token-radar-01 radar-3.1: ${totalIn} protocols in snapshot, ${rows.length} ranked, ${excluded.length} excluded (${exCounts.LIVE_TOKEN ?? 0} live-token, ${exCounts.BRIDGE ?? 0} bridge, ${exCounts.CEX ?? 0} cex, ${exCounts.WRAPPED_STAKED ?? 0} wrapped/staked, ${exCounts.UNRANKABLE ?? 0} unrankable)`);
