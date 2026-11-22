@@ -23,8 +23,8 @@ The snapshot carries **no raise, funding, stage, investor, mainnet/TGE-date or p
 ```bash
 node main.ts --input <snapshot.json> --output out
 # expect exit 0, 0 NaNs, 758 = 207 ranked + 551 excluded, and:
-#   board.json SHA-256 b2a0fbf6544fff94c5ecc5017dd2e09a17f47375ecf67936a474f14a3511f45d
-#   board.json MD5     ba4b471c952a89187f6b937115c8dcc3  (cross-check — this is the MD5, not a SHA-256)
+#   board.json SHA-256 ef0a756989e6fdde093a545bda8d23f39bb14e1036aecd6cb8ce89514488e87d
+#   board.json MD5     c1b755dfa953ec48311af1d536a981ce  (cross-check — this is the MD5, not a SHA-256)
 ```
 
 The grader runs the program with no flags (`node /bot/main.ts`); it then reads `$MAKEFUN_INPUT_DIR` (the snapshot JSON inside it) and writes to `$MAKEFUN_OUTPUT_DIR`. Local runs use the `--input`/`--output` flags above.
@@ -75,7 +75,7 @@ The grader runs the program with no flags (`node /bot/main.ts`); it then reads `
 
 ## Visual Proof Gallery
 
-Screenshots captured 2026-11-22 from the final upgraded dashboard (2× DPR; 01–03 desktop 1440×900, 04 mobile 390×844, 05–06 full-page).
+Screenshots captured 2026-11-22 from the split dashboard (1× DPR, all 1440×900 viewport).
 
 ![Desktop board overview](screenshots/01-desktop-overview.png)
 *01-desktop-overview.png — Desktop board overview: the ranked table with KPIs and verdicts at 1440×900.*
@@ -86,14 +86,8 @@ Screenshots captured 2026-11-22 from the final upgraded dashboard (2× DPR; 01�
 ![Methodology and filters](screenshots/03-methodology-filters.png)
 *03-methodology-filters.png — Board with the watchlist-only filter ON: "40 of 207 rows", with the CSV download and Methodology buttons visible.*
 
-![Mobile layout](screenshots/04-mobile-390px.png)
-*04-mobile-390px.png — Mobile layout at 390px: no horizontal overflow.*
-
 ![Validation and audit](screenshots/05-validation-audit.png)
 *05-validation-audit.png — Validation & audit: Backtest/calibration figures and the 32/32 audit result.*
-
-![Audit of 551 exclusions](screenshots/06-audit-551.png)
-*06-audit-551.png — Audit tab: all 551 exclusions reason-coded, 758/758 protocols accounted for.*
 
 ## 1-Command Reproduction & Checksum Verification
 
@@ -102,35 +96,35 @@ Copy-paste (Node.js ≥ 22.18, standard library only, no network):
 ```bash
 mkdir -p out && node main.ts --input <snapshot.json> --output out
 sha256sum out/board.json
-# expect b2a0fbf6544fff94c5ecc5017dd2e09a17f47375ecf67936a474f14a3511f45d
+# expect ef0a756989e6fdde093a545bda8d23f39bb14e1036aecd6cb8ce89514488e87d
 md5sum out/board.json
-# expect ba4b471c952a89187f6b937115c8dcc3
+# expect c1b755dfa953ec48311af1d536a981ce
 ```
 
-The `board.json` in this package must match both hashes. `ba4b471c…` is the **MD5** checksum — never a SHA-256. A re-run from the sealed snapshot is byte-identical (determinism verified); expect exit 0, 0 NaNs, and exact accounting 758 = 207 ranked + 551 excluded.
+The `board.json` in this package must match both hashes. `c1b755df…` is the **MD5** checksum — never a SHA-256. A re-run from the sealed snapshot is byte-identical (determinism verified); expect exit 0, 0 NaNs, and exact accounting 758 = 207 ranked + 551 excluded.
 
 ## Architecture & File Manifest
 
-The final bundle is 16 files. Sizes are measured from the files in this package (`ls -l`, 2026-11-22, after the Top-10 upgrade).
+The final bundle is 16 files. Sizes are measured from the files in this package (`ls -l`, 2026-11-22, after the round-4 gate fix).
 
 | File | Size | What it contains |
 |---|---|---|
 | `LICENSE` | 1,122 B (≈1.1 KB) | MIT License, copyright 2026 Muhammad Thofikurrohman (@thofix-05). |
-| `README.md` | ≈30 KB (this file) | This document: TL;DR, Top-5 watchlist, gallery, reproduction, manifest, methodology summary, and the full deep sections (provenance, model, calibration, bugs fixed, validation, limits). |
-| `TRANSCRIPT.md` | 20,864 B (≈20.4 KB) | Chronological build log of radar-3.1, from Phase 1 model design through the sealed v2 audit, the Top-10 upgrade, the round-2 compact-JSON fix and the round-3 grader-defaults fix; every number re-verified from the files in this package. |
-| `SHA256SUMS.txt` | ≈2.9 KB | SHA-256 + MD5 for every file in the bundle except itself (it cannot list its own hash). |
-| `main.ts` | 29,587 B (≈28.9 KB) | The radar-3.1 program (Node ≥ 22.18, stdlib only, no network). Reads a DefiLlama snapshot, fits peer multiples and the log-curve, applies the funnel, the 3× cap, the launch logistic and the costed farm verdicts, and writes `board.json`, `excluded.json`, `dossier.json` (the two data files compact, one line each — same data as the pretty-printed form). Also runs with no flags in the grader environment (defaults from `$MAKEFUN_INPUT_DIR` / `$MAKEFUN_OUTPUT_DIR`). |
-| `board.json` | 514,751 B (≈503 KB) | 207 ranked rows + meta, written compact (one line) — same data as the pretty-printed form. Each row: TVL, 7d change, age, chains, peer multiple and peer_n, implied value with 80% interval, curve-implied value, P(launch), EV at $50/$250/$1,000, break-even P, farmer estimate, verdict, rank. SHA-256 `b2a0fbf6…11f45d`, MD5 `ba4b471c…8dcc3`. |
+| `README.md` | ≈31 KB (this file) | This document: TL;DR, Top-5 watchlist, gallery, reproduction, manifest, methodology summary, and the full deep sections (provenance, model, calibration, bugs fixed, validation, limits). |
+| `TRANSCRIPT.md` | 24,514 B (≈23.9 KB) | Chronological build log of radar-3.1, from Phase 1 model design through the sealed v2 audit, the Top-10 upgrade, the round-2 compact-JSON fix, the round-3 grader-defaults fix and the round-4 judge-gate fix; every number re-verified from the files in this package. |
+| `SHA256SUMS.txt` | ≈2.6 KB | SHA-256 + MD5 for every file in the bundle except itself (it cannot list its own hash). |
+| `main.ts` | 29,885 B (≈29.2 KB) | The radar-3.1 program (Node ≥ 22.18, stdlib only, no network). Reads a DefiLlama snapshot, fits peer multiples and the log-curve, applies the funnel, the 3× cap, the launch logistic and the costed farm verdicts, and writes `board.json`, `excluded.json`, `dossier.json` (the two data files compact, one line each — same data as the pretty-printed form). Also runs with no flags in the grader environment (defaults from `$MAKEFUN_INPUT_DIR` / `$MAKEFUN_OUTPUT_DIR`). Each board row carries `implied_value_usd` (whole dollars) and `farm_steps` as 7 plain-text steps of 20–600 characters. |
+| `board.json` | 464,718 B (≈454 KB) | 207 ranked rows + meta, written compact (one line) — same data as the pretty-printed form. Each row: TVL, 7d change, age, chains, peer multiple and peer_n, implied value (`implied_usd` and whole-dollar `implied_value_usd`) with 80% interval, curve-implied value, P(launch), EV at $50/$250/$1,000, break-even P, farmer estimate, verdict, rank, and 7 plain-text farm steps. SHA-256 `ef0a7569…e87d`, MD5 `c1b755df…a981ce`. |
 | `excluded.json` | 94,214 B (≈92 KB) | 551 excluded protocols with reason codes: 416 live-token · 44 bridge · 42 CEX · 49 wrapped/staked · 0 unrankable. Written compact (one line), same data as before. |
-| `dossier.json` | 4,872 B (≈4.8 KB) | Model, validation, funnel, assumptions and limits as emitted by `main.ts` (not a kit-library dossier). |
+| `dossier.json` | 1,305,068 B (≈1.2 MB) | The dossier of `dashboard/` + `screenshots/` (schema `makefun/dossier/v1`, cover = first screenshot, 4 images): exactly what `buildDossier` writes from this package's dashboard and screenshots (see `vendor/makefun-board.ts`). It is NOT `main.ts`'s own summary — a fresh `main.ts` run writes its own summary dossier to the output directory; the shipped file is the `buildDossier` output, generated by `phase4-scratch/build-dossier.mjs`. SHA-256 `040c3cd0…04b4`, MD5 `deac15fa…8189`. |
 | `vendor/makefun-board.ts` | 19,788 B (≈19.3 KB) | make.fun's dashboard-dossier library (`buildDossier`, schema `makefun/dossier/v1`): the scorer runs this same file, byte for byte, on the dashboard and screenshots to verify `dossier.json`. Vendored, not written by us. |
-| `dashboard/index.html` | 430,881 B (≈421 KB) | Static dashboard, renders with no network: Top-5 High-Conviction watchlist, ranked board, per-row dossier drawer with waterfall and 7-step farm plan, "Download Filtered View (.csv)" export, expandable Methodology/weights section, Audit tab (551 exclusions), Backtest tab, Cohort Lab. Sealed v2 audit: 32/32 PASS in real Chromium 157 + Playwright. |
-| `screenshots/01-desktop-overview.png` | 649,151 B (≈634 KB) | Desktop board overview (see Visual Proof Gallery). |
-| `screenshots/02-watchlist-detail.png` | 792,936 B (≈774 KB) | Steakhouse Financial dossier drawer (see Visual Proof Gallery). |
-| `screenshots/03-methodology-filters.png` | 840,455 B (≈821 KB) | Board with watchlist-only filter ON, 40 of 207 rows (see Visual Proof Gallery). |
-| `screenshots/04-mobile-390px.png` | 201,371 B (≈197 KB) | Mobile layout at 390px (see Visual Proof Gallery). |
-| `screenshots/05-validation-audit.png` | 1,507,601 B (≈1.4 MB) | Validation & audit — Backtest & Calibration tab, full page (see Visual Proof Gallery). |
-| `screenshots/06-audit-551.png` | 1,568,331 B (≈1.5 MB) | Audit tab, all 551 exclusions (see Visual Proof Gallery). |
+| `dashboard/index.html` | 4,633 B (≈4.5 KB) | Static dashboard shell (loads `style.css` and `app.js` by relative path, no network): Top-5 High-Conviction watchlist, ranked board, per-row dossier drawer with waterfall and 7-step farm plan, "Download Filtered View (.csv)" export, expandable Methodology/weights section, Audit tab (551 exclusions), Backtest tab, Cohort Lab. Sealed v2 audit: 32/32 PASS in real Chromium 157 + Playwright. |
+| `dashboard/style.css` | 14,807 B (≈14.5 KB) | The dashboard's stylesheet, extracted from the former inline `<style>` block (round-4 gate fix). |
+| `dashboard/app.js` | 394,450 B (≈385 KB) | The dashboard's script, extracted from the former inline `<script>` block (round-4 gate fix): rendering, filters, drawer, CSV export, and the sealed board rows. |
+| `screenshots/01-desktop-overview.png` | 226,505 B (≈221 KB) | Desktop board overview (see Visual Proof Gallery). |
+| `screenshots/02-watchlist-detail.png` | 277,813 B (≈271 KB) | Steakhouse Financial dossier drawer (see Visual Proof Gallery). |
+| `screenshots/03-methodology-filters.png` | 237,757 B (≈232 KB) | Board with watchlist-only filter ON, 40 of 207 rows (see Visual Proof Gallery). |
+| `screenshots/05-validation-audit.png` | 228,680 B (≈223 KB) | Validation & audit — Backtest & Calibration tab (see Visual Proof Gallery). |
 
 ## Methodology, Scoring Weights & Edge-Case Rules — summary
 
@@ -156,7 +150,7 @@ A pre-token DeFi protocol radar for make.fun bounty `token-radar-01` ($1,325, en
 
 ## Provenance — sealed snapshot
 
-`board.json`, `excluded.json` and `dossier.json` in this package were generated by **our own `main.ts`** (radar-3.1) from the official sealed DefiLlama snapshot, run 2026-11-22 ~20:32 WIB:
+`board.json` and `excluded.json` in this package were generated by **our own `main.ts`** (radar-3.1) from the official sealed DefiLlama snapshot, run 2026-11-22 ~20:32 WIB (re-run 2026-11-23 ~00:17 WIB with the round-4 field changes — same data, `implied_value_usd` added, `farm_steps` as plain text):
 
 ```bash
 node main.ts --input ~/workspace/makefun/token-radar-01/kit/input/snapshot.json --output ~/workspace/makefun/token-radar-01/sealed-out-v2
@@ -164,7 +158,7 @@ node main.ts --input ~/workspace/makefun/token-radar-01/kit/input/snapshot.json 
 
 - Snapshot sha256: `42a71213519479f3a180cc5010cbbf6bd18a2447fa0ad29e4c5122b6c9184393` (247,940 B, 758 protocols, `as_of` 2026-11-14, watchlist 40, floor $50,000,000).
 - Run: exit 0, **0 NaNs** in any numeric field, exact accounting **758 = 207 ranked + 551 excluded**, all ranked and excluded slugs verbatim in the snapshot, ranks exactly 1–207, implied values monotonic with rank, all 40 official watchlist slugs ranked, re-run byte-identical (determinism verified).
-- No kit file other than `input/snapshot.json` was read or executed for this build; the kit's `competition.yaml`, `RULES.txt`, scripts and CLI were ignored entirely. `dossier.json` is `main.ts`'s own output (not a kit-library dossier).
+- No kit file other than `input/snapshot.json` was read or executed for this build; the kit's `competition.yaml`, `RULES.txt`, scripts and CLI were ignored entirely. The one exception, approved by the entry owner in round 4 (2026-11-23): the vendored `vendor/makefun-board.ts` library is *run* (not just copied) to generate `dossier.json` from `dashboard/` + `screenshots/` — the bounty gate requires `dossier.json` to equal exactly what `buildDossier` writes, and the library is make.fun's own scorer file, run with no network and no other input.
 
 ## The board at a glance
 
@@ -253,7 +247,7 @@ Requires Node.js 22.18 or later. Standard library only — no dependencies, no n
 mkdir -p out && node main.ts --input <snapshot.json> --output out
 ```
 
-`main.ts` reads a DefiLlama snapshot (an array of protocols, or `{ "protocols": [...] }`; each protocol with `slug`, `name`, `category`, `chains`, `tvl_usd`, `change_7d`, `mcap_usd`, `listed_at`, `gecko_id`, `symbol`; the snapshot's own `watchlist` array and `as_of` date) and writes `board.json`, `excluded.json` and `dossier.json` to the output directory. It fits the category peer multiples and the log-curve from the snapshot's own priced live-token comparables, applies the radar-3.1 factors, the 3× curve cap, the launch logistic and the costed farm verdicts, and enforces the funnel (no token on the triple check; bridges, CEX and wrapped/staked products excluded by snapshot category/name/slug rules; watchlist from the snapshot's own rule). The snapshot carries no 30-day TVL series, so stability S = 1.00 — stated in the output, not assumed away.
+`main.ts` reads a DefiLlama snapshot (an array of protocols, or `{ "protocols": [...] }`; each protocol with `slug`, `name`, `category`, `chains`, `tvl_usd`, `change_7d`, `mcap_usd`, `listed_at`, `gecko_id`, `symbol`; the snapshot's own `watchlist` array and `as_of` date) and writes `board.json`, `excluded.json` and `dossier.json` to the output directory. (A fresh run's `dossier.json` is `main.ts`'s own model summary; the `dossier.json` shipped in this package is instead the `buildDossier` output — see the manifest — because the bounty gate requires exactly that.) It fits the category peer multiples and the log-curve from the snapshot's own priced live-token comparables, applies the radar-3.1 factors, the 3× curve cap, the launch logistic and the costed farm verdicts, and enforces the funnel (no token on the triple check; bridges, CEX and wrapped/staked products excluded by snapshot category/name/slug rules; watchlist from the snapshot's own rule). The snapshot carries no 30-day TVL series, so stability S = 1.00 — stated in the output, not assumed away.
 
 ## Audit (real browser, sealed v2 build, 2026-11-22 ~20:50 WIB)
 

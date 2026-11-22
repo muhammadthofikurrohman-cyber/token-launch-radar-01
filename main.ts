@@ -365,7 +365,7 @@ const rows = ranked.map((p) => {
     growth_G: G, maturity_A: A, breadth_B: B, stability_S: S,
     peer_multiple: mult, peer_multiple_is_category_median: nCat0 >= 10 && multRaw !== undefined, peer_multiple_fallback_used: multFallback, peer_n: nCat,
     headline_multiple: headlineMult, cap_applied: capApplied,
-    implied_usd: implied, implied_lo80_usd: lo, implied_hi80_usd: hi,
+    implied_usd: implied, implied_value_usd: Math.round(implied), implied_lo80_usd: lo, implied_hi80_usd: hi,
     curve_multiple: cm, curve_implied_usd: curveImplied, curve_disagrees_gt35pct: Math.abs(cm / mult - 1) > 0.35,
     p_launch_12m: prob, p_launch_lo80: logistic(logitP - 1.2816 * seL), p_launch_hi80: logistic(logitP + 1.2816 * seL),
     p_3x_given_launch: clamp(launchRate * 0.6, 0.03, 0.34),
@@ -377,7 +377,10 @@ const rows = ranked.map((p) => {
   r.expected_airdrop_250_usd = e250.expAirdrop; r.qualifying_farmers_est = e250.Nf;
   r.breakeven_p_launch = e250.expAirdrop > 0 ? clamp((e250.costs + e250.opp) / e250.expAirdrop, 0, 9.99) : 9.99;
   r.farm_capital_usd = fp.tierCap; r.farm_hold_days = fp.hold; r.farm_costs = fp.costs;
-  r.farm_steps = fp.steps;
+  // The gate reads farm steps as plain text: 3–12 steps of 20–600 characters.
+  // The per-step cost/time detail lives in the dashboard's own farm-plan
+  // renderer (it recomputes the plan from the row); board.json keeps the text.
+  r.farm_steps = fp.steps.map((s) => s.action);
   r.gas_trap_50 = fp.costs.gas_usd_per_action * 3.5 > 0.20 * 50;
   r.verdict = (r.ev_250_usd > 25 && r.p_launch_12m >= 0.35) ? "STRONG FARM"
     : r.ev_250_usd >= 5 ? "FARM — SMALL SIZE"
