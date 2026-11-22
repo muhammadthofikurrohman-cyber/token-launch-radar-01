@@ -56,7 +56,7 @@
  * comparables, so its outputs on the sealed snapshot are the model's own.
  */
 
-import { readFileSync, writeFileSync, mkdirSync } from "node:fs";
+import { readFileSync, writeFileSync, mkdirSync, readdirSync, statSync, existsSync } from "node:fs";
 import { join } from "node:path";
 
 // ---------- small helpers (stdlib only) ----------
@@ -130,6 +130,27 @@ function parseArgs(argv) {
   return out;
 }
 const args = parseArgs(process.argv.slice(2));
+// Grader defaults: the grader runs bare `node /bot/main.ts` with no flags,
+// mounting the competition input at $MAKEFUN_INPUT_DIR and expecting the
+// outputs in $MAKEFUN_OUTPUT_DIR. When --input/--output are absent, fall
+// back to those env vars; the input is the snapshot JSON inside the input
+// dir (snapshot.json if present, else the first *.json found, one level deep).
+function findSnapshot(dir) {
+  const cands = ["snapshot.json"];
+  try {
+    for (const name of readdirSync(dir)) {
+      const p = join(dir, name);
+      if (name.endsWith(".json")) cands.push(name);
+      else if (statSync(p).isDirectory()) {
+        for (const sub of readdirSync(p)) if (sub.endsWith(".json")) cands.push(join(name, sub));
+      }
+    }
+  } catch { /* fall through: the missing-input error below reports it */ }
+  for (const c of cands) { const p = join(dir, c); if (existsSync(p)) return p; }
+  return null;
+}
+if (!args.input && process.env.MAKEFUN_INPUT_DIR) args.input = findSnapshot(process.env.MAKEFUN_INPUT_DIR) ?? undefined;
+if (!args.output && process.env.MAKEFUN_OUTPUT_DIR) args.output = process.env.MAKEFUN_OUTPUT_DIR;
 if (args.help || !args.input || !args.output) {
   console.log("Usage: node main.ts --input <snapshot.json> --output <dir>");
   console.log("  snapshot.json: DefiLlama snapshot — array of protocols, or { \"protocols\": [...] }");

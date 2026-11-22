@@ -27,6 +27,8 @@ node main.ts --input <snapshot.json> --output out
 #   board.json MD5     ba4b471c952a89187f6b937115c8dcc3  (cross-check — this is the MD5, not a SHA-256)
 ```
 
+The grader runs the program with no flags (`node /bot/main.ts`); it then reads `$MAKEFUN_INPUT_DIR` (the snapshot JSON inside it) and writes to `$MAKEFUN_OUTPUT_DIR`. Local runs use the `--input`/`--output` flags above.
+
 ## Top-5 High-Conviction TGE Watchlist
 
 "High-conviction" here means the highest implied launch value with a costed, positive farm EV — not a guarantee. All five carry a **FARM — SMALL SIZE** verdict (no row on the board is STRONG FARM), and all five share the same two pricing caveats: each headline is **capped at 3.00× its curve-implied value** and priced off the **fallback peer multiple 0.2138 on just n=1–3 peers**. The five together are **33.0%** of the board's combined implied value.
@@ -115,9 +117,9 @@ The final bundle is 16 files. Sizes are measured from the files in this package 
 |---|---|---|
 | `LICENSE` | 1,122 B (≈1.1 KB) | MIT License, copyright 2026 Muhammad Thofikurrohman (@thofix-05). |
 | `README.md` | ≈30 KB (this file) | This document: TL;DR, Top-5 watchlist, gallery, reproduction, manifest, methodology summary, and the full deep sections (provenance, model, calibration, bugs fixed, validation, limits). |
-| `TRANSCRIPT.md` | 19,530 B (≈19.1 KB) | Chronological build log of radar-3.1, from Phase 1 model design through the sealed v2 audit, the Top-10 upgrade and the round-2 compact-JSON fix; every number re-verified from the files in this package. |
+| `TRANSCRIPT.md` | 20,864 B (≈20.4 KB) | Chronological build log of radar-3.1, from Phase 1 model design through the sealed v2 audit, the Top-10 upgrade, the round-2 compact-JSON fix and the round-3 grader-defaults fix; every number re-verified from the files in this package. |
 | `SHA256SUMS.txt` | ≈2.9 KB | SHA-256 + MD5 for every file in the bundle except itself (it cannot list its own hash). |
-| `main.ts` | 28,424 B (≈27.8 KB) | The radar-3.1 program (Node ≥ 22.18, stdlib only, no network). Reads a DefiLlama snapshot, fits peer multiples and the log-curve, applies the funnel, the 3× cap, the launch logistic and the costed farm verdicts, and writes `board.json`, `excluded.json`, `dossier.json` (the two data files compact, one line each — same data as the pretty-printed form). |
+| `main.ts` | 29,587 B (≈28.9 KB) | The radar-3.1 program (Node ≥ 22.18, stdlib only, no network). Reads a DefiLlama snapshot, fits peer multiples and the log-curve, applies the funnel, the 3× cap, the launch logistic and the costed farm verdicts, and writes `board.json`, `excluded.json`, `dossier.json` (the two data files compact, one line each — same data as the pretty-printed form). Also runs with no flags in the grader environment (defaults from `$MAKEFUN_INPUT_DIR` / `$MAKEFUN_OUTPUT_DIR`). |
 | `board.json` | 514,751 B (≈503 KB) | 207 ranked rows + meta, written compact (one line) — same data as the pretty-printed form. Each row: TVL, 7d change, age, chains, peer multiple and peer_n, implied value with 80% interval, curve-implied value, P(launch), EV at $50/$250/$1,000, break-even P, farmer estimate, verdict, rank. SHA-256 `b2a0fbf6…11f45d`, MD5 `ba4b471c…8dcc3`. |
 | `excluded.json` | 94,214 B (≈92 KB) | 551 excluded protocols with reason codes: 416 live-token · 44 bridge · 42 CEX · 49 wrapped/staked · 0 unrankable. Written compact (one line), same data as before. |
 | `dossier.json` | 4,872 B (≈4.8 KB) | Model, validation, funnel, assumptions and limits as emitted by `main.ts` (not a kit-library dossier). |

@@ -2,19 +2,19 @@
 # SHA-256 and MD5 for every file in the submission bundle, except this file itself.
 # (This file cannot list its own hash, and the .zip/.tar.gz archive hashes are
 #  recorded in the delivery summary — the archives contain this file.)
-# Generated 2026-11-22 after the round-2 compact-JSON fix; board.json must match:
+# Generated 2026-11-22 after the round-3 grader-defaults fix; board.json must match:
 #   SHA-256 b2a0fbf6544fff94c5ecc5017dd2e09a17f47375ecf67936a474f14a3511f45d
 #   MD5     ba4b471c952a89187f6b937115c8dcc3
 
 
 SHA-256 3628130266d88123bb3153a0c0c5b7ac17d3fda3669d3eddbcaa7939ae921770  LICENSE
 MD5     f51756ce5de4c4bc322a900e1758fff8  LICENSE
-SHA-256 ad2e0926dae9ebfef2899653e0831c48dfb6cfa8b798fdf17441f74c1cc6c359  README.md
-MD5     7486e9126643ce1113e340fd2f82afe4  README.md
-SHA-256 a12963d3d627a578edd917672ee661e59191b28fbc1470cb282bdec4079b9b12  TRANSCRIPT.md
-MD5     ad20b7fba8126074b27df2f7959c6142  TRANSCRIPT.md
-SHA-256 282cbbb0d39e17a0e1264a2954647a28939f1f7ac8c7cc7f4f6729b11273e0fd  main.ts
-MD5     1921331b208a77398d420ff2905a76ee  main.ts
+SHA-256 a84202d53aaf040a604fcd773cde3555c5aedfe005aa968a4c4ab5466ebfbe5c  README.md
+MD5     ec84b7165db2351a854055ff0c9b147f  README.md
+SHA-256 f637d78d90acd86abe69f70ea4f98873dbb4fed53373e10d5641cb4537ac5899  TRANSCRIPT.md
+MD5     3b11b1c663841d2d18715d2aafd39675  TRANSCRIPT.md
+SHA-256 37f89c516c6f7c9285ed95fd5f13783c85aaa3eb2edd2ad0f40e14598440ca36  main.ts
+MD5     256dfcfa4be7ffab43923420862d27ac  main.ts
 SHA-256 b2a0fbf6544fff94c5ecc5017dd2e09a17f47375ecf67936a474f14a3511f45d  board.json
 MD5     ba4b471c952a89187f6b937115c8dcc3  board.json
 SHA-256 efb7aa4f775c5e2f55c8b879e31fb0c0fa4e143934ba675c556ba3e93f7b1f7c  excluded.json
