@@ -17,18 +17,25 @@
  *
  * Model (radar-3.1 — changes vs radar-3, see README "Two bugs found and fixed"
  * and "radar-3.1 calibration"):
- *   implied_i = TVL_i x M_cat(i) x G_i x A_i x B_i x S_i, then capped at 3x the
- *           size-adjusted log-curve implied value (cap binds only where the
- *           size-blind median exceeds 3x the curve; 7 of 207 rows on the
- *           sealed snapshot).
- *   M_cat = median circulating Mcap/TVL among PRICED live-token peers
- *           (mcap_usd > 0) in the same category, used only when n_cat >= 10;
- *           a thin cohort falls back to the OVERALL priced median (0.2138,
- *           n = 128 on the sealed snapshot) — NOT the old 0.25 constant.
- *           Priced-only comparables exclude 16 zero/negative-mcap dead
- *           tokens that depressed the v1 median to 0.1689 and inflated
- *           thin category counts (Yield 13 -> 9, Liquid Staking 11 -> 9,
- *           CEX 11 -> 9). Only Lending (15) and Dexs (11) qualify at n >= 10.
+ *   implied_i = TVL_i x C(TVL_i) x G_i x A_i x B_i x S_i
+ *   C(TVL) = 10^(a + b*log10(TVL)) — the log-curve log10(FDV/TVL) =
+ *           a + b*log10(TVL), OLS-fitted on the snapshot's own 128 priced
+ *           live-token comparables at run time (a = 3.0247, b = -0.4777,
+ *           R^2 = 0.17 on the sealed snapshot). The curve is the headline:
+ *           it is the single best out-of-sample predictor of a token's
+ *           market cap from its TVL (leave-one-out median fold error 3.40x,
+ *           vs 5.10x for the flat category-median headline it replaces).
+ *           The old category median M_cat is DROPPED from pricing entirely:
+ *           it was used only at n >= 10 (Lending 15, Dexs 11) and the
+ *           overall median 0.2138 covered the other 165 of 207 rows; the
+ *           field tested category offsets and rejected them (they did not
+ *           beat the single curve out of sample). There is no cap: the 3x
+ *           curve cap of radar-3.1 is gone because the headline IS the curve.
+ *   The per-row 80% interval is the 10th-90th percentile of the curve's
+ *   own leave-one-out log prediction errors on the 128 priced comparables
+ *   (multipliers 0.062x / 8.629x) — a wide interval, honestly measured,
+ *   because a token's FDV/TVL varies ~3.4x around the curve even out of
+ *   sample. See README "Validation — sealed-comp LOO" for the full table.
  *   Exclusion (from snapshot fields at run time): a protocol with a recorded
  *           token is LIVE_TOKEN; bridges (category Bridge / Canonical Bridge
  *           / Cross Chain Bridge, or "bridge" in name/slug) are BRIDGE;
@@ -44,8 +51,7 @@
  *       TVL series, so S = 1.00 for every row on the sealed snapshot.
  *   logit p_launch = -2.41 + 0.63*log10(TVL/$50M) + 0.41*(age/1095)
  *                    + 0.38*launch_rate_cat + 0.27*chains_scaled
- *   EV_farm = p_launch x E[airdrop|launch] - total_costs
- *             - capital x 4.2% x hold_days/365
+ *   EV_farm = p_launch x E[airdrop|launch] - total_costs - capital x 4.2% x hold_days/365
  *   E[airdrop|launch] = implied x 7.3% / qualifying farmers
  *           (1 farmer per ~$4.5k TVL, clamped 400-60,000)
  *
@@ -245,25 +251,72 @@ for (const c of comparables) {
   if (!byCat.has(c.category)) byCat.set(c.category, []);
   byCat.get(c.category).push(c.mcap / c.tvl);
 }
-const catMult = new Map();
-for (const [cat, ratios] of byCat) catMult.set(cat, median(ratios));
 const overallMedian = median(comparables.map((c) => c.mcap / c.tvl));
+// (The category-median map is gone: the curve headline prices every row
+// from the fitted log-curve, not from a per-category median. overallMedian
+// is kept for the board meta / dashboard cohort display only.)
 // Log-curve fit: log10(FDV/TVL) = a + b*log10(TVL), OLS on comparables.
+// Refitted at run time from the snapshot's own priced comparables.
+// The curve is the headline multiple (see header comment). olsFit is also
+// used for the leave-one-out residuals that set the per-row 80% interval.
+function olsFit(xs, ys) {
+  const n = xs.length;
+  const mx = xs.reduce((a, b) => a + b, 0) / n;
+  const my = ys.reduce((a, b) => a + b, 0) / n;
+  let sxy = 0, sxx = 0, sst = 0;
+  for (let i = 0; i < n; i++) { sxy += (xs[i] - mx) * (ys[i] - my); sxx += (xs[i] - mx) ** 2; sst += (ys[i] - my) ** 2; }
+  const b = sxx > 0 ? sxy / sxx : 0;
+  const a = my - b * mx;
+  let ssr = 0;
+  for (let i = 0; i < n; i++) ssr += (ys[i] - (a + b * xs[i])) ** 2;
+  return { a, b, r2: sst > 0 ? 1 - ssr / sst : NaN };
+}
 let curveA = 0.2756, curveB = -0.1206; // Phase 1 fitted values; refit below when possible
+let curveR2 = NaN;
 {
   const xs = [], ys = [];
   for (const c of comparables) {
     if (c.tvl > 0 && c.mcap > 0) { xs.push(Math.log10(c.tvl)); ys.push(Math.log10(c.mcap / c.tvl)); }
   }
   if (xs.length >= 10) {
-    const mx = xs.reduce((a, b) => a + b, 0) / xs.length;
-    const my = ys.reduce((a, b) => a + b, 0) / ys.length;
-    let sxy = 0, sxx = 0;
-    for (let i = 0; i < xs.length; i++) { sxy += (xs[i] - mx) * (ys[i] - my); sxx += (xs[i] - mx) ** 2; }
-    if (sxx > 0) { curveB = sxy / sxx; curveA = my - curveB * mx; }
+    const fit = olsFit(xs, ys);
+    curveA = fit.a; curveB = fit.b; curveR2 = fit.r2;
   }
 }
 const curveMult = (tvl) => Math.pow(10, curveA + curveB * Math.log10(tvl));
+// LOO curve residuals: for each priced comparable, refit the log-curve on
+// the other 127 and record log10(actual mcap / LOO-predicted mcap). The
+// 10th and 90th percentiles of those residuals are the 80% interval
+// multipliers applied to every row's implied value. This is the curve's
+// own held-out error (median fold 3.40x on the sealed snapshot), not the
+// old median's. Linear-interpolation percentiles (numpy "linear" default).
+function looCurveInterval() {
+  const logErr = [];
+  for (let i = 0; i < comparables.length; i++) {
+    const xs = [], ys = [];
+    for (let j = 0; j < comparables.length; j++) {
+      if (j === i) continue;
+      xs.push(Math.log10(comparables[j].tvl));
+      ys.push(Math.log10(comparables[j].mcap / comparables[j].tvl));
+    }
+    const fit = olsFit(xs, ys);
+    const pred = comparables[i].tvl * Math.pow(10, fit.a + fit.b * Math.log10(comparables[i].tvl));
+    logErr.push(Math.log10(comparables[i].mcap / pred));
+  }
+  const s = [...logErr].sort((a, b) => a - b);
+  const pct = (q) => {
+    const pos = q * (s.length - 1);
+    const lo = Math.floor(pos), hi = Math.ceil(pos);
+    return s[lo] + (s[hi] - s[lo]) * (pos - lo);
+  };
+  const p10 = pct(0.10), p90 = pct(0.90);
+  // median fold error, for the run log and the README validation table
+  const folds = logErr.map((e) => Math.pow(10, Math.abs(e))).sort((a, b) => a - b);
+  const m = Math.floor(folds.length / 2);
+  const medFold = folds.length % 2 ? folds[m] : (folds[m - 1] + folds[m]) / 2;
+  return { loMult: Math.pow(10, p10), hiMult: Math.pow(10, p90), medFold, p10, p90 };
+}
+const looCI = looCurveInterval();
 
 // ---------- funnel ----------
 // Exclusion is computed from snapshot fields at run time, in this order.
@@ -365,12 +418,16 @@ function resolveProtocolActions(r) {
 function farmPlan(r) {
   const gas = GAS[r.main_chain] ?? 0.5;
   const bridge = r.chains.length > 1 ? 4 + Math.min(14, r.chains.length * 2) : 0;
-  const total = Math.round((gas * 3.5 + bridge) * 100) / 100;
   const tierCap = r.tvl_usd >= 500e6 ? 250 : r.tvl_usd >= 100e6 ? 150 : r.tvl_usd >= 50e6 ? 100 : 50;
   const split1 = Math.round(tierCap * 0.65);
   const split2 = tierCap - split1;
   const hold = r.age_known && r.age_days > 900 ? 30 : r.age_known && r.age_days > 450 ? 60 : 90;
   const weeks = Math.max(4, Math.round(hold / 7));
+  // Total gas: 3 full-gas actions (deposit, second action, claim) + one weekly
+  // touch at half gas PER WEEK of the hold (round 9: the touch used to be
+  // charged once for a 9-13 week hold, undercounting cost by $4,086.28
+  // board-wide). Decomposition: gas * (3 + 0.5 * weeks) + bridge.
+  const total = Math.round((gas * (3 + 0.5 * weeks) + bridge) * 100) / 100;
   const [act1, act2] = resolveProtocolActions(r);
   const steps = [
     {
@@ -390,8 +447,8 @@ function farmPlan(r) {
     },
     {
       action: `Weekly touch (${weeks} weeks on ${r.main_chain}). Claim, compound, or rebalance once a week (~$${(Math.round(gas * 0.5 * 100) / 100).toFixed(2)}/wk) to keep ${r.name} active for the full ${hold}-day hold.`,
-      cost_usd: Math.round(gas * 0.5 * 100) / 100,
-      time_min: 5,
+      cost_usd: Math.round(gas * 0.5 * weeks * 100) / 100,
+      time_min: 5 * weeks,
     },
     {
       action: `Points / eligibility check on ${r.name}'s official points dashboard after week 1 — confirm the wallet is accruing before scaling above $${tierCap}.`,
@@ -426,38 +483,26 @@ function evAt(r, size, fp) {
 
 const wrappedExcluded = excluded.some((e) => ["BRIDGE", "CEX", "WRAPPED_STAKED"].includes(e.code));
 const rows = ranked.map((p) => {
-  const multRaw = catMult.get(p.category);
-  const nCat0 = byCat.get(p.category)?.length ?? 0;
-  // Phase 1 spec: category median only when the cohort is big enough (n >= 10);
-  // a thin cohort (n < 10) falls back to the OVERALL PRICED median
-  // (overallMedian, 0.2138 on n=128 priced comparables) — NOT the old 0.25
-  // constant. A single-comparable "median" (e.g. one 400x outlier) must
-  // never price a category. Only Lending (15) and Dexs (11) qualify at
-  // n >= 10 on the sealed snapshot; 165 of 207 rows are on the fallback.
-  const mult = nCat0 >= 10 && multRaw !== undefined ? multRaw : overallMedian;
-  const multFallback = nCat0 < 10;
   const G = 1 + clamp(p.chg7, -60, 120) / 100 * 0.5;
   const ageKnown = Number.isFinite(p.age);
   const ageEff = ageKnown ? p.age : 365;
   const A = 0.6 + Math.min(ageEff, 1095) / 1095 * 0.4;
   const B = 1 + Math.min(p.chains.length - 1, 4) * 0.03;
   const S = 1 - 0.5 * Math.min(p.dd30, 0.40);
+  // Curve headline: the implied value is the fitted log-curve multiple at
+  // this protocol's TVL, times the G/A/B/S adjustments. No category median
+  // (dropped — the field tested category offsets and they did not beat the
+  // single curve out of sample) and no 3x cap (the headline IS the curve).
+  // peer_multiple is kept as the row's curve multiple so the dashboard's
+  // pricing waterfall reads unchanged; it is no longer a category median.
   const cm = curveMult(p.tvl);
-  const curveImplied = p.tvl * cm * G * A * B * S;
-  // radar-3.1 cap: the size-blind median overstates giant protocols — the
-  // log-curve (R² = 0.17, weak: it is a guardrail, not a headline) puts
-  // Steakhouse's curve-implied at $79.7M against a $520.7M median headline
-  // (6.5x). Cap the headline at 3x the curve-implied value: it binds only
-  // 7 of 207 rows (TVL ≳ $1B) and leaves the other 200 rows' Phase-1
-  // median pricing untouched. A geometric-mean blend was rejected: it would
-  // rewrite every row and inflate small-TVL rows by up to ~70% on a weak fit.
-  const uncappedImplied = p.tvl * mult * G * A * B * S;
-  const capApplied = uncappedImplied > 3 * curveImplied;
-  const implied = capApplied ? 3 * curveImplied : uncappedImplied;
-  const headlineMult = implied / (p.tvl * G * A * B * S);
+  const implied = p.tvl * cm * G * A * B * S;
   const nCat = byCat.get(p.category)?.length ?? 0;
-  const sig = 0.62 / Math.sqrt(Math.max(nCat, 1)) + 0.11;
-  const lo = implied * Math.exp(-1.2816 * sig), hi = implied * Math.exp(1.2816 * sig);
+  // 80% interval from the curve's own LOO residuals (see looCurveInterval):
+  // the 10th/90th percentiles of log10(actual/predicted) on the 128 priced
+  // comparables, applied to the final implied value. Wide by design — a
+  // token's FDV/TVL varies ~3.4x around the curve even out of sample.
+  const lo = implied * looCI.loMult, hi = implied * looCI.hiMult;
   const launchRate = CATEGORY_LAUNCH_RATE[p.category] ?? 0.22;
   const logitP = LOGIT.intercept + LOGIT.tvl * Math.log10(p.tvl / 50e6)
     + LOGIT.age * (ageEff / 1095) + LOGIT.launchRate * launchRate
@@ -470,10 +515,10 @@ const rows = ranked.map((p) => {
     tvl_usd: p.tvl, tvl_change_7d_pct: p.chg7, tvl_change_30d_pct: p.chg30, tvl_drawdown_30d: p.dd30,
     age_days: p.age, age_known: ageKnown,
     growth_G: G, maturity_A: A, breadth_B: B, stability_S: S,
-    peer_multiple: mult, peer_multiple_is_category_median: nCat0 >= 10 && multRaw !== undefined, peer_multiple_fallback_used: multFallback, peer_n: nCat,
-    headline_multiple: headlineMult, cap_applied: capApplied,
+    peer_multiple: cm, peer_multiple_is_category_median: false, peer_multiple_fallback_used: false, peer_n: nCat,
+    headline_multiple: cm, cap_applied: false,
     implied_usd: implied, implied_value_usd: Math.round(implied), implied_lo80_usd: lo, implied_hi80_usd: hi,
-    curve_multiple: cm, curve_implied_usd: curveImplied, curve_disagrees_gt35pct: Math.abs(cm / mult - 1) > 0.35,
+    curve_multiple: cm, curve_implied_usd: implied, curve_disagrees_gt35pct: false,
     p_launch_12m: prob, p_launch_lo80: logistic(logitP - 1.2816 * seL), p_launch_hi80: logistic(logitP + 1.2816 * seL),
     p_3x_given_launch: clamp(launchRate * 0.6, 0.03, 0.34),
     integrity: { token_absent_3of3: true, wrapped_staked_excluded: wrappedExcluded, tvl_single_count: true, audit_in_snapshot: null },
@@ -488,7 +533,7 @@ const rows = ranked.map((p) => {
   // The per-step cost/time detail lives in the dashboard's own farm-plan
   // renderer (it recomputes the plan from the row); board.json keeps the text.
   r.farm_steps = fp.steps.map((s) => s.action);
-  r.gas_trap_50 = fp.costs.gas_usd_per_action * 3.5 > 0.20 * 50;
+  r.gas_trap_50 = fp.costs.gas_usd_per_action * (3 + 0.5 * Math.max(4, Math.round(fp.hold / 7))) > 0.20 * 50;
   r.verdict = (r.ev_250_usd > 25 && r.p_launch_12m >= 0.35) ? "STRONG FARM"
     : r.ev_250_usd >= 5 ? "FARM — SMALL SIZE"
     : (r.ev_250_usd >= -5 || (r.p_launch_12m >= 0.15 && r.p_launch_12m < 0.35)) ? "WATCH" : "FADE / SKIP";
@@ -516,13 +561,10 @@ const board = {
     log_curve: { a: curveA, b: curveB },
     calibration: {
       comparables_rule: "priced live-token peers only: mcap_usd > 0 with CoinGecko id and symbol (16 zero/negative-mcap dead tokens excluded)",
-      category_median_rule: "category median used only at n >= 10 priced comparables (qualifying: Lending 15, Dexs 11)",
-      fallback_rule: "thin cohorts (n < 10) use the overall priced median (0.2138, n=128), flagged peer_multiple_fallback_used",
-      cap_rule: "headline implied capped at 3x the size-adjusted log-curve implied value (cap_applied flag per row)",
+      pricing_rule: "headline multiple is the fitted log-curve C(TVL) = 10^(a + b*log10(TVL)), OLS on the 128 priced comparables (a=3.0247, b=-0.4777, R2=0.17); no category median, no cap — the category median was tested and rejected (it did not beat the single curve out of sample)",
+      loo_curve: { median_fold: looCI.medFold, lo_mult: looCI.loMult, hi_mult: looCI.hiMult },
+      interval_rule: "per-row 80% interval = 10th/90th percentiles of the curve's leave-one-out log prediction errors on the 128 priced comparables, applied to the final implied value",
       stability_note: "snapshot carries no 30-day TVL series, so stability S = 1.00 for every row",
-      fallback_rows: rows.filter((r) => r.peer_multiple_fallback_used).length,
-      cap_rows: rows.filter((r) => r.cap_applied).length,
-      curve_disagree_rows: rows.filter((r) => r.curve_disagrees_gt35pct).length,
     },
     funnel: {
       protocols_in_snapshot: totalIn,
@@ -541,7 +583,7 @@ const board = {
     verdicts,
     category_totals_usd: catTotals,
     formulas: {
-      implied: "implied_i = TVL_i × M_cat(i) × G_i × A_i × B_i × S_i",
+      implied: "implied_i = TVL_i × C(TVL_i) × G_i × A_i × B_i × S_i, C(TVL) = 10^(3.0247 − 0.4777·log10(TVL))",
       logit_p_launch: "logit p = −2.41 + 0.63·log10(TVL/$50M) + 0.41·(age/1095) + 0.38·launch_rate_cat + 0.27·chains_scaled",
       ev_farm: "EV = p_launch × E[airdrop|launch] − total_costs − capital × 4.2% × hold_days/365",
     },
@@ -580,9 +622,9 @@ writeFileSync(join(args.output, "dossier.json"), buildDossier(args.output, {
 }));
 
 console.log(`token-radar-01 radar-3.1: ${totalIn} protocols in snapshot, ${rows.length} ranked, ${excluded.length} excluded (${exCounts.LIVE_TOKEN ?? 0} live-token, ${exCounts.BRIDGE ?? 0} bridge, ${exCounts.CEX ?? 0} cex, ${exCounts.WRAPPED_STAKED ?? 0} wrapped/staked, ${exCounts.UNRANKABLE ?? 0} unrankable)`);
-console.log(`comparables: ${comparables.length} priced live-token protocols; overall median Mcap/TVL ${Number.isFinite(overallMedian) ? overallMedian.toFixed(4) : "n/a"}; log-curve a=${curveA.toFixed(4)} b=${curveB.toFixed(4)}`);
+console.log(`comparables: ${comparables.length} priced live-token protocols; log-curve a=${curveA.toFixed(4)} b=${curveB.toFixed(4)} R2=${curveR2.toFixed(3)}; LOO median fold ${looCI.medFold.toFixed(2)}x, 80% interval multipliers ${looCI.loMult.toFixed(3)}x/${looCI.hiMult.toFixed(3)}x`);
 console.log(`combined implied $${(totalImplied / 1e6).toFixed(1)}M; verdicts ${JSON.stringify(verdicts)}`);
-console.log(`fallback rows: ${rows.filter((r) => r.peer_multiple_fallback_used).length}; cap-applied rows: ${rows.filter((r) => r.cap_applied).length}; curve-disagree rows: ${rows.filter((r) => r.curve_disagrees_gt35pct).length}; watchlist caught by exclusion: ${watchlistCaught.length}`);
+console.log(`watchlist caught by exclusion: ${watchlistCaught.length}`);
 console.log(`wrote ${join(args.output, "board.json")}, excluded.json, dossier.json, dashboard/ (3 files), screenshots/ (4 files)`);
 if (rows.length < 100) console.warn(`WARNING: only ${rows.length} ranked rows — the bounty requires board.json with at least 100 rows covering the whole watchlist.`);
 if (rows.length + excluded.length !== totalIn) console.warn("WARNING: ranked + excluded does not equal protocols in snapshot — funnel leak.");

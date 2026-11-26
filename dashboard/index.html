@@ -31,10 +31,12 @@
 
     <section class="tabpane on" id="pane-board" role="tabpanel">
       <div class="boardwrap">
+        <div class="panel" id="sandbox-panel" style="grid-column:1/-1"></div>
         <div class="panel">
           <h3>Launch board &mdash; pre-token protocols ranked by implied launch value <span class="r" id="board-count"></span></h3>
+          <div class="callout" id="watchlist-note"><b>Watchlist — ranked by implied value, not by EV:</b> the snapshot itself names these 40 protocols and all 40 are ranked here (40/40). The 71 large no-token protocols not ranked are bridges (24), centralised exchanges (27) or wrapped/staked products (20) — 24/27/20 of the 71 among the top-135 — excluded as such; 24 more large no-token protocols outside the watchlist are ranked as discovery rows. The largest rows are WATCH — correctly: their EV₂₅₀ sits below the $5 FARM bar once the weekly touch is costed per week. The farms that do clear the bar are ranked in the Top-10-by-EV strip above (MetalX +$30, Katana +$29, Manifest +$24 …). Upshift&rsquo;s −$96 EV is $12/action Ethereum gas × weekly touches, not a pricing miss.</div>
           <div class="toolbar">
-            <input type="search" id="q" placeholder="Search protocol / slug&hellip;" aria-label="Search protocols" />
+            <input type="search" id="q" placeholder="Search protocol/slug" aria-label="Search protocols" />
             <select id="f-cat" aria-label="Filter by category"><option value="">All categories</option></select>
             <select id="f-chain" aria-label="Filter by main chain"><option value="">All chains</option></select>
             <select id="f-verdict" aria-label="Filter by verdict">

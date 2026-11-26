@@ -1,36 +1,36 @@
 # SHA256SUMS.txt — Token Launch Radar (token-radar-01), model radar-3.1
 # SHA-256 and MD5 for every file in the submission bundle, except this file itself.
 # (This file cannot list its own hash.)
-# Generated 2026-11-23 after the round-6 concrete farm steps; board.json must match:
-#   SHA-256 8fbba6feee7b4829e148f351c8d2f89b172f8eb3fb9533061023431b95399629
-#   MD5     5e0171139d1fb75644f29909ac6d4172  (cross-check — this is the MD5, not a SHA-256)
+# Generated 2026-11-26 WIB after the round-21 five-fix pass (gap-analysis-round21.md §C) and TRANSCRIPT/README update; board.json must match:
+#   SHA-256 f129eb58d18dbf793f816280f577c50da50a63cc66739ac0439ab7ab7382771b
+#   MD5     356fb20f541d2836939c54253ec1cf94  (cross-check — this is the MD5, not a SHA-256)
 3628130266d88123bb3153a0c0c5b7ac17d3fda3669d3eddbcaa7939ae921770  LICENSE
 f51756ce5de4c4bc322a900e1758fff8  LICENSE (MD5)
-7f53f28900e454f110dcfc4525a3a4464831871eb88546627de0a8dd18f60539  README.md
-7b481c52c8a23f35b62f17745d38307b  README.md (MD5)
-6e7b089bf854bac4ead1d6243f2d45686bb491e3bb9aa4ca9caec071115f64ae  TRANSCRIPT.md
-7fd30c9bfb5aa9f9506665cb0932f017  TRANSCRIPT.md (MD5)
-74165bab41f54ce48f7390f1a8d1691c96e5f966a8a150d98abdb3c61f44bd2b  main.ts
-62cd6b477a58bf74a1b2807f1b341039  main.ts (MD5)
-8fbba6feee7b4829e148f351c8d2f89b172f8eb3fb9533061023431b95399629  board.json
-5e0171139d1fb75644f29909ac6d4172  board.json (MD5)
+9ca385573ad41d940f7ce559a3134042a707e3a5f3622fae6b70a9445c0b2301  README.md
+871ed4aa02c93674275deb779dc8bbda  README.md (MD5)
+728eb37b9667e6f2e25c0fccb23228ff9f2c5ea69d7498b3e3dc7818c2d60d1c  TRANSCRIPT.md
+7343975d9902d63f875baab50fdaea6a  TRANSCRIPT.md (MD5)
+9db0a2ef7a9879f391dff9def77a721fa4a5394acda162757cb5ecb6b66c0ed0  main.ts
+43e52a582114882285b1ff79ba022353  main.ts (MD5)
+f129eb58d18dbf793f816280f577c50da50a63cc66739ac0439ab7ab7382771b  board.json
+356fb20f541d2836939c54253ec1cf94  board.json (MD5)
 efb7aa4f775c5e2f55c8b879e31fb0c0fa4e143934ba675c556ba3e93f7b1f7c  excluded.json
 98b7fe7aa4ffc4d7256516b0ed0886ed  excluded.json (MD5)
-1ab38d8260e5ca67e71c0300a9c313837a739241e4bba5618dd9b62744fed236  dossier.json
-772d12301fed572bb8d8c4056fb251ce  dossier.json (MD5)
+a9e453d2ab434a77e47d54d7a2181ee5896b7c7ffbebf0ef1f643c15ae32d7b1  dossier.json
+401fb3c401204cc0050769b224856950  dossier.json (MD5)
 9ca51b6e5cd84fe46cb0efa61e2ea99365a1fb0e21f2b75e6007f977f0dc326e  vendor/makefun-board.ts
 5ba220c2671b81b1c453350f3235adf4  vendor/makefun-board.ts (MD5)
-8bf2729913ac040429ae3b10634bd0260530c03ad5906f4b3a05a4d8bd7e73a1  dashboard/index.html
-a4ee513ef1333e338c9a57d711e8aeeb  dashboard/index.html (MD5)
-8ede8b3fd230fad8103bae1de7df8fc4a1ef2fbaf2dd2c51e22eaba9ab167943  dashboard/style.css
-be4a0f48c7df14cfd0ef7f408fa27dc6  dashboard/style.css (MD5)
-1717fef5d6fc59c42b4db4460b43fe5e12efabc567a0d3ca4b38084918a74c7e  dashboard/app.js
-a02f229813e4929d55c55712f9be40d8  dashboard/app.js (MD5)
-035dda8999cf5559877da1da69eccac2005a4a30a189097da7bc4286a3ec51cf  screenshots/01-desktop-overview.png
-a40d08059e97868b470287d3cd3e3c5e  screenshots/01-desktop-overview.png (MD5)
-5d610f230a5cc2a1083116c87dd36e0c13d091352463315053410ee093a2103a  screenshots/02-watchlist-detail.png
-92890dbfec5023138de32a7c56aac480  screenshots/02-watchlist-detail.png (MD5)
-f941da81c3eb5ed4cc31ade47cfaa9068180b208eb0c38aeec43856ddd8dfd31  screenshots/03-methodology-filters.png
-0dbcb9a266b5c407bf314dafb2e804d5  screenshots/03-methodology-filters.png (MD5)
-50534285cf987520c1ef23460af6b74e87f4b5b3a7c34415b4b37a67bfd12636  screenshots/05-validation-audit.png
-6e1a99e16aa6e8e3c89158a669b1bf4c  screenshots/05-validation-audit.png (MD5)
+8b48110a2cfe22fbe06a388909f297c0f9570d92e215313fe3ef765a94947291  dashboard/index.html
+6f03ab42b88bef823bc91978cd73ec77  dashboard/index.html (MD5)
+5379aa9d1f1e0452f5b0f1228f7fdf9fcad2e8eb8a80349380e572be1210a37c  dashboard/style.css
+c0d1bdcb7c9689340a3417df6f02dcdd  dashboard/style.css (MD5)
+527f787e377a5b8f4996313853e5f53a4a1682ef9760cfd6be14f357e5d2fa0c  dashboard/app.js
+aaba356aea5f0d87a0100f98eb52ff9d  dashboard/app.js (MD5)
+274ffd06a020426a2cd6cb11ade48043d21f1a0b6eb0e05ca40ffbd6e37e2795  screenshots/01-desktop-overview.png
+c2361bc0b6646fef9666ba2ba1a38db4  screenshots/01-desktop-overview.png (MD5)
+8f07c6f600f260a8fc33ee9b6f300cc55939a93eb9ab6051e0cd42f6b5650b13  screenshots/02-watchlist-detail.png
+ebd683b22b698099960a1fc248b57303  screenshots/02-watchlist-detail.png (MD5)
+d290517c9fc7471c98f343a1b5a5bc376c613fbf09b7e00ad55744711f907b5a  screenshots/03-methodology-filters.png
+c8c94edc5ac354f9e338767a893a99b9  screenshots/03-methodology-filters.png (MD5)
+9f03b649404351820f146743dce9d36383d040c8cdad37d39da617c090f608c2  screenshots/05-validation-audit.png
+de07fed7590606e2986a0880accb4631  screenshots/05-validation-audit.png (MD5)
