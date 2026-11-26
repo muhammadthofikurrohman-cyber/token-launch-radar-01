@@ -3,7 +3,7 @@
       * { box-sizing: border-box; }
       :root{
         --bg:#0A0E14; --panel:#0F1620; --panel2:#0C1219; --line:#1E2A38; --line2:#27374A;
-        --tx:#C9D4E0; --tx2:#8CA0B5; --tx3:#5D7189;
+        --tx:#C9D4E0; --tx2:#A8BCD0; --tx3:#7E94AC;
         --grn:#2ECC71; --amb:#F5A623; --red:#FF5A5A; --cyn:#4CC2FF;
         --mono:ui-monospace,"SF Mono","Cascadia Code","JetBrains Mono",Menlo,Consolas,monospace;
         --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
@@ -18,13 +18,13 @@
       .topbar .meta b{ color:var(--tx); font-weight:600; }
       .topbar .right{ margin-left:auto; font-family:var(--mono); font-size:11.5px; color:var(--tx3); }
       .kpis{ display:grid; grid-template-columns:repeat(7,1fr); gap:1px; background:var(--line); border-bottom:1px solid var(--line); }
-      .kpi{ background:var(--panel); padding:7px 14px 6px; min-width:0; }
+      .kpi{ background:var(--panel); padding:10px 14px 8px; min-width:0; }
       .kpi .lab{ font-size:10.5px; letter-spacing:.09em; text-transform:uppercase; color:var(--tx3); font-family:var(--mono); white-space:normal; overflow:visible; text-overflow:clip; line-height:1.3; }
-      .kpi .val{ font-family:var(--mono); font-size:21px; font-weight:600; color:#EDF4FB; margin-top:2px; white-space:nowrap; }
-      .kpi .sub{ font-family:var(--mono); font-size:10.5px; color:var(--tx2); margin-top:2px; line-height:1.4; }
+      .kpi .val{ font-family:var(--mono); font-size:22px; font-weight:600; color:#EDF4FB; margin-top:2px; white-space:nowrap; }
+      .kpi .sub{ font-family:var(--mono); font-size:11px; color:var(--tx2); margin-top:2px; line-height:1.4; }
       .kpi .sub .up{ color:var(--grn); } .kpi .sub .warn{ color:var(--amb); }
       .strip{ display:flex; flex-wrap:wrap; align-items:stretch; gap:1px; background:var(--line); border-bottom:1px solid var(--line); }
-      .strip .cell{ background:var(--panel2); padding:6px 12px; flex:1 1 auto; min-width:118px; }
+      .strip .cell{ background:var(--panel2); padding:8px 14px; flex:1 1 auto; min-width:118px; }
       .strip .cell .n{ font-family:var(--mono); font-size:16px; font-weight:600; color:#EDF4FB; }
       .strip .cell .d{ font-size:11px; color:var(--tx2); font-family:var(--mono); }
       .strip button.cell{ border:0; text-align:left; cursor:pointer; color:inherit; font:inherit; }
@@ -33,11 +33,11 @@
       .strip .arrow{ align-self:center; color:var(--tx3); font-family:var(--mono); padding:0 2px; background:var(--panel2); }
       .strip .ok{ color:var(--grn); } .strip .bad{ color:var(--red); } .strip .mid{ color:var(--amb); }
       .src{ display:block; font-size:10px; color:var(--tx3); font-family:var(--mono); margin-top:1px; white-space:normal; }
-      .evstrip{ border-bottom:1px solid var(--line); background:var(--panel2); padding:6px 14px 6px; }
+      .evstrip{ border-bottom:1px solid var(--line); background:var(--panel2); padding:8px 14px 8px; }
       .evstrip .eh{ font-family:var(--mono); font-size:11px; letter-spacing:.09em; text-transform:uppercase; color:var(--tx2); margin-bottom:3px; }
       .evstrip .eh .r{ float:right; color:var(--tx3); letter-spacing:0; text-transform:none; }
       .evchips{ display:flex; flex-wrap:wrap; gap:4px; }
-      .evchip{ background:var(--panel); border:1px solid var(--line2); color:var(--tx); font-family:var(--mono); font-size:11.5px; padding:4px 9px; cursor:pointer; text-align:left; min-height:26px; }
+      .evchip{ background:var(--panel); border:1px solid var(--line2); color:var(--tx); font-family:var(--mono); font-size:11.5px; padding:5px 10px; cursor:pointer; text-align:left; min-height:26px; }
       .evchip:hover{ background:#131E2C; }
       .evchip:focus-visible{ outline:2px solid var(--cyn); outline-offset:1px; }
       .evchip b{ color:#EDF4FB; } .evchip .rk{ color:var(--cyn); font-weight:700; }
@@ -87,14 +87,14 @@
       .pager button, .mini-btn{ background:var(--panel2); border:1px solid var(--line2); color:var(--tx); font-family:var(--mono); font-size:12px; padding:6px 12px; cursor:pointer; min-height:36px; }
       .pager button:disabled{ opacity:.4; cursor:default; }
       .pager .info{ font-family:var(--mono); font-size:12px; color:var(--tx2); }
-      .side{ display:flex; flex-direction:column; gap:6px; min-width:0; }
+      .side{ display:flex; flex-direction:column; gap:8px; min-width:0; }
       .kv{ display:flex; justify-content:space-between; gap:10px; padding:1px 12px; font-size:12.5px; }
       .kv .k{ color:var(--tx2); } .kv .v{ font-family:var(--mono); text-align:right; }
       .pbar{ height:8px; background:#16202D; position:relative; margin:3px 12px 1px; }
       .pbar .fill{ position:absolute; top:0; bottom:0; background:var(--cyn); }
       .pbar .ci2{ position:absolute; top:-3px; bottom:-3px; border-left:2px solid #EDF4FB; border-right:2px solid #EDF4FB; opacity:.55; }
       .pbar-lab{ display:flex; justify-content:space-between; padding:0 12px 2px; font-family:var(--mono); font-size:11px; color:var(--tx3); }
-      .bar-row{ display:grid; grid-template-columns:152px 1fr 96px; /* round 20 (L13-visual): fits "Onchain Capital Allocator" */ gap:8px; align-items:center; padding:0 12px; font-size:12px; }
+      .bar-row{ display:grid; grid-template-columns:152px 1fr 96px; /* round 21: fits "Onchain Capital Allocator" and "$461.4M · 34" on one line; narrowing the value col wraps it */ gap:8px; align-items:center; padding:0 12px; font-size:12px; }
       .bar-row .nm{ color:var(--tx2); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
       .bar-row .tr{ height:10px; background:#16202D; } .bar-row .fl{ height:100%; background:#2F6EA3; }
       .bar-row .vl{ font-family:var(--mono); text-align:right; }
@@ -142,7 +142,7 @@
       .evgrid{ display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--line); border:1px solid var(--line); }
       .evgrid .c{ background:var(--panel2); padding:2px 10px; }
       .evgrid .c .l{ font-family:var(--mono); font-size:10.5px; color:var(--tx3); letter-spacing:.07em; }
-      .evgrid .c .v{ font-family:var(--mono); font-size:15px; font-weight:600; margin-top:2px; }
+      .evgrid .c .v{ font-family:var(--mono); font-size:16px; font-weight:600; margin-top:2px; }
       .drawer .kv{ padding-top:1px; padding-bottom:1px; font-size:12px; line-height:1.3; }
       .drawer .note{ padding-top:3px; padding-bottom:5px; font-size:11.5px; line-height:1.4; }
       footer{ padding:14px; border-top:1px solid var(--line); font-family:var(--mono); font-size:11.5px; color:var(--tx3); display:flex; flex-wrap:wrap; gap:6px 20px; }

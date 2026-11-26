@@ -12,6 +12,11 @@
    Walk-forward (128 comparables, oldest first; 33 with no listed_at as 365 d;
    64/64): older → newer 2.91x vs median 4.89x · newer → older 3.92x
    vs median 6.06x. The walk-forward median is the overall median of the training half (flat), not M_cat.
+   Flat-rule check, same snapshot: our first sealed board used a flat median
+   and crowned Coinbase Bridge $1.64B, WBTC $1.37B, Binance Bitcoin $991.8M —
+   bridges and wrapped products that will never launch. The fitted curve crowns
+   Steakhouse $79.7M, Sentora $74.5M, Gauntlet $61.9M. The flat median priced
+   the top-10 giants ~3x their curve value (5.2x Steakhouse).
    80% interval: p10/p90 of the curve's LOO log errors (0.062x / 8.629x, 139.4x wide);
    coverage 79.7% (102 of 128 inside it) — calibrated to 80% by construction.
    Temporal hold-out (fit ≤2025-06-30, n=41 launches): 3.87×, bias +0.11, 80% coverage 78% (32/41); launch model AUC 0.79, Brier 0.118 vs 0.197, P@20 0.60, slope 0.94.
@@ -42,8 +47,6 @@
    so FARM fell 83 → 62. Implied values are unchanged vs the pre-repricing board.
    Sensitivity (Steakhouse, in the drawer): implied −20% curve multiple → $63.8M; −30% TVL (curve repriced) → $66.2M; both → $52.9M.
    =========================================================================== */
-/* ============ deterministic PRNG (mulberry32) ============ */
-function mulberry32(seed){ return function(){ seed|=0; seed = seed + 0x6D2B79F5 | 0; var t = Math.imul(seed ^ seed>>>15, 1|seed); t = t + Math.imul(t ^ t>>>7, 61|t) ^ t; return ((t ^ t>>>14)>>>0)/4294967296; }; }
 function clamp(x,a,b){ return Math.min(b, Math.max(a,x)); }
 function logistic(x){ return 1/(1+Math.exp(-x)); }
 
@@ -64,7 +67,6 @@ function fmtUSDfull(x){
 function fmtPct(x, dec){ return (x*100).toFixed(dec != null ? dec : 1) + "%"; }
 function fmtSigned(x){ return (x >= 0 ? "+" : "−") + "$" + Math.abs(x).toFixed(0); }
 function esc(s){ return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;"); }
-function slugify(s){ return s.toLowerCase().replace(/&/g,"and").replace(/[^a-z0-9]+/g,"-").replace(/^-+|-+$/g,""); }
 
 /* ============ category model (radar-3, sealed snapshot) ============
    mult: the fitted log-curve multiple at the category's MEDIAN row TVL
@@ -77,7 +79,6 @@ var CATNAMES = ["Anchor BTC","Basis Trading","CDP","CDP Manager","CeDeFi","Chain
 var GAS = { "Ethereum":12.00, "Solana":0.05, "Arbitrum":1.00, "Base":1.00, "Optimism":1.00, "Polygon":0.50, "BNB Chain":0.50, "Avalanche":0.50, "zkSync Era":1.00, "Linea":1.00, "Scroll":1.00, "Mantle":0.50, "Sonic":0.50, "Berachain":0.50, "HyperEVM":0.50 };
 var CURVE_A = 3.0246728051987968, CURVE_B = -0.47773445148599736;
 function curveMult(tvl){ return Math.pow(10, CURVE_A + CURVE_B*Math.log10(tvl)); }
-var LOO_MED_FOLD = 3.40;
 var LOO_LO_MULT = 0.0619;
 var LOO_HI_MULT = 8.6290;
 
@@ -449,11 +450,11 @@ function renderKPIs(){
   var tiles = [
     { lab:"Protocols in snapshot", val:"758", sub:"sealed snapshot · 2026-11-14" },
     { lab:"Record no token", val:"342", sub:"no mcap · no CG id · no symbol" },
-    { lab:"Ranked on board", val:"207", sub:"40 watchlist (all 40 listed) + 167 discovery · verdicts " + vc["STRONG FARM"] + " STRONG / " + vc["FARM — SMALL SIZE"] + " FARM / " + vc["WATCH"] + " WATCH / " + vc["FADE / SKIP"] + " FADE" },
-    { lab:"Fitted log-curve", val:"LOO 3.40×", sub:"median fold error · n = 128 priced peers · log₁₀(FDV/TVL) = 3.0246728051987968 − 0.47773445148599736·log₁₀(TVL)" },
-    { lab:"Launch model · held-out", val:"AUC 0.79", sub:"Brier 0.118 vs 0.197 · P@20 0.60 · Phase 1 calibration set (n=128) · temporal hold-out · held out ×2" },
-    { lab:"Combined implied value", val:fmtUSD(TOTAL_IMPLIED), sub:"80% CI " + fmtUSD(TOTAL_LO) + " – " + fmtUSD(TOTAL_HI) + " · median fold error 3.40×. Sum of per-row 80% intervals (LOO 3.40×); 102 of 128 comparables inside it." },
-    { lab:"Snapshot regime — not a live market call", val:regime, sub:"median 7d TVL Δ " + (med30 >= 0 ? "+" : "−") + Math.abs(med30).toFixed(1) + "% · " + fmtPct(posShare, 0) + " of rows growing · n=207 · snapshot 2026-11-14 (no 30d series in snapshot)" }
+    { lab:"Ranked on board", val:"207", sub:"40 watchlist + 167 discovery · " + vc["STRONG FARM"] + " STRONG / " + vc["FARM — SMALL SIZE"] + " FARM / " + vc["WATCH"] + " WATCH / " + vc["FADE / SKIP"] + " FADE" },
+    { lab:"Fitted log-curve", val:"LOO 3.40×", sub:"median fold error · n = 128 · curve 3.40× vs median 5.10× · walk-forward 2.91× / 3.92×" },
+    { lab:"Launch model · held-out", val:"AUC 0.79", sub:"Brier 0.118 vs 0.197 · P@20 0.60 · n=128 · temporal hold-out" },
+    { lab:"Combined implied value", val:fmtUSD(TOTAL_IMPLIED), sub:"80% CI " + fmtUSD(TOTAL_LO) + " – " + fmtUSD(TOTAL_HI) + " · 102 of 128 inside it" },
+    { lab:"Snapshot regime — not a live market call", val:regime, sub:"median 7d TVL Δ " + (med30 >= 0 ? "+" : "−") + Math.abs(med30).toFixed(1) + "% · " + fmtPct(posShare, 0) + " growing · n=207 · snapshot 2026-11-14" }
   ];
   $("kpis").innerHTML = tiles.map(function(t){
     return '<div class="kpi"><div class="lab">' + t.lab + '</div><div class="val num">' + t.val + '</div><div class="sub">' + t.sub + '</div></div>';
@@ -463,19 +464,13 @@ function renderStrip(){
   var cells = [
     { n:"758", d:"protocols in snapshot", act:"" },
     { n:"342", d:"record no token (3/3 checks)", act:"" },
-    { n:"40", d:"watchlist · all 40 the snapshot lists", act:"wl" },
-    { n:"207", d:"ranked rows on board", act:"board" },
-    { n:"49", d:"wrapped / staked excluded", act:"audit", cls:"mid" },
-    { n:"44", d:"bridges excluded", act:"audit", cls:"mid" },
-    { n:"42", d:"CEX excluded", act:"audit", cls:"mid" },
-    { n:"0", d:"unrankable · reason-coded", act:"audit", cls:"bad" },
-    { n:"416", d:"live-token excluded", act:"audit", cls:"dim" },
-    { n:"100%", d:"token-absence triple-check pass", act:"", cls:"ok" },
-    { n:"100%", d:"TVL single-count pass", act:"", cls:"ok" }
+    { n:"207", d:"ranked rows · 40 watchlist", act:"board" },
+    { n:"551", d:"excluded · 416 live-token · 49 wrapped · 44 bridge · 42 CEX · 0 unrankable", act:"audit", cls:"mid" },
+    { n:"100%", d:"token-absence triple-check + TVL single-count pass", act:"", cls:"ok" }
   ];
   $("strip").innerHTML = cells.map(function(c,i){
     var inner = '<div class="n num ' + (c.cls||"") + '">' + c.n + '</div><div class="d">' + c.d + '</div>';
-    var arrow = i > 0 && i < 4 ? '<span class="arrow">&rarr;</span>' : "";
+    var arrow = i > 0 && i < 3 ? '<span class="arrow">&rarr;</span>' : "";
     if (c.act) return arrow + '<button class="cell" data-act="' + c.act + '" title="Filter the board / open audit">' + inner + '</button>';
     return arrow + '<div class="cell">' + inner + '</div>';
   }).join("");
@@ -492,7 +487,7 @@ function renderStrip(){
 /* ============ Top 10 by EV @ $250 strip ============ */
 function renderTopEV(){
   var top = ROWS.slice().sort(function(a,b){ return b.ev250 - a.ev250; }).slice(0, 10);
-  $("top-ev").innerHTML = '<div class="eh">Top 10 by costed EV @ $250 (after per-week touch cost) — where the farm utility actually sits <span class="r">ranked on costed EV, not implied size · P = P(launch ≤ 12m) · click a chip for the dossier</span></div><div class="evchips">' +
+  $("top-ev").innerHTML = '<div class="eh">Top 10 by costed EV @ $250 <span class="r">ranked on EV, not implied size · best farms at board ranks 70–168 · click a chip for the dossier</span></div><div class="evchips">' +
     top.map(function(r, i){
       return '<button class="evchip" data-slug="' + r.slug + '"><span class="rk">#' + (i+1) + '</span> <b>' + esc(r.name) + '</b> · EV ' + fmtSigned(r.ev250) + ' · P ' + fmtPct(r.p, 0) + ' · ' + r.verdict + '</button>';
     }).join("") + "</div>";
@@ -506,21 +501,13 @@ var COLS = [
   { k:"rank", lab:"Rank", cls:"" },
   { k:"name", lab:"Protocol", cls:"l" },
   { k:"cat", lab:"Category", cls:"l" },
-  { k:"chains", lab:"Chains", cls:"c-chains" },
   { k:"tvl", lab:"TVL", cls:"" },
-  { k:"chg7", lab:"7d", cls:"c-chg" },
-  { k:"spark", lab:"7d path", cls:"c-spark" },
   { k:"implied", lab:"Implied · 80% CI<br><span style='font-size:9px'>79.7% (102/128) · LOO 3.40×</span>", cls:"" },
   { k:"p", lab:"P(launch 12m)", cls:"" },
   { k:"ev250", lab:"EV $250", cls:"c-ev" },
   { k:"verdict", lab:"Verdict", cls:"l" }
 ];
 var state = { sort:"rank", dir:1, page:0, perPage:25, showAll:false, q:"", cat:"", chain:"", verdict:"", wl:false, sel:ROWS[0].slug };
-function sparkSVG(pts, up){
-  var w=64, h=22, min=Math.min.apply(null,pts), max=Math.max.apply(null,pts), rg=(max-min)||1;
-  var s = pts.map(function(v,i){ return (i/(pts.length-1)*w).toFixed(1) + "," + (h-2-((v-min)/rg)*(h-4)).toFixed(1); }).join(" ");
-  return '<svg width="' + w + '" height="' + h + '" viewBox="0 0 ' + w + ' ' + h + '" aria-hidden="true"><polyline points="' + s + '" fill="none" stroke="' + (up ? "#2ECC71" : "#FF5A5A") + '" stroke-width="1.4"/></svg>';
-}
 function vClass(v){ return v === "STRONG FARM" ? "v-strong" : v.indexOf("FARM") === 0 ? "v-farm" : v === "WATCH" ? "v-watch" : "v-fade"; }
 function filtered(){
   var out = ROWS.filter(function(r){
@@ -567,15 +554,12 @@ function renderBoard(){
       '<td>' + r.rank + (r.watchlist ? ' <span class="wl" title="On the snapshot&rsquo;s own 40-protocol watchlist">WL</span>' : "") + "</td>" +
       '<td class="l"><span class="pname">' + esc(r.name) + '</span><br/><span class="pslug">' + r.slug + "</span></td>" +
       '<td class="l c-cat"><span class="cat">' + r.cat + "</span></td>" +
-      '<td class="c-chains" title="' + r.chains.join(", ") + '">' + r.chains.length + " · " + r.mainChain + "</td>" +
-      "<td>" + fmtUSD(r.tvl) + "</td>" +
-      '<td class="c-chg ' + (r.chg7 >= 0 ? "pos" : "neg") + '">' + (r.chg7 >= 0 ? "+" : "−") + Math.abs(r.chg7).toFixed(1) + "%</td>" +
-      '<td class="c-spark">' + sparkSVG(r.spark, r.chg7 >= 0) + "</td>" +
+      "<td>" + fmtUSD(r.tvl) + '<span class="ci ' + (r.chg7 >= 0 ? "pos" : "neg") + '">7d ' + (r.chg7 >= 0 ? "+" : "−") + Math.abs(r.chg7).toFixed(1) + "%</span></td>" +
       "<td><b>" + fmtUSD(r.implied) + '</b><span class="ci">' + fmtUSD(r.lo) + " – " + fmtUSD(r.hi) + "</span></td>" +
       "<td>" + fmtPct(r.p) + '<span class="ci">n=' + r.peersN + " peers</span></td>" +
       '<td class="c-ev ' + (r.ev250 >= 0 ? "pos" : "neg") + '">' + fmtSigned(r.ev250) + "</td>" +
       '<td class="l"><span class="vtag ' + vClass(r.verdict) + '">' + r.verdict + "</span></td></tr>";
-  }).join("") || '<tr><td colspan="11" class="l dim" style="padding:16px">No protocols match these filters. Loosen a filter — the funnel accounts for all 758 either way.</td></tr>';
+  }).join("") || '<tr><td colspan="8" class="l dim" style="padding:16px">No protocols match these filters. Loosen a filter — the funnel accounts for all 758 either way.</td></tr>';
   Array.prototype.forEach.call(document.querySelectorAll("#board-body tr[data-slug]"), function(tr){
     tr.addEventListener("click", function(){ selectRow(tr.getAttribute("data-slug"), true); });
   });
