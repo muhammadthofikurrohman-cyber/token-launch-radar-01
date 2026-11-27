@@ -1,13 +1,14 @@
 # SHA256SUMS.txt — Token Launch Radar (token-radar-01), model radar-3.1
 # SHA-256 and MD5 for every file in the submission bundle, except this file itself.
 # (This file cannot list its own hash.)
-# Generated 2026-11-26 WIB after the round-23 lever-2 pass (levers-round23.md §3: EV-vs-implied divergence, on top of lever 1); board.json must match:
+# Generated 2026-11-27 WIB for round 24 candidate F (combination: B evidence panel + D light theme + C card grid, on top of round 23 lever 1 + lever 2); board.json must match:
 #   SHA-256 f129eb58d18dbf793f816280f577c50da50a63cc66739ac0439ab7ab7382771b
 #   MD5     356fb20f541d2836939c54253ec1cf94  (cross-check — this is the MD5, not a SHA-256)
+
 3628130266d88123bb3153a0c0c5b7ac17d3fda3669d3eddbcaa7939ae921770  LICENSE
 f51756ce5de4c4bc322a900e1758fff8  LICENSE (MD5)
-9ca385573ad41d940f7ce559a3134042a707e3a5f3622fae6b70a9445c0b2301  README.md
-871ed4aa02c93674275deb779dc8bbda  README.md (MD5)
+fe94714d8f7bf7089c4f58b396657054d2fe257e134b6ca96654fa7aa6d6f8ab  README.md
+714fa648533fe4a07c96add6c99fc58b  README.md (MD5)
 728eb37b9667e6f2e25c0fccb23228ff9f2c5ea69d7498b3e3dc7818c2d60d1c  TRANSCRIPT.md
 7343975d9902d63f875baab50fdaea6a  TRANSCRIPT.md (MD5)
 9db0a2ef7a9879f391dff9def77a721fa4a5394acda162757cb5ecb6b66c0ed0  main.ts
@@ -16,21 +17,21 @@ f129eb58d18dbf793f816280f577c50da50a63cc66739ac0439ab7ab7382771b  board.json
 356fb20f541d2836939c54253ec1cf94  board.json (MD5)
 efb7aa4f775c5e2f55c8b879e31fb0c0fa4e143934ba675c556ba3e93f7b1f7c  excluded.json
 98b7fe7aa4ffc4d7256516b0ed0886ed  excluded.json (MD5)
-5b11ffab40dbdad35c62d65b01cee66660df6355c3f2147c1cd83ac6518929f3  dossier.json
-83b2656b55bea6746170123776509a34  dossier.json (MD5)
+6203192e28f589388f95e1d2f5dd189a9e710c1ca8353ec4627dcb1e71b41769  dossier.json
+02eca1ed5f08cc6b26f514379b7db11a  dossier.json (MD5)
 9ca51b6e5cd84fe46cb0efa61e2ea99365a1fb0e21f2b75e6007f977f0dc326e  vendor/makefun-board.ts
 5ba220c2671b81b1c453350f3235adf4  vendor/makefun-board.ts (MD5)
-1d514100b828f3a193155de280d98fb792b670aeade0f8fc66bf7d7176960648  dashboard/index.html
-a0982ca5230049a4fa68252b775c00ab  dashboard/index.html (MD5)
-79493d82159d083d1bb7781abdda0a5c67008da25aac3b66cc5432710c98035e  dashboard/style.css
-df805ef5202722be1032cdfbbb5255cd  dashboard/style.css (MD5)
-53cf76d7242677040d06c76f37c7ac35f56502a18e7bfdd6fef34b03c3420a6e  dashboard/app.js
-2ec2c2f5a0f9ec1fb2ef1573b3bb1309  dashboard/app.js (MD5)
-d54e963dea4f8a2dc5d1b11b3bf06dbfedc6688e51e2b32af6fff19b0a6a9fdd  screenshots/01-desktop-overview.png
-0a5501703d7f353c4126a248072e104e  screenshots/01-desktop-overview.png (MD5)
-9001a4274df3714da779337e54124e4933bb47694f36f08e81ba4a98b5518965  screenshots/02-watchlist-detail.png
-27e2ecfea0ef4c3b3c96c750861193da  screenshots/02-watchlist-detail.png (MD5)
-b3332e3fc4214c542e6e555196936ebfcf8d49b43630f132ac476f26a18c1644  screenshots/03-methodology-filters.png
-a3ff14c4ba4a8421e69172db49a8140e  screenshots/03-methodology-filters.png (MD5)
-336e5e86cc33340edd7753eea24d5d4bc977872bdfcb8e0b13c1f8c11b204df0  screenshots/05-validation-audit.png
-aa03c3355b4a74554bd9d07ef1341d0f  screenshots/05-validation-audit.png (MD5)
+22a72156aae6a080c71430bd3198b22d25fb66c1de0f8a7f2bc8b64965773b38  dashboard/index.html
+4a80b8a1897ad720aedd37619d1b4cc7  dashboard/index.html (MD5)
+f355cb4354274f976ac22ace67c4b16f8cc09c44a51029ced4c738fbed0324b7  dashboard/style.css
+e65b7791cc596dab3cdc86a5ce8e644b  dashboard/style.css (MD5)
+b15db431a9266450b3e4c01df8d580df927d552037c12d22858356c586d13059  dashboard/app.js
+b270cace8b9485adfd9ecff8bcfcabb7  dashboard/app.js (MD5)
+ce27f70e684d756981b04ba502259fc5d4db713afb08390953ce0d9364807cab  screenshots/01-desktop-overview.png
+810247af9d28776cc49eabf49e381158  screenshots/01-desktop-overview.png (MD5)
+1c55f2c6c8689a45e15b383a48f5e702d1a0f67ce80f33794c25e140cba5ff5f  screenshots/02-watchlist-detail.png
+aa182bd07e6dc8cbb636a21995fcdbc2  screenshots/02-watchlist-detail.png (MD5)
+df9cd7efe8c04776d139451798e633e2f2665da71407cacb6e40b10571825ced  screenshots/03-methodology-filters.png
+2ba03dd810a27e7815ee9df959ad28f3  screenshots/03-methodology-filters.png (MD5)
+928d85941d4120bae73349e5787ffd1389e1b4cc3cacc0bc15b6e928c751d20c  screenshots/05-validation-audit.png
+b03e4c76e18d93d1e460ca307f58b45c  screenshots/05-validation-audit.png (MD5)

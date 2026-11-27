@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-    <meta name="color-scheme" content="dark" />
+    <meta name="color-scheme" content="light" />
     <link rel="icon" href="data:," />
     <title>Token Launch Radar</title>
     <link rel="stylesheet" href="style.css">
@@ -30,6 +30,10 @@
     </nav>
 
     <section class="tabpane on" id="pane-board" role="tabpanel">
+      <div class="cardgrid-sec">
+        <div class="cardgrid-head">Top 8 by implied launch value — one card per protocol <span class="r">same order, same values as the table below &middot; click a card for the dossier</span></div>
+        <div class="cardgrid" id="cardgrid"></div>
+      </div>
       <div class="boardwrap">
         <div class="panel" id="sandbox-panel" style="grid-column:1/-1"></div>
         <div class="panel">
@@ -64,6 +68,26 @@
           </div>
         </div>
         <div class="side">
+          <div class="panel" id="evidence-panel">
+            <h3>The evidence — why this board wins <span class="r">same sealed snapshot</span></h3>
+            <div class="ev-block">
+              <h4>1 · A flat rule crowns the wrong board</h4>
+              <div class="ev-compare">
+                <div><span class="ev-k bad">Flat median crowns</span><span class="ev-v">Coinbase Bridge <b>$1.64B</b></span><span class="ev-v">WBTC <b>$1.37B</b></span><span class="ev-v">Binance Bitcoin <b>$991.8M</b></span></div>
+                <div><span class="ev-k ok">Fitted curve crowns</span><span class="ev-v">Steakhouse <b>$79.7M</b></span><span class="ev-v">Sentora <b>$74.5M</b></span><span class="ev-v">Gauntlet <b>$61.9M</b></span></div>
+              </div>
+              <p>Bridges and wrapped products that will never launch. The flat median priced the top-10 giants <b>~3×</b> their curve value (<b>5.2×</b> Steakhouse).</p>
+            </div>
+            <div class="ev-block">
+              <h4>2 · EV ≠ size — the best farms sit deep in the board</h4>
+              <p>Top-10-by-EV at ranks <b>70–168</b> (MetalX <b>+$30</b>, Katana <b>+$29</b>, Manifest <b>+$24</b>). 9 of the top 10 by implied are <b>WATCH</b> — best WATCH EV₂₅₀ <b>+$4.15</b>, 8 of 9 negative.</p>
+            </div>
+            <div class="ev-block">
+              <h4>3 · The fitted curve, tested held-out</h4>
+              <p class="ev-line">LOO <b>3.40×</b> vs flat median <b>5.10×</b> · walk-forward <b>2.91× / 3.92×</b> · AUC <b>0.79</b> · Brier <b>0.118</b> vs 0.197</p>
+              <p>The curve wins every TVL band and both walk-forward directions (n = 128 priced comparables).</p>
+            </div>
+          </div>
           <div class="panel" id="cohort-panel"></div>
           <div class="panel" id="cat-panel"></div>
           <div class="panel" id="calib-panel"></div>

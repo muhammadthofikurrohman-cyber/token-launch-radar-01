@@ -451,10 +451,10 @@ function renderKPIs(){
     { lab:"Protocols in snapshot", val:"758", sub:"sealed snapshot · 2026-11-14" },
     { lab:"Record no token", val:"342", sub:"no mcap · no CG id · no symbol" },
     { lab:"Ranked on board", val:"207", sub:"40 watchlist + 167 discovery · " + vc["STRONG FARM"] + " STRONG / " + vc["FARM — SMALL SIZE"] + " FARM / " + vc["WATCH"] + " WATCH / " + vc["FADE / SKIP"] + " FADE" },
-    { lab:"Fitted log-curve", val:"LOO 3.40×", sub:"median fold error · n = 128 · curve 3.40× vs median 5.10× · walk-forward 2.91× / 3.92×" },
-    { lab:"Launch model · held-out", val:"AUC 0.79", sub:"Brier 0.118 vs 0.197 · P@20 0.60 · n=128 · temporal hold-out" },
+    { lab:"Fitted log-curve", val:"LOO 3.40×", sub:"curve 3.40× vs median 5.10× · walk-fwd 2.91×/3.92× · n=128" },
+    { lab:"Launch model · held-out", val:"AUC 0.79", sub:"Brier 0.118 vs 0.197 · P@20 0.60 · n=128" },
     { lab:"Combined implied value", val:fmtUSD(TOTAL_IMPLIED), sub:"80% CI " + fmtUSD(TOTAL_LO) + " – " + fmtUSD(TOTAL_HI) + " · 102 of 128 inside it" },
-    { lab:"Snapshot regime — not a live market call", val:regime, sub:"median 7d TVL Δ " + (med30 >= 0 ? "+" : "−") + Math.abs(med30).toFixed(1) + "% · " + fmtPct(posShare, 0) + " growing · n=207 · snapshot 2026-11-14" }
+    { lab:"Snapshot regime — not a live market call", val:regime, sub:"median 7d Δ " + (med30 >= 0 ? "+" : "−") + Math.abs(med30).toFixed(1) + "% · " + fmtPct(posShare, 0) + " growing · n=207" }
   ];
   $("kpis").innerHTML = tiles.map(function(t){
     return '<div class="kpi"><div class="lab">' + t.lab + '</div><div class="val num">' + t.val + '</div><div class="sub">' + t.sub + '</div></div>';
@@ -465,7 +465,7 @@ function renderStrip(){
     { n:"758", d:"protocols in snapshot", act:"" },
     { n:"342", d:"record no token (3/3 checks)", act:"" },
     { n:"207", d:"ranked rows · 40 watchlist", act:"board" },
-    { n:"551", d:"excluded · 416 live-token · 49 wrapped · 44 bridge · 42 CEX · 0 unrankable", act:"audit", cls:"mid" },
+    { n:"551", d:"excluded · 416 live · 49 wrapped · 44 bridge · 42 CEX", act:"audit", cls:"mid" },
     { n:"100%", d:"token-absence triple-check + TVL single-count pass", act:"", cls:"ok" }
   ];
   $("strip").innerHTML = cells.map(function(c,i){
@@ -502,8 +502,8 @@ var COLS = [
   { k:"name", lab:"Protocol", cls:"l" },
   { k:"cat", lab:"Category", cls:"l" },
   { k:"tvl", lab:"TVL", cls:"" },
-  { k:"implied", lab:"Implied · 80% CI<br><span style='font-size:9px'>79.7% (102/128) · LOO 3.40×</span>", cls:"" },
-  { k:"p", lab:"P(launch 12m)", cls:"" },
+  { k:"implied", lab:"Implied · 80% CI<br><span style='font-size:9px'>79.7% · LOO 3.40×</span>", cls:"" },
+  { k:"p", lab:"P(launch<br>12m)", cls:"" },
   { k:"ev250", lab:"EV $250", cls:"c-ev" },
   { k:"verdict", lab:"Verdict", cls:"l" }
 ];
@@ -569,6 +569,29 @@ function renderBoard(){
   $("pg-prev").disabled = state.showAll || state.page <= 0;
   $("pg-next").disabled = state.showAll || state.page >= pages - 1;
   $("pg-all").textContent = state.showAll ? "Paginate · 25 / page" : "Show all " + total;
+  renderCardGrid(rows);
+}
+
+/* ============ card-grid discovery (round 24 candidate C): top 8 of the same
+   filtered view, same order and same values as the table below. Cards are a
+   scannable front door to the leaders; the compact full table keeps all 207. */
+function renderCardGrid(rows){
+  var top = rows.slice(0, 8);
+  var el = $("cardgrid");
+  if (!el) return;
+  el.innerHTML = top.map(function(r){
+    return '<button type="button" class="pcard' + (state.sel === r.slug ? " sel" : "") + '" data-slug="' + r.slug + '" title="' + esc(r.name) + ' — rank #' + r.rank + ' · click for the dossier">' +
+      '<span class="prow"><span class="prank">#' + r.rank + '</span><span class="pname">' + esc(r.name) + (r.watchlist ? ' <span class="wl" title="On the snapshot&rsquo;s own 40-protocol watchlist">WL</span>' : "") + '</span></span>' +
+      '<span class="pcat"><span class="catxt">' + esc(r.cat) + ' · ' + esc(r.mainChain) + '</span><span class="vtag ' + vClass(r.verdict) + '">' + r.verdict + '</span></span>' +
+      '<span class="pbig"><span class="cell"><span class="lab">TVL</span><br/><span class="val">' + fmtUSD(r.tvl) + '</span></span>' +
+      '<span class="cell"><span class="lab">Implied value</span><br/><span class="val">' + fmtUSD(r.implied) + '</span></span></span>' +
+      '<span class="pci">80% CI ' + fmtUSD(r.lo) + ' – ' + fmtUSD(r.hi) + '</span>' +
+      '<span class="pfoot"><span>P(launch) <b>' + fmtPct(r.p) + '</b></span><span>EV $250 <b class="' + (r.ev250 >= 0 ? "pos" : "neg") + '">' + fmtSigned(r.ev250) + '</b></span><span>7d <b class="' + (r.chg7 >= 0 ? "pos" : "neg") + '">' + (r.chg7 >= 0 ? "+" : "−") + Math.abs(r.chg7).toFixed(1) + '%</b></span></span>' +
+      '</button>';
+  }).join("") || '<div class="dim" style="padding:16px">No protocols match these filters.</div>';
+  Array.prototype.forEach.call(el.querySelectorAll("[data-slug]"), function(b){
+    b.addEventListener("click", function(){ selectRow(b.getAttribute("data-slug"), true); });
+  });
 }
 function selectRow(slug, open){
   state.sel = slug;
@@ -585,7 +608,7 @@ function renderCohortPanel(r){
   $("cohort-panel").innerHTML =
     "<h3>Peer-cohort odds — selected row <span class='r'>logistic · held-out ×2</span></h3>" +
     '<div style="padding:6px 12px 0"><span class="pname" style="font-size:15px">' + esc(r.name) + '</span> <span class="vtag ' + vClass(r.verdict) + '">' + r.verdict + '</span><br/><span class="pslug">' + r.slug + " · " + r.cat + "</span></div>" +
-    '<div class="kv"><span class="k">P(launch ≤ 12m)</span><span class="v"><b style="color:#EDF4FB">' + fmtPct(r.p) + '</b> · 80% CI ' + fmtPct(r.pLo,0) + "–" + fmtPct(r.pHi,0) + "</span></div>" +
+    '<div class="kv"><span class="k">P(launch ≤ 12m)</span><span class="v"><b style="color:#111111">' + fmtPct(r.p) + '</b> · 80% CI ' + fmtPct(r.pLo,0) + "–" + fmtPct(r.pHi,0) + "</span></div>" +
     '<div class="pbar"><div class="ci2" style="left:' + (r.pLo*100) + "%;width:" + ((r.pHi-r.pLo)*100) + '%"></div><div class="fill" style="left:0;width:' + (r.p*100) + '%"></div></div>' +
     (isFinite(base) ? '<div class="pbar-lab"><span>0%</span><span>peer base rate ' + fmtPct(base) + ' (prior)' + "</span><span>100%</span></div>" : '<div class="pbar-lab"><span>0%</span><span>peer base rate — no live peers in category (prior ' + fmtPct(cat.launchRate) + ')</span><span>100%</span></div>') +
     (r.peersN > 0 ? '<div class="kv"><span class="k">Peer cohort record</span><span class="v">' + r.peersLaunched + "/" + r.peersN + " launched ≤ 12m</span></div>" : '<div class="kv"><span class="k">Peer cohort record</span><span class="v">no live-token peers in this category</span></div>') +
@@ -611,17 +634,17 @@ function calibSVG(w, h, mini){
   var padL = 48, padB = 26, padT = 12, padR = 16, iw = w - padL - padR, ih = h - padT - padB;
   var X = function(p){ return padL + p*iw; }, Y = function(p){ return padT + (1-p)*ih; };
   var s = '<svg width="100%" viewBox="0 0 ' + w + " " + h + '" style="display:block;overflow:visible" role="img" aria-label="Calibration plot: predicted versus observed launch rate by decile">';
-  s += '<line x1="' + X(0) + '" y1="' + Y(0) + '" x2="' + X(0.65) + '" y2="' + Y(0.65) + '" stroke="#3A4E66" stroke-dasharray="4 3"/>';
-  s += '<line x1="' + padL + '" y1="' + (padT+ih) + '" x2="' + (padL+iw) + '" y2="' + (padT+ih) + '" stroke="#27374A"/>';
-  s += '<line x1="' + padL + '" y1="' + padT + '" x2="' + padL + '" y2="' + (padT+ih) + '" stroke="#27374A"/>';
+  s += '<line x1="' + X(0) + '" y1="' + Y(0) + '" x2="' + X(0.65) + '" y2="' + Y(0.65) + '" stroke="#595959" stroke-dasharray="4 3"/>';
+  s += '<line x1="' + padL + '" y1="' + (padT+ih) + '" x2="' + (padL+iw) + '" y2="' + (padT+ih) + '" stroke="#111111"/>';
+  s += '<line x1="' + padL + '" y1="' + padT + '" x2="' + padL + '" y2="' + (padT+ih) + '" stroke="#111111"/>';
   [0, 0.3, 0.6].forEach(function(t){
-    s += '<text x="' + (padL-5) + '" y="' + (Y(t)+3) + '" fill="#5D7189" font-size="9" font-family="monospace" text-anchor="end">' + Math.round(t*100) + '%</text>';
-    s += '<text x="' + X(t) + '" y="' + (h-5) + '" fill="#5D7189" font-size="9" font-family="monospace" text-anchor="middle">' + Math.round(t*100) + '%</text>';
+    s += '<text x="' + (padL-5) + '" y="' + (Y(t)+3) + '" fill="#333333" font-size="9" font-family="monospace" text-anchor="end">' + Math.round(t*100) + '%</text>';
+    s += '<text x="' + X(t) + '" y="' + (h-5) + '" fill="#333333" font-size="9" font-family="monospace" text-anchor="middle">' + Math.round(t*100) + '%</text>';
   });
   CALIB.forEach(function(c){
-    s += '<circle cx="' + X(c.pred) + '" cy="' + Y(c.obs) + '" r="' + (mini ? 3 : 4.5) + '" fill="#4CC2FF" stroke="#0A0E14" stroke-width="1"><title>Decile ' + c.d + ": predicted " + fmtPct(c.pred) + ", observed " + fmtPct(c.obs) + ", n=" + c.n + "</title></circle>";
+    s += '<circle cx="' + X(c.pred) + '" cy="' + Y(c.obs) + '" r="' + (mini ? 3 : 4.5) + '" fill="#0047BB" stroke="#FFFFFF" stroke-width="1"><title>Decile ' + c.d + ": predicted " + fmtPct(c.pred) + ", observed " + fmtPct(c.obs) + ", n=" + c.n + "</title></circle>";
   });
-  s += '<text x="' + (padL+iw) + '" y="' + (padT+10) + '" fill="#5D7189" font-size="9" font-family="monospace" text-anchor="end">dashed = perfect</text>';
+  s += '<text x="' + (padL+iw) + '" y="' + (padT+10) + '" fill="#333333" font-size="9" font-family="monospace" text-anchor="end">dashed = perfect</text>';
   return s + "</svg>";
 }
 function renderCalibPanel(){
@@ -954,7 +977,7 @@ function renderSandbox(){
     '<button id="sb-preset-metalx" type="button">Preset: MetalX (best EV)</button>' +
     '<div class="sb-out" id="sb-out"></div>' +
     '</div>' +
-    '<div class="note">Same code path as the board; no second formula. S = 1.00 throughout (no 30d series). The logit is the Phase 1 fit: −2.41 + 0.63·log₁₀(TVL/$50M) + 0.41·(age/1095) + 0.38·launch_rate_cat + 0.27·chains_scaled.</div>';
+    '<div class="note">Same code path as the board; no second formula. S = 1.00 throughout. Logit: −2.41 + 0.63·log₁₀(TVL/$50M) + 0.41·(age/1095) + 0.38·launch_rate_cat + 0.27·chains_scaled.</div>';
   function renderSandboxOut(){
     var s = sandboxRow();
     window.SANDBOX_LAST = s;
